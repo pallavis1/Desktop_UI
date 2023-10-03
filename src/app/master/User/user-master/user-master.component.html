@@ -1,0 +1,117 @@
+
+<div class="page_heading">
+  User Master - New
+  <div class="options_dd">
+    <button mat-button [matMenuTriggerFor]="menu">Options <i class="fa fa-angle-down"></i></button>
+    <mat-menu #menu="matMenu" class="option_panel">
+      <a routerLink="/user-master-list">List</a>
+    </mat-menu>
+  </div>
+</div>
+
+<div class="page_wrapper">
+  <div class="custom_panel page_form">
+  
+    <div class="row">
+      <div class="col-md-2 col-sm-4 col-xs-12">
+        <div class="form_panel">
+          <label>{{TRANSLATE.UserID}}</label>
+          <input type="text" placeholder="" />
+        </div>
+      </div>
+      
+      <div class="col-md-2 col-sm-4 col-xs-12">
+        <div class="form_panel">
+          <label>{{TRANSLATE.UserName}} <span class="required">*</span></label>
+          <input type="text" placeholder="" />
+        </div>
+      </div>
+      
+      <div class="col-md-2 col-sm-4 col-xs-12">
+        <div class="form_panel">
+          <label>{{TRANSLATE.EmailIDLoginID}} <span class="required">*</span></label>
+          <input type="text" placeholder="" />
+        </div>
+      </div>
+      <div class="col-md-2 col-sm-4 col-xs-12">
+        <div class="form_panel">
+          <label>{{TRANSLATE.POSUserId}} <span class="required">*</span></label>
+          <input type="text" placeholder="" />
+        </div>
+      </div>
+      
+      <div class="col-md-2 col-sm-4 col-xs-12">
+        <div class="form_panel">
+          <label>{{TRANSLATE.Password}} <span class="required">*</span></label>
+          <input type="text" placeholder="" />
+        </div>
+      </div>
+      
+      <div class="col-md-2 col-sm-4 col-xs-12">
+        <div class="form_panel">
+          <label>{{TRANSLATE.ConfirmPassword}} <span class="required">*</span></label>
+          <input type="text" placeholder="" />
+        </div>
+      </div>
+      
+      <div class="col-md-2 col-sm-4 col-xs-12">
+        <div class="form_panel">
+          <label>{{TRANSLATE.Role}} <span class="required">*</span></label>
+          <mat-select placeholder=" ">
+            <mat-option value="one">First option</mat-option>
+            <mat-option value="two">Second option</mat-option>
+          </mat-select>
+        </div>
+      </div>
+      <div class="col-md-2 col-sm-4 col-xs-12">
+        <div class="form_panel">
+          <label>{{TRANSLATE.Interface}} </label>
+          <mat-select placeholder=" ">
+            <mat-option value="one">First option</mat-option>
+            <mat-option value="two">Second option</mat-option>
+          </mat-select>
+        </div>
+      </div>
+      <div class="col-md-2 col-sm-4 col-xs-12">
+        <div class="form_panel">
+          <label>{{TRANSLATE.Restaurant}} <span class="required">*</span></label>
+          <div class="position_realtive">
+            <input type="text" placeholder="" />
+            <div class="floating_icon"><i class="fa fa-search"></i></div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-2 col-sm-4 col-xs-12">
+        <div class="form_panel">
+          <label>{{TRANSLATE.RetireUser}} </label>
+          <div class="radio_btn">
+            <mat-radio-group aria-label="Select an option">
+              <mat-radio-button value="1">Yes</mat-radio-button>
+              <mat-radio-button value="2" checked>No</mat-radio-button>
+            </mat-radio-group>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-2 col-sm-4 col-xs-12">
+        <div class="form_panel">
+          <label>{{TRANSLATE.SuperUser}} </label>
+          <div class="radio_btn">
+            <mat-radio-group aria-label="Select an option">
+              <mat-radio-button value="1">Yes</mat-radio-button>
+              <mat-radio-button value="2" checked>No</mat-radio-button>
+            </mat-radio-group>
+          </div>
+        </div>
+      </div>
+      
+      
+      
+    </div>
+      
+  </div>
+</div>
+
+<div class="bottom_btns">
+  <button class="primary_btn border_btn mr_10">Reset</button>
+  <button class="primary_btn">Submit</button>
+</div>

@@ -1,0 +1,77 @@
+
+@import '../..//config.scss';
+
+
+
+.login_panel{    
+    font-family: 'Niveau Grotesk';
+    background: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 5px 7px  var(--box-shadow_color);
+    // border: 1px solid var(----login_input_border-color);
+    margin: 0 auto;
+    max-width: 400px;
+    margin: 20px auto 20px;
+    .mat-form-field{
+        width: 100%;
+        &.mat-focused{
+            
+        }
+           
+       
+    }   
+    
+    .center{
+        h4{
+            margin: 0;
+            color:  var(--login_h4);
+        }
+    }
+    input{
+        width: 100%;
+    }
+    .login_text{
+        color:  var(--login_text);
+        @include font_bold;
+        padding: 0 15px;
+
+    }
+    .login_btn{
+        width: 100px;
+        height: 40px;
+        text-align: left;
+        vertical-align: middle;
+        cursor: pointer;
+        background:  var(--login_button_border);
+        border: 1px solid  var(--login_button_border);
+        background-image: none;
+        white-space: nowrap;
+        color: var(--primary_color);
+        border-radius: 5px;
+        background-image: url('../../assets/image/login_btn_icon.png');
+        background-repeat: no-repeat;
+        background-position: 72px 10px;
+        padding-left: 12px;
+        font-size: 15px;
+    }
+    .login_btn:focus-within {
+        outline: 1px solid;
+    }
+    .pull-right {
+        text-align: right;
+        padding: 0 15px;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+    }
+    .space-between {
+        justify-content: space-between;
+        text-align: left
+    }
+
+    
+   
+}
+
+

@@ -1,0 +1,382 @@
+<!-- <div class="card_panel">
+  <div class="card_box"> 
+    <a routerLink="/reservation">
+      <img src="./assets/image/reserveration.png">
+      <p>{{TRANSLATE.RESERVATION}}</p>
+    </a>  
+  </div>
+  <div class="card_box">
+    <a routerLink="/reservation">
+      <img src="./assets/image/reserveration.png">
+      <p>{{TRANSLATE.RESERVATION}}</p>
+  </a>   
+  </div>
+</div> -->
+<div class="dash_wrapper">
+  <div class="dash_head">
+    <h4>Dashboard</h4>
+    <div class="filter_dd">
+      <div class="radio_btn">
+        <mat-radio-group aria-label="Select an option">
+          <mat-radio-button value="1" checked>Day</mat-radio-button>
+          <mat-radio-button value="2">Weekly</mat-radio-button>
+          <mat-radio-button value="3">Monthly</mat-radio-button>
+        </mat-radio-group>
+        &nbsp;&nbsp; | &nbsp;&nbsp;
+        <mat-radio-group aria-label="Select an option">
+          <mat-radio-button value="1" checked>Normal</mat-radio-button>
+          <mat-radio-button value="2" (change)="radioChange($event)">Percentage</mat-radio-button>
+        </mat-radio-group>
+      </div>
+      <!-- <button mat-button [matMenuTriggerFor]="menu"> <i class="fa fa-filter"></i></button>
+      <mat-menu #menu="matMenu" class="option_panel">
+        <div class="day_dd">
+          <a routerLink="">Day</a>
+          <a routerLink="">Weekly</a>
+          <a routerLink="">Monthly</a>
+        </div>
+        <a>Percentage</a>
+      </mat-menu> -->
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-9 dash_left">
+      <div class="row">
+        <div class="col-md-4">
+          <div class="dashboard_panel">            
+            <h4><div class="d_flex cstm_dd">
+              Reservation Status
+            </div>
+          </h4>
+            <div *ngIf="dayChart">
+              <canvas baseChart 
+              [data]="doughnutChartData" 
+              [labels]="doughnutChartLabels" 
+              [chartType]="doughnutChartType"       
+              [colors]="doughnutChartColors"
+              [options]="doughnutChartOptions" 
+              [plugins]="doughnutChartPlugins" 
+              >
+              </canvas>
+            </div>
+            <div *ngIf="weeklyChart">
+              <canvas 
+              baseChart 
+              [data]="pieChartData" 
+              [labels]="pieChartLabels" 
+              [chartType]="pieChartType"
+              [options]="pieChartOptions" 
+              [plugins]="pieChartPlugins" 
+              [colors]="pieChartColors" 
+              [legend]="pieChartLegend">
+          </canvas>
+            </div>
+            <div *ngIf="MonthlyChart">
+              <canvas id="myChart" width="400" height="200"></canvas>
+            </div>
+            <div class="percentage_panel" *ngIf="showPercentage">
+              <div class="percentage_text">Currently Seated <span>60%</span></div>
+              <div class="percentage_text">Yes to arriv <span>40%</span></div>
+            </div>
+          </div>
+        </div>
+      
+        <div class="col-md-4">
+          <div class="dashboard_panel">
+            <h4>Table Status</h4>
+            <div class="chartjs-container">
+              <canvas 
+                baseChart 
+                [data]="pieChartData" 
+                [labels]="pieChartLabels" 
+                [chartType]="pieChartType"
+                [options]="pieChartOptions" 
+                [plugins]="pieChartPlugins" 
+                [colors]="pieChartColors" 
+                [legend]="pieChartLegend">
+            </canvas>
+            </div>
+            <div class="percentage_panel" *ngIf="showPercentage">
+              <div class="percentage_text">Reserved <span>60%</span></div>
+              <div class="percentage_text">Occupied  <span>20%</span></div>
+              <div class="percentage_text">Vacant  <span>20%</span></div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-md-4">
+          <div class="dashboard_panel">
+            <h4>Reservation Source</h4>
+            <canvas id="myChart" width="400" height="200"></canvas>
+          </div>   
+        </div>
+        
+        
+    <div class="col-md-4">
+      <div class="dashboard_panel">
+        <h4>Table Turnover</h4>
+        <canvas baseChart 
+          [datasets]="barChartData" 
+          [labels]="barChartLabels" 
+          [options]="barChartOptions"
+          [plugins]="barChartPlugins" 
+          [legend]="barChartLegend" 
+          [chartType]="barChartType">
+      </canvas>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="dashboard_panel">
+        <h4>Revenue Analytics</h4>
+      
+        <div class="chartjs-container">
+          <canvas baseChart 
+              [datasets]="lineChartData" 
+              [labels]="lineChartLabels" 
+              [options]="lineChartOptions"
+              [colors]="lineChartColors" 
+              [legend]="lineChartLegend" 
+              [chartType]="lineChartType" 
+              [plugins]="lineChartPlugins"
+              (chartHover)="chartHovered($event)" 
+              (chartClick)="chartClicked($event)">
+          </canvas>
+        </div>
+      </div>  
+    </div>
+
+    <div class="col-md-4">
+      <div class="dashboard_panel">
+        <h4>Forecasting</h4>
+        <div class="chartjs-container">
+          <canvas id="Forecasting" width="400" height="200"></canvas>
+        </div>
+      </div>
+    </div>
+    
+
+
+    <div class="col-md-4">
+      <div class="dashboard_panel">
+        <h4>Table Occupancy</h4>
+    
+        <div class="chartjs-container">
+          <canvas baseChart 
+              [datasets]="lineChartData" 
+              [labels]="lineChartLabels" 
+              [options]="lineChartOptions"
+              [colors]="lineChartColors" 
+              [legend]="lineChartLegend" 
+              [chartType]="lineChartType" 
+              [plugins]="lineChartPlugins"
+              (chartHover)="chartHovered($event)" 
+              (chartClick)="chartClicked($event)">
+          </canvas>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="dashboard_panel">
+        <h4>Guest Arrival Patterns</h4>  
+        <div class="chartjs-container"> 
+          <canvas id="GuestArrivalPatterns" width="400" height="200"></canvas>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="dashboard_panel">
+        <h4>Reservation vs Walkin</h4>
+    
+        <canvas baseChart 
+          [datasets]="barChartData1" 
+          [labels]="barChartLabels1" 
+          [options]="barChartOptions1"
+          [plugins]="barChartPlugins1" 
+          [legend]="barChartLegend1"
+          [colors]="barChartColors1"  
+          [chartType]="barChartType1">
+        </canvas>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="dashboard_panel">
+        <h4>Meal Session</h4>
+        <canvas id="mealSession" width="400" height="200"></canvas>
+
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="dashboard_panel">
+        <h4>Peak Booking Times</h4>
+        <!-- <div class="chartjs-container">
+          <canvas 
+          baseChart 
+          [data]="pieChartData" 
+          [labels]="pieChartLabels" 
+          [chartType]="pieChartType"
+          [options]="pieChartOptions" 
+          [plugins]="pieChartPlugins" 
+          [colors]="pieChartColors" 
+          [legend]="pieChartLegend">
+      </canvas>
+        </div> -->
+        <div class="chartjs-container">
+          <canvas baseChart 
+              [datasets]="scatterChartData" 
+              [options]="scatterChartOptions" 
+              [chartType]="scatterChartType">
+          </canvas>
+      </div>
+      </div>
+    </div>
+
+      </div>
+    </div>
+    <div class="col-md-3 dash_right">    
+      <div class="row">
+        <div class="col-md-12">
+          <div class="dashboard_panel">
+            
+            <h4>Waitlisted</h4>
+          <div class="wait_panel">
+              <div class="left">
+                <img src="../../assets/image/icons/dine-table.png"/> 20 RES <br/>
+                <img src="../../assets/image/icons/people.png"/> 40 PAX
+              </div>
+            <div class="right">
+              <span>Average Wait Time</span>
+              <h3><img src="../../assets/image/icons/clock_orange.png"/> 15 Min. 30 Sec.</h3>
+            </div>
+          </div>
+      
+      
+          </div>
+        </div>
+        
+        <div class="col-md-6">
+          <div class="dashboard_panel minheight_auto">
+            <h4>Avg. Party Size</h4>
+    
+            <div class="count">
+              4 PAX<br/>
+              <span class="increase">+10%</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="dashboard_panel minheight_auto">
+            <h4>Walk-In</h4>
+            <div class="count">
+              20 PAX <br/>
+              <span class="decrease">-10%</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="dashboard_panel minheight_auto">
+            <h4>Cancellations</h4>
+            <div class="count">
+              20 RES | 40 PAX<br/>
+              <span class="increase">+15%</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="dashboard_panel minheight_auto">
+            <h4>No Shows</h4>
+            <div class="count">
+              20 RES | 60 PAX <br/>
+              <span class="increase">+25%</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-12">
+          <div class="dashboard_panel">
+            <h4>Lead time before booking per day of week</h4>
+      
+            <div class="wait_panel">
+              <div class="left">
+                <img src="../../assets/image/icons/dine-table.png"/> 20 RES <br/>
+                <img src="../../assets/image/icons/people.png"/> 40 PAX
+              </div>
+            <div class="right">
+              <span>Number of days</span>
+              <h3><img src="../../assets/image/icons/calendar.png"/> 15Days</h3>
+            </div>
+          </div>
+      
+          </div>
+        </div>
+
+      </div>
+    </div>
+  
+
+    <!-- <div class="col-md-8">
+      <div class="dashboard_panel">
+        <h4>Table Turnover</h4>
+        <canvas baseChart 
+          [datasets]="horizontalBarChartData" 
+          [labels]="horizontalBarChartLabels" 
+          [options]="barChartOptions"
+          [plugins]="barChartPlugins" 
+          [legend]="barChartLegend" 
+          [chartType]="barChartType">
+      </canvas>
+      </div>
+    </div> -->
+
+    
+
+    
+    <div class="col-md-4" style="display: none;">
+      <div class="dashboard_panel">
+        <h4>Reservation Cancellations</h4>
+
+        <div class="resrv_cancel_box custom_scroll">
+          <div class="msg_box">
+            <p>"I changed my mind” is the top reason for cancelling an order
+          </p>
+          <div class="d_flex">
+            <img src="../../assets/image/icons/clock_red.png"/> 2.30PM
+          </div>
+          </div>
+          <div class="msg_box">
+            <p>"I changed my mind” is the top reason for cancelling an order
+          </p>
+          <div class="d_flex">
+            <img src="../../assets/image/icons/clock_red.png"/> 2.30PM
+          </div>
+          </div><div class="msg_box">
+            <p>"I changed my mind” is the top reason for cancelling an order
+          </p>
+          <div class="d_flex">
+            <img src="../../assets/image/icons/clock_red.png"/> 2.30PM
+          </div>
+          </div><div class="msg_box">
+            <p>"I changed my mind” is the top reason for cancelling an order
+          </p>
+          <div class="d_flex">
+            <img src="../../assets/image/icons/clock_red.png"/> 2.30PM
+          </div>
+          </div><div class="msg_box">
+            <p>"I changed my mind” is the top reason for cancelling an order
+          </p>
+          <div class="d_flex">
+            <img src="../../assets/image/icons/clock_red.png"/> 2.30PM
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+</div>
+
+

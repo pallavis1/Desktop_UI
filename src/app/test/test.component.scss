@@ -1,0 +1,27 @@
+// app.component.scss
+@import '@angular/material/prebuilt-themes/indigo-pink.css';
+
+.table {
+    width: 100%;
+  }
+
+  
+    .search-bars {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 10px;
+  
+      .search-bar {
+        flex: 1;
+      }
+    }
+  
+    .paginator {
+      margin-bottom: 10px;
+    }
+  
+    .table {
+      width: 100%;
+    }
+  
+  

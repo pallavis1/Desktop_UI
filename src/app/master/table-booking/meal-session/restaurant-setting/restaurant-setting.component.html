@@ -1,0 +1,104 @@
+<div class="page_heading">
+  {{TRANSLATE.MealSession}} - {{TRANSLATE.Edit}}
+</div>
+
+<div class="page_wrapper">
+  <div class="custom_panel page_form">
+    <div class="row">
+      
+      <div class="col-md-2 col-sm-4 col-xs-12">
+        <div class="form_panel">
+          <label>{{TRANSLATE.Restaurant}} <span class="required">*</span></label>
+          <div class="position_realtive">
+            <input type="text" placeholder="" />
+            <div class="floating_icon"><i class="fa fa-search"></i></div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-2 col-sm-4 col-xs-12">
+        <div class="form_panel">
+          <label>{{TRANSLATE.MealStructure}} <span class="required">*</span></label>
+          <input type="text" placeholder="" />
+        </div>
+      </div>
+      <div class="col-md-2 col-sm-4 col-xs-12">
+        <div class="form_panel">
+          <label>{{TRANSLATE.FromTime}} <span class="required">*</span></label>
+          <mat-select placeholder="Select Floor">
+            <mat-option value="one">First option</mat-option>
+            <mat-option value="two">Second option</mat-option>
+          </mat-select>
+        </div>
+      </div>
+      <div class="col-md-2 col-sm-4 col-xs-12">
+        <div class="form_panel">
+          <label>{{TRANSLATE.ToTime}} <span class="required">*</span></label>
+          <mat-select placeholder="Select Floor">
+            <mat-option value="one">First option</mat-option>
+            <mat-option value="two">Second option</mat-option>
+          </mat-select>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-2 col-sm-4 col-xs-12">
+        <div class="form_panel">
+          <label>{{TRANSLATE.DefaultMealLength}} <span class="required">*</span></label>
+          <mat-select placeholder="Select Floor">
+            <mat-option value="one">First option</mat-option>
+            <mat-option value="two">Second option</mat-option>
+          </mat-select>
+          <div class="info_text">Hours</div>
+        </div>
+      </div>
+      <div class="col-md-2 col-sm-4 col-xs-12">
+        <div class="form_panel">
+          <label>{{TRANSLATE.Session}} </label>
+          <mat-select placeholder="Select Floor">
+            <mat-option value="one">First option</mat-option>
+            <mat-option value="two">Second option</mat-option>
+          </mat-select>
+        </div>
+      </div>
+
+      <div class="col-md-2 col-sm-4 col-xs-12">
+        <div class="form_panel">
+          <label>{{TRANSLATE.Active}}</label>
+          <div class="custom_checkbox">
+            <mat-checkbox class="example-margin"></mat-checkbox>
+          </div>
+        </div>
+      </div> 
+    </div>
+  
+
+  <h4 class="mt_20">{{TRANSLATE.PaxWiseReservationList}}</h4>
+  <div class="custom_table table_bordered mb_10">
+    <table class="mat-table" >
+      <tr class="mat-header-row">
+        <th class="mat-header-cell">Pax From	</th>
+        <th class="mat-header-cell">Pax To</th>
+        <th class="mat-header-cell">Meal Lenght	</th>
+        <th class="mat-header-cell">Action</th>
+      </tr>
+      <tr class="mat-row">
+        <td class="mat-cell">Mr. Johny</td>
+        <td class="mat-cell">7856925555</td>
+        <td class="mat-cell">VIP</td>
+        <td class="mat-cell">28 Jun 2021</td>
+      </tr>
+      <tr class="mat-row">
+        <td class="mat-cell">Mr. Johny</td>
+        <td class="mat-cell">7856925555</td>
+        <td class="mat-cell">VIP</td>
+        <td class="mat-cell">28 Jun 2021</td>
+      </tr>
+    </table>       
+  </div>
+</div>
+</div>
+
+<div class="bottom_btns">
+  <button class="primary_btn border_btn mr_10">Reset</button>
+  <button class="primary_btn">Submit</button>
+</div>

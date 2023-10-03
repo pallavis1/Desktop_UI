@@ -1,0 +1,50 @@
+<div class="page_heading">
+  {{TRANSLATE.OccasionMaster}} - {{TRANSLATE.New}}  
+  <div class="options_dd">
+    <button mat-button [matMenuTriggerFor]="menu">Options <i class="fa fa-angle-down"></i></button>
+    <mat-menu #menu="matMenu" class="option_panel">
+      <a routerLink="/BOTEventMasterList">Table View</a>
+    </mat-menu>
+  </div>
+</div>
+
+<div class="page_wrapper">
+  <div class="custom_panel page_form">
+    <div class="row">
+      <div class="col-md-2 col-sm-4 col-xs-12">
+        <div class="form_panel">
+          <label>{{TRANSLATE.OccasionName}} <span class="required">*</span></label>
+          <input type="text" placeholder="" />
+        </div>
+      </div>
+      <div class="col-md-2 col-sm-4 col-xs-12">
+        <div class="form_panel">
+          <label>{{TRANSLATE.Description}}</label>
+          <textarea></textarea>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-2 col-sm-4 col-xs-12">
+        <div class="form_panel">
+          <label>{{TRANSLATE.OccasionImage}}</label>
+          <app-upload-image></app-upload-image>
+        </div>
+      </div>
+      <div class="col-md-2 col-sm-4 col-xs-12">
+        <div class="form_panel">
+          <label>{{TRANSLATE.IsActive}}</label>
+          <div class="custom_checkbox">
+            <mat-checkbox class="example-margin"></mat-checkbox>
+          </div>
+        </div>
+      </div> 
+      
+    </div>
+  </div>
+</div>
+
+<div class="bottom_btns">
+  <button class="primary_btn border_btn mr_10">Reset</button>
+  <button class="primary_btn">Submit</button>
+</div>

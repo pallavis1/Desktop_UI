@@ -1,0 +1,944 @@
+
+
+<div class="reservation_panel">
+  <div id="my-slider" class="carousel slide" data-ride="carousel">
+
+
+    <div class="carousel-inner" role="listbox">
+      <div class="item active">
+        <img src="img/305.jpg" width="500px" height="300px" alt="flower" />
+      </div>
+      <div class="item">
+        <img src="img/300.jpg" width="500px" height="300px" alt="flower" />
+        <div class="carousel-caption">
+          <h2>Brzydki kwiatek</h2>
+        </div>
+      </div>
+      <div class="item">
+        <img src="img/271.jpg" width="500px" height="300px" alt="flower" />
+        <div class="carousel-caption">
+          <h2>Śliczny kwiatek</h2>
+        </div>
+      </div>
+
+    </div>
+
+    <a class="left carousel-control-prev" href="#my-slider" role="button" data-slide="prev">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+
+    <a class="right carousel-control-next" href="#my-slider" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+
+  </div>
+
+  ----------------------------
+
+  <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+       Test Slider
+      </div>
+      <div class="carousel-item">
+        <img class="d-block w-100" src="..." alt="Second slide">
+      </div>
+      <div class="carousel-item">
+        <img class="d-block w-100" src="..." alt="Third slide">
+      </div>
+    </div>
+    <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    </a>
+  </div>
+  <div class="top_panel">
+    <div class="top_filter d_flex">
+      <div class="calendar">
+        <!-- <div class="days_tab">
+          <mat-tab-group>
+            <mat-tab label="Today"></mat-tab>
+            <mat-tab label="Monday"></mat-tab>
+            <mat-tab label="Monday"></mat-tab>
+            <mat-tab label="Monday"></mat-tab>
+            <mat-tab label="Monday"></mat-tab>
+          </mat-tab-group>
+        </div> -->
+        <div class="d_flex">
+          <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker ></mat-datepicker>
+          
+          <div id="carouselDay" class="carousel slide" data-ride="carousel">            
+            <a class="carousel-control-prev theme_arrow" href="#carouselDay" role="button" data-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            </a>
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                Today {{s}}
+              </div>
+              <div class="carousel-item">
+                Monday
+              </div>
+            </div>
+            <a class="carousel-control-next theme_arrow" href="#carouselDay" role="button" data-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            </a>
+          </div>
+        </div>
+        <div class="date_prev">
+          25 November 2022, Friday          
+          <input class="date_input" matInput [matDatepicker]="picker">
+        </div>
+      </div>
+
+      <div class="d_flex search_flex">
+        <div class="search_field mr_15 search_restro">
+          <label>Search a Restaurant</label>
+          <search-dropdown 
+              [items]="items" 
+              [label]="'mealName'" 
+              [(ngModel)]="item">
+            </search-dropdown>
+        </div>
+        <div class="search_field meal_field">
+          <label>Meal Session</label>
+            <select>
+              <option>BreakFast</option>
+              <option>Lunch</option>
+              <option>Dinner</option>
+            </select>
+        </div>
+      </div>
+
+      <div class="table_view_btns">
+        <div class="mr_15" (click)="showTableView()">
+          <i class="fa fa-bars"></i>
+          Table view
+        </div>
+        <div (click)="showGuestView()">
+          <i class="fa fa-bars"></i>
+          Guest view
+        </div>
+      </div>
+    </div>
+    <div class="left_tab" id="leftTab" [ngClass]="{'hideShadow': isGuestView == true && isHideWhenTableview == false }">
+      <ul class="nav nav-pills mb-3 bordered_pills" id="pills-tab" role="tablist">
+        <li class="nav-item" role="presentation">
+          <button class="nav-link " id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#reservation" type="button" role="tab" aria-controls="pills-home" aria-selected="true">New Reservation</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link active" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#quickBooking" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Quick Booking</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#reservationList" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Reservation List</button>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+
+  <div class="d_flex mobile_block" *ngIf="isTableView">
+    <div class="reservation_left" [ngStyle]="{'width': isHideWhenTableview === false ? '100%' : '50%'}">     
+      <div class="mt_15"></div>
+      <div class="time_slot_wrapper">
+        <mat-tab-group >
+          <mat-tab label="8:00 AM">
+            <div class="floor_tab">
+              <nav>
+                <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                  <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#firstFloor" type="button" role="tab" aria-controls="nav-home" aria-selected="true">1st Floor</button>
+                  <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#secondFloor" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">2nd Floor</button>
+                  <button class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#thirdFloor" type="button" role="tab" aria-controls="nav-contact" aria-selected="false">3rd Floor</button>
+                </div>
+              </nav>
+              <div class="tab-content" id="nav-tabContent">
+                <div class="tab-pane fade show active" id="firstFloor" role="tabpanel" aria-labelledby="nav-home-tab">
+                  <div class="table_wrapper">
+                    <div class="table_box vacant two_person_tbl">
+                      <!-- <div class="status_icon">
+                        <img src="../../assets/image/icons/no-sim.png"/>
+                      </div> -->
+                      <div class="d_flex">
+                        <div>
+                          <div class="tbl_no">
+                            T58564
+                          </div>
+                          <div class="tbl_capcity">
+                            <p class="seat">S: 5</p>
+                            <p class="people">P: 2 </p>
+                          </div>
+                        </div>
+                        <div class="tbl_info">                   
+                          <div class="status_icon">
+                            <img src="../../assets/image/icons/no-sim.png"/>
+                          </div>                        
+                          <div class="time_status">
+                            <img src="../../assets/image/icons/clock_orange.png"/>
+                          </div>  
+                          <div class="tbl_lock">
+                            <img src="../../assets/image/icons/lock.png"/>
+                          </div>   
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="table_box occupied six_person_tbl">                
+                      
+                      <div class="d_flex">
+                        <div>
+                          <div class="tbl_no">
+                            T23456
+                          </div>
+                          <div class="tbl_capcity">
+                            <p class="seat">S: 5</p>
+                            <p class="people">P: 2 </p>
+                          </div>
+                        </div>
+                        <div class="tbl_info">
+                          <div class="status_icon">
+                            <img src="../../assets/image/icons/occupied.png"/>
+                          </div>
+                          <div class="time_status">
+                            <img src="../../assets/image/icons/clock_green.png"/>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="table_box vacant two_person_tbl">
+                      <div class="d_flex">
+                        <div>
+                          <div class="tbl_no">
+                            T58564
+                          </div>
+                          <div class="tbl_capcity">
+                            <p class="seat">S: 5</p>
+                            <p class="people">P: 2 </p>
+                          </div>
+                        </div>
+                        <div class="tbl_info">                   
+                          <div class="status_icon">
+                            <img src="../../assets/image/icons/no-sim.png"/>
+                          </div>                        
+                          <div class="time_status">
+                            <img src="../../assets/image/icons/clock_orange.png"/>
+                          </div>  
+                          <div class="tbl_lock">
+                            <img src="../../assets/image/icons/lock.png"/>
+                          </div>   
+                        </div>
+                      </div>
+                    </div>
+                    <div class="table_box vacant two_person_tbl">
+                      <!-- <div class="status_icon">
+                        <img src="../../assets/image/icons/no-sim.png"/>
+                      </div> -->
+                      <div class="d_flex">
+                        <div>
+                          <div class="tbl_no">
+                            T58564
+                          </div>
+                          <div class="tbl_capcity">
+                            <p class="seat">S: 5</p>
+                            <p class="people">P: 2 </p>
+                          </div>
+                        </div>
+                        <div class="tbl_info">                   
+                          <div class="status_icon">
+                            <img src="../../assets/image/icons/no-sim.png"/>
+                          </div>                        
+                          <div class="time_status">
+                            <img src="../../assets/image/icons/clock_orange.png"/>
+                          </div>  
+                          <div class="tbl_lock">
+                            <img src="../../assets/image/icons/lock.png"/>
+                          </div>   
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="table_box occupied six_person_tbl">                
+                      
+                      <div class="d_flex">
+                        <div>
+                          <div class="tbl_no">
+                            T23456
+                          </div>
+                          <div class="tbl_capcity">
+                            <p class="seat">S: 5</p>
+                            <p class="people">P: 2 </p>
+                          </div>
+                        </div>
+                        <div class="tbl_info">
+                          <div class="status_icon">
+                            <img src="../../assets/image/icons/occupied.png"/>
+                          </div>
+                          <div class="time_status">
+                            <img src="../../assets/image/icons/clock_green.png"/>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="table_box vacant two_person_tbl">
+                      <div class="d_flex">
+                        <div>
+                          <div class="tbl_no">
+                            T58564
+                          </div>
+                          <div class="tbl_capcity">
+                            <p class="seat">S: 5</p>
+                            <p class="people">P: 2 </p>
+                          </div>
+                        </div>
+                        <div class="tbl_info">                   
+                          <div class="status_icon">
+                            <img src="../../assets/image/icons/no-sim.png"/>
+                          </div>                        
+                          <div class="time_status">
+                            <img src="../../assets/image/icons/clock_red.png"/>
+                          </div>  
+                          <div class="tbl_lock">
+                            <img src="../../assets/image/icons/lock.png"/>
+                          </div>   
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+                <div class="tab-pane fade" id="secondFloor" role="tabpanel" aria-labelledby="nav-profile-tab">...</div>
+                <div class="tab-pane fade" id="thirdFloor" role="tabpanel" aria-labelledby="nav-contact-tab">...</div>
+              </div>
+            </div>
+          </mat-tab>
+          <mat-tab label="8:30 AM">
+            <div class="example-large-box mat-elevation-z4">
+              Large content
+            </div>
+          </mat-tab>
+          <mat-tab label="9:00 AM">
+            <div class="example-small-box mat-elevation-z4">
+              Small content
+            </div>
+          </mat-tab>
+          <mat-tab label="9:30 AM">
+            <div class="example-large-box mat-elevation-z4">
+              Large content
+            </div>
+          </mat-tab>
+          <mat-tab label="10:00 AM">
+            <div class="example-small-box mat-elevation-z4">
+              Small content
+            </div>
+          </mat-tab>
+          <mat-tab label="10:30 AM">
+            <div class="example-large-box mat-elevation-z4">
+              Large content
+            </div>
+          </mat-tab>
+          <mat-tab label="11:00 AM">
+            <div class="example-small-box mat-elevation-z4">
+              Small content
+            </div>
+          </mat-tab>
+          <mat-tab label="11:30 AM">
+            <div class="example-large-box mat-elevation-z4">
+              Large content
+            </div>
+          </mat-tab>
+          <mat-tab label="12:00 AM">
+            <div class="example-small-box mat-elevation-z4">
+              Small content
+            </div>
+          </mat-tab>
+          
+          <mat-tab label="12:30 PM">
+            <div class="example-small-box mat-elevation-z4">
+              Small content
+            </div>
+          </mat-tab>
+          
+          <mat-tab label="12:00 AM">
+            <div class="example-small-box mat-elevation-z4">
+              Small content
+            </div>
+          </mat-tab>
+          
+          
+        </mat-tab-group>
+
+        <div class="mt_15"></div>
+      </div>
+
+    </div>
+    <!-- Reservation right content start here -->
+    <div class="reservation_right" *ngIf="isHideWhenTableview">
+      <div class="mobile_tab_view">
+        <ul class="nav nav-pills mb-3 bordered_pills" id="pills-tab" role="tablist">
+          <li class="nav-item" role="presentation">
+            <button class="nav-link " id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#reservation" type="button" role="tab" aria-controls="pills-home" aria-selected="true">New Reservation</button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link active" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#quickBooking" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Quick Booking</button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#reservationList" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Reservation List</button>
+          </li>
+        </ul>
+      </div>      
+
+      <div class="tab-content" id="pills-tabContent">
+        <!-- Reservation Tab -->
+        <div class="tab-pane fade  " id="reservation" role="tabpanel" aria-labelledby="pills-home-tab">
+          <div class="search-bars">
+            <div class="d_flex">
+              <div class="search_field guest_field">
+                <label>Guest Name/Number/Email</label>
+                <div class="position_realtive">
+                  <input type="text"  placeholder="Search" (change)="filterByAccountName($event.target.value)"  />
+                  <i class="fa fa-search icon"></i>
+                </div>
+              </div>
+              <div class="search_field room_field">
+                <label>Room No.</label>
+                <div class="position_realtive">
+                  <input type="number" placeholder="Room No." (change)="filterByAccountID($event.target.value)"  />
+                    <i class="fa fa-search  icon"></i>
+                </div>
+              </div>
+              <div class="search_field member_field">
+                <label>Member ID</label>
+                <div class="position_realtive">
+                  <input type="number" placeholder="Member ID" (change)="filterByAccountID($event.target.value)"  />
+                    <i class="fa fa-search  icon"></i>
+                </div>
+              </div>
+            </div>
+            
+          </div>
+          <div class="custom_table mt_20 no_side_spacing">
+            <table class="mat-table" >
+              <tr class="mat-header-row">
+                <th class="mat-header-cell"></th>
+                <th class="mat-header-cell">Guest Name</th>
+                <th class="mat-header-cell">Mobile#</th>
+                <th class="mat-header-cell">Type</th>
+                <th class="mat-header-cell">Last Visit</th>
+                <th class="mat-header-cell">Visits</th>
+                <th class="mat-header-cell">Last Visit</th>
+                <th class="mat-header-cell"></th>
+              </tr>
+              <tr class="mat-row">
+                <td class="mat-cell"><img src="../../assets/image/user-icon.jpg" class="user_circle" /></td>
+                <td class="mat-cell">Mr. Johny</td>
+                <td class="mat-cell">7856925555</td>
+                <td class="mat-cell">VIP</td>
+                <td class="mat-cell">28 Jun 2021</td>
+                <td class="mat-cell">25</td>
+                <td class="mat-cell">28 Jun 2021</td>
+                <td class="mat-cell"><img src="../../assets/image/icons/next_arrow.png" class="arrow_img"/></td>
+              </tr>
+              <tr class="mat-row">
+                <td class="mat-cell"><img src="../../assets/image/user-icon.jpg" class="user_circle" /></td>
+                <td class="mat-cell">Johnathan M</td>
+                <td class="mat-cell">7856925555</td>
+                <td class="mat-cell">VIP</td>
+                <td class="mat-cell">28 Jun 2021</td>
+                <td class="mat-cell">25</td>
+                <td class="mat-cell">28 Jun 2021</td>
+                <td class="mat-cell"><img src="../../assets/image/icons/next_arrow.png" class="arrow_img" /></td>
+              </tr>
+            </table>          
+          </div>
+        </div>
+
+        <!-- Quick booking Tab -->
+        <div class="tab-pane fade show active" id="quickBooking" role="tabpanel" aria-labelledby="pills-profile-tab">
+          <div class="guest_detail">  
+            <!-- Guest Detail form -->
+            <div class="custom_panel mt_10">
+              <div class="nav nav-pills btn_pills" id="nav-tab" role="tablist">
+                <button class="nav-link active" id="nav-guest-detail-tab" data-bs-toggle="tab" data-bs-target="#guestDetail" type="button" role="tab" aria-controls="nav-guest" aria-selected="true">Guest Details</button>
+                <button class="nav-link  selected" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#bookerDetail" type="button" role="tab" aria-controls="nav-booker" aria-selected="false">Booker Details</button>
+              </div>
+              <!-- Guest and Booker tab -->
+              <div class="tab-content" id="nav-tabContent">
+                <div class="tab-pane fade show active" id="guestDetail" role="tabpanel" aria-labelledby="nav-guest-detail-tab">
+                  <div class="d_flex mt_10">
+                    <div class="mr_10">
+                      <div class="profile_pic">
+                        <div class="take_photo flex_vertical_center">
+                          <img src="../../assets/image/icons/camera.png" />
+                          Take photo
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-2">
+                        <div class="form_panel">
+                          <label>Title</label>
+                          <select><option>Mr</option></select>
+                        </div>
+                      </div>
+                      <div class="col-md-3">
+                        <div class="form_panel">
+                          <label>First Name <span class="required">*</span></label>
+                          <input placeholder="" />
+                        </div>
+                      </div>
+      
+                      <div class="col-md-3">
+                        <div class="form_panel">
+                          <label>Last Name</label>
+                          <input placeholder="" />
+                        </div>
+                      </div>
+                      
+                      <div class="col-md-2">
+                        <div class="form_panel">
+                          <label>Room No</label>
+                          <input placeholder="#" />
+                        </div>
+                      </div>
+      
+                      <div class="col-md-2">
+                        <div class="form_panel">
+                          <label>ISD</label>
+                          <input placeholder="" />
+                        </div>
+                      </div>
+                      <div class="col-md-3">
+                        <div class="form_panel">
+                          <label>Mobile</label>
+                          <input placeholder="" />
+                        </div>
+                      </div>
+                      <div class="col-md-3">
+                        <div class="form_panel">
+                          <label>Email</label>
+                          <input placeholder="" />
+                        </div>
+                      </div>
+                      <div class="col-md-2">
+                        <div class="form_panel">
+                          <label>Allergies</label>
+                          <select><option>select</option></select>
+                        </div>
+                      </div>
+      
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-2">
+                      <div class="form_panel">
+                        <label>Guest Type</label>
+                        <select><option>VIP</option></select>
+                      </div>
+                    </div>
+                    <div class="col-md-2">
+                      <div class="form_panel">
+                        <label>Date of Birth</label>
+                        <div class="position_realtive">
+                          <input matInput [matDatepicker]="dob">
+                          <mat-datepicker-toggle class="floating_icon" matIconSuffix [for]="dob"></mat-datepicker-toggle>
+                          <mat-datepicker #dob></mat-datepicker>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-2">
+                      <div class="form_panel">
+                        <label>Anniversary Date</label>
+                        <div class="position_realtive">
+                          <input matInput [matDatepicker]="annvDate">
+                          <mat-datepicker-toggle class="floating_icon" matIconSuffix [for]="annvDate"></mat-datepicker-toggle>
+                          <mat-datepicker #annvDate></mat-datepicker>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <div class="col-md-3">
+                      <div class="form_panel">
+                        <label>Company Name</label>
+                        <input placeholder="" value="IBM International"/>
+                      </div>
+                    </div>
+                    <div class="col-md-3">
+                      <div class="form_panel">
+                        <label>Designation</label>
+                        <input placeholder="" value="IBM International"/>
+                      </div>
+                    </div>
+      
+                  </div>
+                  <h4 class="headingh4">Booking Details</h4>
+                  <div class="row">
+                    <div class="col-md-2">
+                      <div class="form_panel">
+                        <label>Booking Source</label>
+                        <select><option>Booker</option></select>
+                      </div>
+                    </div>
+                    <div class="col-md-2">
+                      <div class="form_panel">
+                        <label>Date</label>
+                        <div class="position_realtive">
+                          <input matInput [matDatepicker]="bookDate">
+                          <mat-datepicker-toggle class="floating_icon" matIconSuffix [for]="bookDate"></mat-datepicker-toggle>
+                          <mat-datepicker #bookDate></mat-datepicker>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-2">
+                      <div class="form_panel">
+                        <label>Time</label>
+                        <div class="position_realtive">
+                          <input matInput [matDatepicker]="bookTime">
+                          <mat-datepicker-toggle class="floating_icon" matIconSuffix [for]="bookTime"></mat-datepicker-toggle>
+                          <mat-datepicker #bookTime></mat-datepicker>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <div class="col-md-1">
+                      <div class="form_panel">
+                        <label>Pax</label>
+                        <input placeholder="" value="2"/>
+                      </div>
+                    </div>
+                    <div class="col-md-1">
+                      <div class="form_panel">
+                        <label>Table</label>
+                        <input placeholder="" value="01"/>
+                      </div>
+                    </div>
+                    <div class="col-md-2">
+                      <div class="form_panel">
+                        <label>Duration</label>
+                        <select><option>90min</option></select>
+                      </div>
+                    </div>
+                    <div class="col-md-2">
+                      <div class="form_panel">
+                        <label>Unlocked</label><br/>
+                        <img src="../../assets/image/icons/lock.png" width="20"/>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">              
+                    <div class="col-md-3">
+                      <div class="form_panel">
+                        <label>Occasion</label>
+                        <select><option>Anniversary</option></select>
+                      </div>
+                    </div>            
+                    <div class="col-md-3">
+                      <div class="form_panel">
+                        <label>Flag</label>
+                        <select><option>Select</option></select>
+                      </div>
+                    </div>            
+                    <div class="col-md-3">
+                      <div class="form_panel">
+                        <label>Reservation Status</label>
+                        <select><option>Confirmed</option></select>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="tab-pane fade" id="bookerDetail" role="tabpanel" aria-labelledby="nav-Booker-detail-tab">...</div>
+              </div>
+            </div>
+
+            <!-- Memebership Tab -->
+            <div class="custom_panel mt_10">
+              <div  class="bordered_pills">
+                <mat-tab-group>
+                  <mat-tab label="Membership">
+                    <div class="custom_table mt_20">
+                      <table class="mat-table" >
+                        <tr class="mat-header-row">
+                          <th class="mat-header-cell">Membership Type</th>
+                          <th class="mat-header-cell">Membership Number</th>
+                          <th class="mat-header-cell">Membership Level</th>
+                          <th class="mat-header-cell">Status</th>
+                          <th class="mat-header-cell">Expiry</th>
+                          <th class="mat-header-cell"><img src="../../assets/image/icons/expand.png" class="arrow_img"/></th>
+                        </tr>
+                        <tr class="mat-row">
+                          <td class="mat-cell">Type</td>
+                          <td class="mat-cell">5</td>
+                          <td class="mat-cell">lv:5</td>
+                          <td class="mat-cell">Active</td>
+                          <td class="mat-cell">28 Jun 2021</td>
+                          <td class="mat-cell"><img src="../../assets/image/icons/expand.png" class="arrow_img"/></td>
+                        </tr>
+                      </table>          
+                    </div>
+                  </mat-tab>
+                  <mat-tab label="Offer">
+                    <h1>Offer content</h1>
+                  </mat-tab>
+                  <mat-tab label="Notes">
+                    <h1>Notes content</h1>
+                  </mat-tab>
+                  <mat-tab label="Advance">
+                    <h1>Advance content</h1>
+                  </mat-tab>
+                  <mat-tab label="Guest History">
+                    <h1>Guest History content</h1>
+                  </mat-tab>
+                  <mat-tab label="Ordered Items">
+                    <h1>Ordered Items content</h1>
+                  </mat-tab>
+                  <mat-tab label="Reservation Edit History">
+                    <h1>Reservation Edit History content</h1>
+                  </mat-tab>
+                </mat-tab-group>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Reservation List Tab-->
+        <div class="tab-pane fade" id="reservationList" role="tabpanel" aria-labelledby="pills-contact-tab">...</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Guest View table  -->
+  <div class="guest_view" *ngIf="isGuestView">
+    <div class="flexslider">
+      <ul class="slides">
+        <li>
+          <img src="slide1.jpg" />
+        </li>
+        <li>
+          <img src="slide2.jpg" />
+        </li>
+        <li>
+          <img src="slide3.jpg" />
+        </li>
+        <li>
+          <img src="slide4.jpg" />
+        </li>
+      </ul>
+    </div>
+    <div class="custom-navigation">
+      <a href="#" class="flex-prev">Prev</a>
+      <div class="custom-controls-container"></div>
+      <a href="#" class="flex-next">Next</a>
+    </div>
+
+    
+    
+    <!-- <div id="carouselExampleControls1" class="carousel slide" data-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          Palalvi1
+        </div>
+        <div class="carousel-item">
+          <img class="d-block w-100" src="..." alt="Second slide">
+        </div>
+        <div class="carousel-item">
+          <img class="d-block w-100" src="..." alt="Third slide">
+        </div>
+      </div>
+    </div> -->
+    <div class="time_slot_wrapper">
+
+      <mat-tab-group>
+        <mat-tab label="8:30 AM">
+        <mat-tab-group>
+          <mat-tab label="pallavo" ></mat-tab>
+          <mat-tab label="pallavo"></mat-tab>
+        </mat-tab-group>
+          <div class="guest_table_wrapper">
+            <div class="tbl_row">
+              <div class="tble_name_col">Table <br/> <b>01</b></div>
+              <div class="tble_col"></div>
+              <div class="tble_col"></div>
+              <div class="tble_col"></div>
+              <div class="tble_col"></div>
+              <div class="tble_col"></div>
+              <div class="tble_col"></div>
+              <div class="tble_col"></div>
+              <div class="tble_col"></div>
+              <div class="tble_col"></div>
+              <div class="tble_col"></div>
+              <div class="tble_col"></div>
+              <div class="tble_col"></div>
+              <div class="booking_detail_box" style="left: 13.5%;width: 11.2%;">
+                <ul>
+                  <li>Name: <b>Johnathan</b></li>
+                  <li>Pax: <b>2/2</b></li>
+                  <li>Duration: <b>90min</b></li>
+                  <li>Time Left: <b>30min</b></li>
+                </ul>
+              </div>
+            </div>
+            <div class="tbl_row" >
+              <div class="tble_name_col">Table <br/> <b>01</b></div>
+              <div class="tble_col"></div>
+              <div class="tble_col"></div>
+              <div class="tble_col"></div>
+              <div class="tble_col"></div>
+              <div class="tble_col"></div>
+              <div class="tble_col"></div>
+              <div class="tble_col"></div>
+              <div class="tble_col"></div>
+              <div class="tble_col"></div>
+              <div class="tble_col"></div>
+              <div class="tble_col"></div>
+              <div class="tble_col"></div>
+            </div>
+            
+            <div class="tbl_row" >
+              <div class="tble_name_col">Table <br/> <b>01</b></div>
+              <div class="tble_col"></div>
+              <div class="tble_col"></div>
+              <div class="tble_col"></div>
+              <div class="tble_col"></div>
+              <div class="tble_col"></div>
+              <div class="tble_col"></div>
+              <div class="tble_col"></div>
+              <div class="tble_col"></div>
+              <div class="tble_col"></div>
+              <div class="tble_col"></div>
+              <div class="tble_col"></div>
+              <div class="tble_col"></div>
+              <div class="booking_detail_box" style="left:24.6%;width: 17%; background: #cafdff; border-color: #28d2d9;">
+                <ul>
+                  <li>Name: <b>Johnathan</b></li>
+                  <li>Pax: <b>2/2</b></li>
+                  <li>Duration: <b>90min</b></li>
+                  <li>Time Left: <b>30min</b></li>
+                </ul>
+              </div>
+            </div>
+            <div class="tbl_row" >
+              <div class="tble_name_col">Table <br/> <b>03</b></div>
+              <div class="tble_col"></div>
+              <div class="tble_col"></div>
+              <div class="tble_col"></div>
+              <div class="tble_col"></div>
+              <div class="booking_detail_box" style="left: 7.8%;width: 16.7%; background: #d8e8ff; border-color: #0d6efd;">
+                <ul>
+                  <li>Name: <b>Johnathan</b></li>
+                  <li>Pax: <b>2/2</b></li>
+                  <li>Duration: <b>90min</b></li>
+                  <li>Time Left: <b>30min</b></li>
+                </ul>
+              </div>
+            </div>
+            <div class="tbl_row" >
+              <div class="tble_name_col">Table <br/> <b>04</b></div>
+              <div class="tble_col"></div>
+              <div class="tble_col"></div>
+              <div class="tble_col"></div>
+              <div class="tble_col"></div>
+              <div class="tble_col"></div>
+              <div class="tble_col"></div>
+              <div class="tble_col"></div>
+              <div class="tble_col"></div>
+              <div class="tble_col"></div>
+              <div class="tble_col"></div>
+              <div class="tble_col"></div>
+              <div class="tble_col"></div>
+            </div>
+            
+            <div class="tbl_row" >
+              <div class="tble_name_col">Table <br/> <b>05</b></div>
+              <div class="tble_col"></div>
+              <div class="tble_col"></div>
+              <div class="tble_col"></div>
+              <div class="tble_col"></div>
+              <div class="tble_col"></div>
+              <div class="tble_col"></div>
+              <div class="tble_col"></div>
+              <div class="tble_col"></div>
+              <div class="tble_col"></div>
+              <div class="tble_col"></div>
+              <div class="tble_col"></div>
+              <div class="tble_col"></div>
+            </div>
+            <div class="tbl_row" >
+              <div class="tble_name_col">Table <br/> <b>01</b></div>
+              <div class="tble_col"></div>
+              <div class="tble_col"></div>
+              <div class="tble_col"></div>
+              <div class="tble_col"></div>
+              <div class="tble_col"></div>
+              <div class="tble_col"></div>
+              <div class="tble_col"></div>
+              <div class="tble_col"></div>
+              <div class="tble_col"></div>
+              <div class="tble_col"></div>
+              <div class="tble_col"></div>
+              <div class="tble_col"></div>
+              <div class="booking_detail_box" style="left: 30.5%;width: 16.7%;     background: #ffe4e2;
+              border-color: #f44336;">
+                <ul>
+                  <li>Name: <b>Johnathan</b></li>
+                  <li>Pax: <b>2/2</b></li>
+                  <li>Duration: <b>90min</b></li>
+                  <li>Time Left: <b>30min</b></li>
+                </ul>
+              </div>
+            </div>
+            
+          </div>
+        </mat-tab>
+        <mat-tab label="8:30 AM">
+        </mat-tab>
+        <mat-tab label="8:30 AM">
+        </mat-tab>
+        
+        <mat-tab label="8:30 AM">
+        </mat-tab>
+        <mat-tab label="8:30 AM">
+        </mat-tab>
+        <mat-tab label="8:30 AM">
+        </mat-tab>
+        <mat-tab label="8:30 AM">
+        </mat-tab>
+        <mat-tab label="8:30 AM">
+        </mat-tab>
+        <mat-tab label="8:30 AM">
+        </mat-tab>
+        <mat-tab label="8:30 AM">
+        </mat-tab>
+        <mat-tab label="8:30 AM">
+        </mat-tab>
+        <mat-tab label="8:30 AM">
+        </mat-tab>
+        <mat-tab label="8:30 AM">
+        </mat-tab>
+        <mat-tab label="8:30 AM">
+        </mat-tab>
+        <mat-tab label="8:30 AM">
+        </mat-tab>
+        <mat-tab label="8:30 AM">
+        </mat-tab>
+        <mat-tab label="8:30 AM">
+        </mat-tab>
+        <mat-tab label="8:30 AM">
+        </mat-tab>
+        <mat-tab label="8:30 AM">
+        </mat-tab>
+        <mat-tab label="8:30 AM">
+        </mat-tab>
+        <mat-tab label="8:30 AM">
+        </mat-tab>
+        <mat-tab label="8:30 AM">
+        </mat-tab>
+        <mat-tab label="8:30 AM">
+        </mat-tab>
+
+      </mat-tab-group>
+      
+    </div>
+  </div>
+</div>

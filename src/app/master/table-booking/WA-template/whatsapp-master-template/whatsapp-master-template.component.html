@@ -1,0 +1,81 @@
+<div class="page_heading">
+  {{TRANSLATE.UploadWhatsAppTemplates}}
+</div>
+
+<div class="page_wrapper">
+  <div class="custom_panel page_form">
+    <div class="row">  
+      <div class="col-md-2 col-sm-4 col-xs-12">
+        <div class="form_panel">
+          <label>{{TRANSLATE.TemplateName}} <span class="required">*</span></label>
+          <input type="text" placeholder="" />
+        </div>
+      </div>
+      <div class="col-md-2 col-sm-4 col-xs-12">
+        <div class="form_panel">
+          <label>{{TRANSLATE.TemplateIdFromPartner}} <span class="required">*</span> </label>
+          <input type="text" placeholder="" />
+        </div>
+      </div>   
+      <div class="col-md-2 col-sm-4 col-xs-12">
+        <div class="form_panel">
+          <label>{{TRANSLATE.IsActive}}</label>
+          <div class="custom_checkbox">
+            <mat-checkbox class="example-margin"></mat-checkbox>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-4 col-sm-4 col-xs-12">
+        <div class="form_panel">
+          <label>{{TRANSLATE.TemplateBody}}</label>
+          <div class="wa_textarea">
+            <textarea></textarea>
+            <div class="d_flex">
+              <div class="character_limit mr_10">
+                0 Characters (approx)
+              </div>
+              <button mat-raised-button
+              class="tooltip_btn"
+                matTooltip="Note: The maximum length of text message that you can send is 1024 characters per WA. However, if you send more than 1024 characters then your message will be broken down into chunks of 153 characters before being sent to the recipient's handset.   "
+                [matTooltipPosition]="position.value!"
+                aria-label="Button that displays a tooltip in various positions">
+                Note <i class="fa fa-info-circle ml_5"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div> 
+      <div class="col-md-4 col-sm-4 col-xs-12">
+        <div class="form_panel">
+          <label>{{TRANSLATE.Curl}}</label>
+          <div class="wa_textarea">
+            <textarea></textarea>
+            <div class="d_flex">
+              <div class="character_limit mr_10">
+                0 Characters (approx)
+              </div>
+              <button mat-raised-button
+              class="tooltip_btn"
+                matTooltip="Note: The maximum length of text message that you can send is 1024 characters per WA. However, if you send more than 1024 characters then your message will be broken down into chunks of 153 characters before being sent to the recipient's handset.   "
+                [matTooltipPosition]="position.value!"
+                aria-label="Button that displays a tooltip in various positions">
+                Note <i class="fa fa-info-circle ml_5"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div> 
+    </div>
+      
+
+
+  </div>
+</div>
+
+<div class="bottom_btns">
+  <button class="primary_btn border_btn mr_10">Reset</button>
+  <button class="primary_btn mr_10">Preview</button>
+  <button class="primary_btn">Submit</button>
+</div>

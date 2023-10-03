@@ -1,0 +1,90 @@
+<div class="page_heading">
+  {{TRANSLATE.ParameterMaster}} - {{TRANSLATE.New}}
+</div>
+
+<div class="page_wrapper">
+  <div class="custom_panel page_form">
+    <div class="row">
+      
+      <div class="col-md-2 col-sm-4 col-xs-12">
+        <div class="form_panel">
+          <label>{{TRANSLATE.Restaurant}} <span class="required">*</span></label>
+          <div class="position_realtive">
+            <input type="text" placeholder="" />
+            <div class="floating_icon"><i class="fa fa-search"></i></div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-2 col-sm-4 col-xs-12">
+        <div class="form_panel">
+          <label>{{TRANSLATE.DefaultPax}} <span class="required">*</span></label>
+          <input type="text" placeholder="" />
+        </div>
+      </div>
+      <div class="col-md-2 col-sm-4 col-xs-12">
+        <div class="form_panel">
+          <label>{{TRANSLATE.Weekday}} </label>
+          <mat-select placeholder=" ">
+            <mat-option selected="selected" value="1">Sunday</mat-option>
+            <mat-option value="2">Monday</mat-option>
+            <mat-option value="3">Tuesday</mat-option>
+            <mat-option value="4">Wednesday</mat-option>
+            <mat-option value="5">Thursday</mat-option>
+            <mat-option value="6">Friday</mat-option>
+            <mat-option value="7">Saturday</mat-option>
+          </mat-select>
+        </div>
+      </div>
+      
+      <div class="col-md-2 col-sm-4 col-xs-12">
+        <div class="form_panel">
+          <label>{{TRANSLATE.AllowBackdatedEntries}} <span class="required">*</span></label>
+          <input type="text" placeholder="" />
+        </div>
+      </div>
+      <div class="col-md-2 col-sm-4 col-xs-12">
+        <div class="form_panel">
+          <label>{{TRANSLATE.SMSVendor}} </label>
+          <mat-select placeholder="Select Vendor">
+            <mat-option value="one">First option</mat-option>
+            <mat-option value="two">Second option</mat-option>
+          </mat-select>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-2 col-sm-4 col-xs-12">
+        <div class="form_panel">
+          <label>{{TRANSLATE.TriggerforSMS}} <span class="required">*</span></label>
+          <mat-select placeholder=" " multiple>
+            <mat-option value="one">First option</mat-option>
+            <mat-option value="two">Second option</mat-option>
+          </mat-select>
+        </div>
+      </div>
+      <div class="col-md-2 col-sm-4 col-xs-12">
+        <div class="form_panel">
+          <label>{{TRANSLATE.Session}} </label>
+          <mat-select placeholder=" " multiple>
+            <mat-option value="one">First option</mat-option>
+            <mat-option value="two">Second option</mat-option>
+          </mat-select>
+        </div>
+      </div>
+
+      <div class="col-md-2 col-sm-4 col-xs-12">
+        <div class="form_panel">
+          <label>{{TRANSLATE.POSInterface}}</label>
+          <div class="custom_checkbox">
+            <mat-checkbox class="example-margin"></mat-checkbox>
+          </div>
+        </div>
+      </div> 
+    </div>
+</div>
+</div>
+
+<div class="bottom_btns">
+  <button class="primary_btn border_btn mr_10">Reset</button>
+  <button class="primary_btn">Submit</button>
+</div>

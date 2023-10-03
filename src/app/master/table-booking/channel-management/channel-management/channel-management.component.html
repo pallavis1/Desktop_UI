@@ -1,0 +1,248 @@
+<div class="page_heading">
+  {{TRANSLATE.ChannelManagementMaster}} - {{TRANSLATE.Edit}}
+</div>
+
+<div class="page_wrapper">
+  <div class="custom_panel page_form">
+    <div class="row">
+      <div class="col-md-2 col-sm-4 col-xs-12">
+        <div class="form_panel">
+          <label>{{TRANSLATE.Channel}}</label>          
+          <mat-select placeholder="ReserveGoogle" disabled>
+            <mat-option value="one">First option</mat-option>
+            <mat-option value="two">Second option</mat-option>
+          </mat-select>
+        </div>
+      </div>
+      <div class="col-md-2 col-sm-4 col-xs-12">
+        <div class="form_panel">
+          <label>{{TRANSLATE.MinAdvanceDays}} <span class="required">*</span></label>
+          <input type="text" placeholder="" />
+        </div>
+      </div>
+      <div class="col-md-2 col-sm-4 col-xs-12">
+        <div class="form_panel">
+          <label>{{TRANSLATE.MaxAdvanceDays}}</label>
+          <input type="text" placeholder="" />
+        </div>
+      </div>
+      
+      <div class="col-md-2 col-sm-4 col-xs-12">
+        <div class="form_panel">
+          <label>{{TRANSLATE.FromDate}}</label>
+          <div class="custom_datepicker">
+            <input matInput [matDatepicker]="FromDate">
+            <mat-datepicker-toggle matIconSuffix [for]="FromDate"></mat-datepicker-toggle>
+            <mat-datepicker #FromDate></mat-datepicker>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-2 col-sm-4 col-xs-12">
+        <div class="form_panel">
+          <label>{{TRANSLATE.ToDate}}</label>
+          <div class="custom_datepicker">
+            <input matInput [matDatepicker]="ToDate">
+            <mat-datepicker-toggle matIconSuffix [for]="ToDate"></mat-datepicker-toggle>
+            <mat-datepicker #ToDate></mat-datepicker>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="horizontal_tab">
+      <mat-tab-group>
+        <mat-tab label="All Days">
+          <div class="row">
+            <div class="col-md-3">
+              <div class="form_panel">
+                <label>{{TRANSLATE.MealSession}}</label>
+                <mat-select placeholder=" ">
+                  <mat-option value="one">First option</mat-option>
+                  <mat-option value="two">Second option</mat-option>
+                </mat-select>
+              </div>
+            </div>
+            <div class="col-md-9">
+              <div class="custom_table table_bordered mb_10">
+                <div class="text_right">
+                  <button class="primary_btn mb_10 btn_sm"> Add </button>
+                </div>
+                <table class="mat-table" >
+                  <tr class="mat-header-row">
+                    <th class="mat-header-cell">Capacity	</th>
+                    <th class="mat-header-cell">Availability	</th>
+                    <th class="mat-header-cell">Allotted	</th>
+                    <th class="mat-header-cell">Exclude Tables</th>
+                    <th class="mat-header-cell">
+                      <button class="primary_btn btn_sm"> Add </button>
+                    </th>
+                  </tr>
+                  <tr class="mat-row">
+                    <td class="mat-cell">2</td>
+                    <td class="mat-cell">4</td>
+                    <td class="mat-cell">
+                      <div class="form_panel">
+                        <input type="text" value="1">
+                      </div>
+                    </td>
+                    <td class="mat-cell">
+                      <div class="form_panel">
+                        <div class="position_realtive">
+                          <input type="text" placeholder="" />
+                          <div class="floating_icon"><i class="fa fa-search"></i></div>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="mat-cell"></td>
+                    <!-- <td class="mat-cell">
+                      <div class="d_flex">
+                        <button class="primary_btn mr_10 btn_sm"> Add </button>
+                      </div>
+                    </td> -->
+                  </tr>
+                </table>       
+              </div>
+            </div>
+          </div>
+        </mat-tab>
+        <mat-tab label="Day of The Week">
+          <div class="row">
+            <div class="col-md-3">
+              <div class="form_panel">
+                <label>{{TRANSLATE.DayOfWeek}}</label>
+                <mat-select placeholder=" ">
+                  <mat-option selected="selected" value="1">Sunday</mat-option>
+                  <mat-option value="2">Monday</mat-option>
+                  <mat-option value="3">Tuesday</mat-option>
+                  <mat-option value="4">Wednesday</mat-option>
+                  <mat-option value="5">Thursday</mat-option>
+                  <mat-option value="6">Friday</mat-option>
+                  <mat-option value="7">Saturday</mat-option>
+                </mat-select>
+              </div>
+              <div class="form_panel">
+                <label>{{TRANSLATE.MealSession}}</label>
+                <mat-select placeholder=" ">
+                  <mat-option value="one">First option</mat-option>
+                  <mat-option value="two">Second option</mat-option>
+                </mat-select>
+              </div>
+            </div>
+            <div class="col-md-9">
+              <div class="custom_table table_bordered mb_10">
+                <div class="text_right">
+                  <button class="primary_btn mb_10 btn_sm"> Add </button>
+                </div>
+                <table class="mat-table" >
+                  <tr class="mat-header-row">
+                    <th class="mat-header-cell">Capacity	</th>
+                    <th class="mat-header-cell">Availability	</th>
+                    <th class="mat-header-cell">Allotted	</th>
+                    <th class="mat-header-cell">Exclude Tables</th>
+                    <th class="mat-header-cell">
+                      <button class="primary_btn btn_sm"> Add </button>
+                    </th>
+                  </tr>
+                  <tr class="mat-row">
+                    <td class="mat-cell">2</td>
+                    <td class="mat-cell">4</td>
+                    <td class="mat-cell">
+                      <div class="form_panel">
+                        <input type="text" value="1">
+                      </div>
+                    </td>
+                    <td class="mat-cell">
+                      <div class="form_panel">
+                        <div class="position_realtive">
+                          <input type="text" placeholder="" />
+                          <div class="floating_icon"><i class="fa fa-search"></i></div>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="mat-cell"></td>
+                    <!-- <td class="mat-cell">
+                      <div class="d_flex">
+                        <button class="primary_btn mr_10 btn_sm"> Add </button>
+                      </div>
+                    </td> -->
+                  </tr>
+                </table>       
+              </div>
+            </div>
+          </div>
+        </mat-tab>
+  
+        <mat-tab label="Special Date"> 
+          <div class="row">            
+            <div class="col-md-3 col-sm-4 col-xs-12">
+              <div class="form_panel">
+                <label>{{TRANSLATE.FromSpecialDate}}</label>
+                <div class="custom_datepicker">
+                  <input matInput [matDatepicker]="FromSpecialDate">
+                  <mat-datepicker-toggle matIconSuffix [for]="FromSpecialDate"></mat-datepicker-toggle>
+                  <mat-datepicker #FromSpecialDate></mat-datepicker>
+                </div>
+              </div>
+              <div class="form_panel">
+                <label>{{TRANSLATE.ToSpecialDate}}</label>
+                <div class="custom_datepicker">
+                  <input matInput [matDatepicker]="ToSpecialDate">
+                  <mat-datepicker-toggle matIconSuffix [for]="ToSpecialDate"></mat-datepicker-toggle>
+                  <mat-datepicker #ToSpecialDate></mat-datepicker>
+                </div>
+              </div>
+            
+              <div class="form_panel">
+                <label>{{TRANSLATE.MealSession}}</label>
+                <mat-select placeholder=" ">
+                  <mat-option value="one">First option</mat-option>
+                  <mat-option value="two">Second option</mat-option>
+                </mat-select>
+              </div>
+            </div>
+            <div class="col-md-9">
+              <div class="custom_table table_bordered mb_10">
+                <div class="text_right">
+                  <button class="primary_btn mb_10 btn_sm"> Add </button>
+                </div>
+                <table class="mat-table" >
+                  <tr class="mat-header-row">
+                    <th class="mat-header-cell">Capacity	</th>
+                    <th class="mat-header-cell">Availability	</th>
+                    <th class="mat-header-cell">Allotted	</th>
+                    <th class="mat-header-cell">Exclude Tables</th>
+                    <th class="mat-header-cell">
+                      <button class="primary_btn btn_sm"> Add </button>
+                    </th>
+                  </tr>
+                  <tr class="mat-row">
+                    <td class="mat-cell">2</td>
+                    <td class="mat-cell">4</td>
+                    <td class="mat-cell">
+                      <div class="form_panel">
+                        <input type="text" value="1">
+                      </div>
+                    </td>
+                    <td class="mat-cell">
+                      <div class="form_panel">
+                        <div class="position_realtive">
+                          <input type="text" placeholder="" />
+                          <div class="floating_icon"><i class="fa fa-search"></i></div>
+                        </div>
+                      </div>
+                    </td>
+                    <td class="mat-cell"></td>
+                  </tr>
+                </table>       
+              </div>
+            </div>
+          </div>
+        </mat-tab>
+      </mat-tab-group>
+    </div>
+  </div>
+</div>
+<div class="bottom_btns">
+  <button class="primary_btn border_btn mr_10">Reset</button>
+  <button class="primary_btn">Submit</button>
+</div>

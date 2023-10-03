@@ -1,0 +1,304 @@
+
+    <header id="header" class="header-main" *ngIf="showHead">
+        <div class="logo">
+            <img src="assets/image/icons/logo.png" style="width: 75px;outline:0">
+        </div>
+        <div class="menu_fixed_icon">
+            <i class="fa fa-bars bar-ico" (click)="fixedMenu()"></i>
+        </div>
+
+        <!-- <div>
+            <span class="top-header-label">{{propertyName}} ({{Pmscust}})</span>
+            <span class="top-header-label">
+                {{TRANSLATE.GEM.ACCOUNTING_DATE}} - {{accountingDate}}
+            </span>
+            <span class="top-header-label">Access Mode - {{userAccessType}}</span>       
+        </div> -->
+        
+        <!-- <div>
+            <span>
+                {{TRANSLATE.GEM.ACCOUNTING_DATE}}
+            </span><br>
+            <span> {{accountingDate}}</span>
+        </div>
+        <div class="property-name">
+            <span>{{propertyName}}</span><br>
+            <span>{{propertyAddress}} ({{Pmscust}})</span>
+        </div>
+        <div>
+            <span>Access Mode</span><br>
+            <span>{{userAccessType}}</span>
+            
+        </div> -->
+        <div class="outletname">
+            <select>
+                <option>Outlet Name</option>
+            </select>
+        </div>
+        <div class="header_right">
+          
+            <!-- <button mat-button [matMenuTriggerFor]="beforeMenu">
+                <img class="avatar" src="./assets/image/gravatar.1.jpg">
+                <i class="fa fa-chevron-down"></i>
+            </button>
+            <mat-menu #beforeMenu="matMenu" xPosition="before">
+                <button mat-menu-item (click)="logout()">{{TRANSLATE.GEM.LOG_OUT}}</button>
+            </mat-menu> -->
+            <div class="username">
+                Welcome,
+                <span>DishCo</span>
+            </div>
+            <div class="user_info">
+                <button mat-button [matMenuTriggerFor]="beforeMenu" style="font-size: 12px;">
+                    <img class="avatar" src="./assets/image/gravatar.1.jpg">
+                    <!-- <span style="margin-left: 2px;">{{User.Name}}</span> -->
+                    <i class="fa fa-chevron-down"></i>
+                    <!-- <span style="text-transform: lowercase;position: absolute;top: 20px;right: 0;">{{User.Email}}</span> -->
+                </button>
+                
+                <mat-menu #beforeMenu="matMenu" xPosition="before" class="Content_profilebar">
+                    <button mat-menu-item  class="ProfileBar" >
+                        <img  class="avatar avatar_image" src="./assets/image/gravatar.1.jpg">
+                        <span class="avatar_text NameSection">
+                            <span >demo@gmail.com</span> </span>
+                    
+                    </button>
+                    
+                    <button  mat-menu-item  class="active_bar">
+                        <span style="width: 40%;">Dark Theme</span>
+                        <mat-slide-toggle [(ngModel)]="isChecked" (change)="changeTheme()" class="toggle-button">
+                        </mat-slide-toggle>
+                    </button>
+                    <button  mat-menu-item  class="active_bar borderBottom">
+                        <span class="avatar_text" (click)="MoveToreservation('Reservation')">Change Property</span>
+                    </button>
+                
+                    <button mat-menu-item  class="active_bar borderBottom"  (click)="logout()">Logout</button>
+                </mat-menu>
+            </div>
+           
+            <div class="Notification_icon_div">
+                <button mat-icon-button color="primary" (click)="showNotification()" class="Notification_icon_button" matBadge="88" matBadgeColor="warn">
+                     <i class="fa fa-bell Notification_icon" aria-hidden="true"></i>
+                </button>
+            </div>
+
+            <div class="notify_panel custom_scroll" *ngIf="showNotifyPanel">
+                <div class="notify_box reserved" (click)="goToReservation()">
+                    <!-- <div class="d_flex">
+                        <div class="left"> -->
+                            <div>
+                                <p class="name">Jimmy show, 9822682222</p>
+                                <p>14th July, 2023 at 15:00 Hrs</p>
+                                <p class="pax">Pax: <span>3</span> | Table No: <span>05</span></p>
+                            </div>
+                            <!-- <img src="../assets/image/icons/people.png" width="15px" class="mr_10"/> -->
+                        <!-- </div>
+                    </div> -->
+                    <img src="https://seeklogo.com/images/Z/zomato-logo-200607EC4C-seeklogo.com.png" class="rersv_img"/>
+                </div>
+                <div class="notify_box cancelled">
+                    <div>
+                        <p class="name">Jimmy show, 9822682222</p>
+                        <p>14th July, 2023 at 15:00 Hrs</p>
+                        <p class="pax">Pax: <span>3</span> | Table No: <span>05</span></p>
+                    </div>
+                    <img src="https://images.yourstory.com/cs/images/companies/logosC141575978425306png" class="rersv_img"/>
+                </div>
+                
+                <div class="notify_box modified">
+                    <div>
+                        <p class="name">Jimmy show, 9822682222</p>
+                        <p>14th July, 2023 at 15:00 Hrs</p>
+                        <p class="pax">Pax: <span>3</span> | Table No: <span>05</span></p>
+                    </div>
+                    <img src="https://images.yourstory.com/cs/images/companies/logosC141575978425306png" class="rersv_img"/>
+                </div>
+                
+                <div class="notify_box waitlist">
+                    <div>
+                        <p class="name">Jimmy show, 9822682222</p>
+                        <p>14th July, 2023 at 15:00 Hrs</p>
+                        <p class="pax">Pax: <span>3</span> | Table No: <span>05</span></p>
+                    </div>
+                    <img src="https://images.yourstory.com/cs/images/companies/logosC141575978425306png" class="rersv_img"/>
+                </div>
+                <div class="notify_box waitlist">
+                    <div>
+                        <p class="name">Jimmy show, 9822682222</p>
+                        <p>14th July, 2023 at 15:00 Hrs</p>
+                        <p class="pax">Pax: <span>3</span> | Table No: <span>05</span></p>
+                    </div>
+                    <img src="https://images.yourstory.com/cs/images/companies/logosC141575978425306png" class="rersv_img"/>
+                </div>
+                <div class="notify_box waitlist">
+                    <div>
+                        <p class="name">Jimmy show, 9822682222</p>
+                        <p>14th July, 2023 at 15:00 Hrs</p>
+                        <p class="pax">Pax: <span>3</span> | Table No: <span>05</span></p>
+                    </div>
+                    <img src="https://images.yourstory.com/cs/images/companies/logosC141575978425306png" class="rersv_img"/>
+                </div>
+            </div>
+          
+         
+        </div>
+       
+    </header>
+    
+
+    <div class="main_wrapper" [ngClass]="!showHead === true ? 'login_bg':'null' ">
+        <div
+            *ngIf="showHead" 
+
+        >
+            <!-- <div > -->
+            <mat-tree [dataSource]="dataSource"
+            
+                id="sideMenuBar" 
+                class="main-menu"
+                [treeControl]="treeControl"            
+                (mouseleave)="mouseleave()"
+            >
+                <!-- This is the tree node template for leaf nodes -->
+                <mat-tree-node *matTreeNodeDef="let node" matTreeNodePadding>
+                  <!-- use a disabled button to provide padding for tree leaf -->
+                  <!-- <button mat-icon-button disabled></button> -->
+                 
+                    <a  href="{{node.url}}" class="d_flex vertical_center">
+                        <mat-icon class="nav_icon">{{node.icon}}</mat-icon>
+                        <span>{{node.name}}</span>
+                    </a>
+                </mat-tree-node>
+                <!-- <mat-tree-node *matTreeNodeDef="let node" matTreeNodePadding>
+                    <button mat-button (click)="logNode(node)">
+                      {{node.item}}
+                    </button>
+                </mat-tree-node> -->
+                <!-- This is the tree node template for expandable nodes -->
+                <mat-tree-node *matTreeNodeDef="let node;when: hasChild"
+                    matTreeNodePadding 
+                    matTreeNodeToggle
+                    [attr.aria-label]="'Toggle ' + 'node.name'"
+                >
+                <!-- (click)=nodeClicked(node) -->
+
+                    <!-- <a  href="{{node.url}}"></a> -->
+                    <div class="d_flex vertical_center">
+                        <mat-icon class="nav_icon">{{node.icon}}</mat-icon> 
+                        <span>{{node.name}}</span>
+                    </div>
+                  <button mat-icon-button (click)="logNode(node)">
+                    <mat-icon class="mat-icon-rtl-mirror">
+                      {{treeControl.isExpanded(node) ? 'expand_more' : 'chevron_right'}}
+                    </mat-icon>
+                  </button>
+                </mat-tree-node>
+              </mat-tree>
+            <!-- </div> -->
+            <nav class="main-menu" id="sideMenuBar" style="display: none;">
+                <ul>
+                    <!-- <li (click)="onClickSideBarOptions()" [class.list]="isClicked">
+                        <a (click)="OpenMenuBar()">
+                            <span class="menu-span" id="rotatespan"><i class="fa fa-random" aria-hidden="true"></i></span>
+                            <span class="nav-text">
+                                <h3>IDS Product Suite</h3>
+                            </span>
+                        </a>
+                    </li> -->
+                    <!-- <li *ngFor="let item of listArray" (click)="onClickSideBarOptions(item)" [class.list]="isClicked === item" >
+                        <a (click)="OpenMenuBar()">
+                          <span class="menu-span" id="rotatespan"><i class="fa fa-random" aria-hidden="true"></i></span>
+                          <span class="nav-text">
+                            <h3>{{ item }}</h3>
+                          </span>
+                        </a>
+                      </li> -->
+                      
+                        <ng-container *ngFor="let item of listArray" >
+                          <ng-container *ngIf="item.subCat">
+                            <li (click)="toggleSubCat(item)" >
+                                <a (click)="navigatePage(item)" [class.active]="page === item.url" >
+                                <span class="menu-span" id="rotatespan"><i class="fa fa-random" aria-hidden="true"></i></span>
+                                <span class="nav-text">
+                                  {{ item.name }}
+                                </span>
+                                <span class="menu-span menu-arrow" id="rotatespan">
+                                    <i class="fa fa-angle-down" aria-hidden="true" *ngIf="item.subCat.length > 0"></i></span>
+                                </a>
+                                <ul class="subCatList padding_li" *ngIf="item.subCatOpen">
+
+                                  <li *ngFor="let subItem of item.subCat" (click)="toggleChildrenSubCat(item)" >
+                                    <!-- <a>
+                                      <span class="menu-span" style="width: 35px;" id="rotatespan"></span>
+                                      <span class="nav-text" style="width: 215px;">
+                                        {{ subItem.name }}
+                                      </span><span class="menu-span" id="rotatespan" ></span> 
+                                    </a> -->
+                                    <a (click)="navigatePage(subItem)" [class.active]="page == subItem.url">
+                                        <span class="{{subItem.icon}} menu-span"></span>
+                                        <span class="nav-text">
+                                            {{subItem.name}}
+                                        </span>
+                                        <span class="menu-span menu-arrow" id="rotatespan"><i class="fa fa-angle-down" 
+                                            aria-hidden="true" *ngIf="item.subCat.length > 0"></i></span>
+                                    </a>
+                                    <ul *ngIf="item.subCat.childrenOpen">
+                                        asas
+                                        <li *ngFor="let Childrens of item.subCat.Children">
+                                            asa
+                                            {{Childrens.name}}
+
+                                            <!-- <a (click)="navigatePage(Childrens)" [class.active]="page == Childrens.url">
+                                                <span class="{{Childrens.icon}} menu-span"></span>
+                                                <span class="nav-text">
+                                                    {{Childrens.name}}
+                                                    asas
+                                                </span>
+                                            </a> -->
+                                        </li>
+                                    </ul>
+                                  </li>
+                                </ul>
+                            </li>
+                          </ng-container>
+                        </ng-container>
+                      
+                      
+                      
+                    <!-- {{sidemenuList | json}} -->
+                    <div *ngFor="let m of sidemenuList">
+                        <li>
+                            <a (click)="navigatePage(m)" [class.active]="page == m.url">
+                                <span class="{{m.icon}} menu-span"></span>
+                                <span class="nav-text">
+                                    {{m.name}}
+                                </span>
+                            </a>
+                        </li>
+                    </div>
+                </ul>
+            </nav>
+        </div>
+        <div class="content_wrapper">
+            <router-outlet></router-outlet>
+        </div>    
+    </div>
+
+
+
+<!-- <div class="main-container" id="main_container">
+    <toaster-container [toasterconfig]="toastConfig"></toaster-container>
+    <router-outlet></router-outlet>
+
+</div> -->
+<!-- <div class="dummy_menu" *ngIf="showHead">
+<a routerLinkActive="active" 
+routerLink="/login">Login</a> |
+
+<a routerLinkActive="active" 
+routerLink="/test">Test</a>
+
+</div> -->
+
+

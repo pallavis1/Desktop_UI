@@ -1,0 +1,21 @@
+<div class="search-bars">
+  <div class="flexBox">
+    <div class="search_field">
+      <div class="position_realtive">
+      <input
+        matInput type="text"
+        (keyup)="doFilter($event.target.value)"
+        placeholder="Filter"
+      >
+        <i class="fa fa-search icon"></i>
+      </div>
+    </div>
+  </div>
+  <mat-paginator
+    style-paginator showFirstLastButtons 
+    [showTotalPages]="3"
+    [length]="7130"
+    [pageSize]="10"
+    [pageSizeOptions]="[5, 10, 25, 100]">
+  </mat-paginator>
+</div>

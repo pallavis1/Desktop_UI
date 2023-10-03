@@ -1,0 +1,66 @@
+<div class="page_heading">
+  {{TRANSLATE.ChannelListReport	}}
+</div>
+
+<div class="page_wrapper">
+  <div class="custom_panel page_form">
+    <div class="row">
+      
+      <div class="col-md-2 col-sm-4 col-xs-12">
+        <div class="form_panel">
+          <label>{{TRANSLATE.RestaurantName}}  <span class="required">*</span></label>
+            <mat-select placeholder=" " multiple>
+              <mat-option value="all">Select All</mat-option>
+              <mat-option value="one">First option</mat-option>
+              <mat-option value="two">Second option</mat-option>
+            </mat-select>
+        </div>
+      </div>
+      <div class="col-md-2 col-sm-4 col-xs-12">
+        <div class="form_panel">
+          <label>{{TRANSLATE.FromDate}}</label>
+          <div class="custom_datepicker">
+            <input matInput [matDatepicker]="FromDate">
+            <mat-datepicker-toggle matIconSuffix [for]="FromDate"></mat-datepicker-toggle>
+            <mat-datepicker #FromDate ></mat-datepicker>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-2 col-sm-4 col-xs-12">
+        <div class="form_panel">
+          <label>{{TRANSLATE.ToDate}}</label>
+          <div class="custom_datepicker">
+            <input matInput [matDatepicker]="ToDate">
+            <mat-datepicker-toggle matIconSuffix [for]="ToDate"></mat-datepicker-toggle>
+            <mat-datepicker #ToDate ></mat-datepicker>
+          </div>
+        </div>
+      </div>   
+      <div class="col-md-2 col-sm-4 col-xs-12">
+        <div class="form_panel">
+          <label>{{TRANSLATE.Channel}}</label>
+            <mat-select placeholder=" " multiple>
+              <mat-option value="all">Select All</mat-option>
+              <mat-option value="one">First option</mat-option>
+              <mat-option value="two">Second option</mat-option>
+            </mat-select>
+        </div>
+      </div>
+      <div class="col-md-2 col-sm-4 col-xs-12">
+        <div class="form_panel">
+          <label>{{TRANSLATE.MealSession}} </label>
+            <mat-select placeholder=" " multiple>
+              <mat-option value="all">Select All</mat-option>
+              <mat-option value="one">First option</mat-option>
+              <mat-option value="two">Second option</mat-option>
+            </mat-select>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="bottom_btns">
+  <button class="primary_btn border_btn mr_10">Reset</button>
+  <button class="primary_btn">View</button>
+</div>

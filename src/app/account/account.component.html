@@ -1,0 +1,183 @@
+
+<div class="page_heading">
+  Account Master - Edit
+</div>
+<div class="page_wrapper coluim_layout">
+<div class="custom_panel page_form">
+  <div class="flex_column">
+    <div class="inner_panel">
+      <div class="inner_heading">Account  Info</div>
+        <div class="row">
+          <div class="col-md-6 col-sm-6 col-xs-12">
+            <div class="form_panel">
+              <label>{{TRANSLATE.AccountId}}</label>
+              <input type="text" placeholder="" />
+            </div>
+          </div>
+          <div class="col-md-6 col-sm-6 col-xs-12">
+            <div class="form_panel">
+              <label>{{TRANSLATE.AccountName}} <span class="required">*</span></label>
+              <input type="text" placeholder="" />
+            </div>
+          </div>
+          <div class="col-md-6 col-sm-6 col-xs-12">
+            <div class="form_panel">
+              <label>{{TRANSLATE.AccountImage}}</label>
+              <input type="file" placeholder="" />
+            </div>
+          </div>
+          <div class="col-md-6 col-sm-6 col-xs-12">
+            <div class="form_panel">
+              <label>{{TRANSLATE.IsActive}}</label>
+              <div class="custom_checkbox">
+                <mat-checkbox class="example-margin"></mat-checkbox>
+              </div>
+            </div>
+          </div> 
+        </div>
+        <div class="sub_heading">Contact Person Details</div>
+        <div class="custom_table table_bordered mb_10">
+          <table class="mat-table" >
+            <tr class="mat-header-row">
+              <th class="mat-header-cell">Name	</th>
+              <th class="mat-header-cell">Designation	</th>
+              <th class="mat-header-cell">Mobile	</th>
+              <th class="mat-header-cell">Email	</th>
+              <th class="mat-header-cell text_right">
+                <button class="primary_btn btn_sm"> Add </button>
+              </th>
+            </tr>
+            <tr class="mat-row">
+              <td class="mat-cell">Mr. Johny</td>
+              <td class="mat-cell">Developer</td>
+              <td class="mat-cell">7856925555</td>
+              <td class="mat-cell">demo@gmail.com</td>
+              <td class="mat-cell text_right">
+                  <div class="action_btn">
+                    <i class="fa fa-trash-alt"></i>
+                  </div>
+              </td>
+            </tr>
+            <tr class="mat-row">
+              <td class="mat-cell">Mr. Johny</td>
+              <td class="mat-cell">Developer</td>
+              <td class="mat-cell">7856925555</td>
+              <td class="mat-cell">demo@gmail.com</td>
+              <td class="mat-cell text_right">
+                  <div class="action_btn">
+                    <i class="fa fa-trash-alt"></i>
+                  </div>
+              </td>
+            </tr>
+            
+          </table>       
+        </div>
+    </div>
+    <div class="inner_panel">
+      <div class="inner_heading">About Account</div>
+      <div class="row">
+      <div class="col-md-6 col-sm-6 col-xs-12">
+        <div class="form_panel">
+          <label>{{TRANSLATE.About}}</label>
+          <input type="text" placeholder="" />
+        </div>
+      </div>
+      <div class="col-md-6 col-sm-6 col-xs-12">
+        <div class="form_panel">
+          <label>{{TRANSLATE.ContactNumber1}}</label>
+          <input type="text" placeholder="" />
+        </div>
+      </div>
+      <div class="col-md-6 col-sm-6 col-xs-12">
+        <div class="form_panel">
+          <label>{{TRANSLATE.ContactNumber2}}</label>
+          <input type="text" placeholder="" />
+        </div>
+      </div>
+      
+      <div class="col-md-6 col-sm-6 col-xs-12">
+        <div class="form_panel">
+          <label>{{TRANSLATE.EmailId}}</label>
+          <input type="text" placeholder="" />
+        </div>
+      </div>
+    </div>
+    </div>
+    <div class="inner_panel">
+      <div class="inner_heading">Location</div>
+      <div class="row">
+        <div class="col-md-6 col-sm-6 col-xs-12">
+          <div class="form_panel">
+            <label>{{TRANSLATE.LatitudePosition}}<span class="required">*</span></label>
+            <input type="text" placeholder="" />
+          </div>
+        </div>
+        <div class="col-md-6 col-sm-6 col-xs-12">
+          <div class="form_panel">
+            <label>{{TRANSLATE.LongitudePosition}}<span class="required">*</span></label>
+            <input type="text" placeholder="" />
+          </div>
+        </div>
+        <div class="col-md-6 col-sm-6 col-xs-12">
+          <div class="form_panel">
+            <label>{{TRANSLATE.AddressLine1}}</label>
+            <input type="text" placeholder="" />
+          </div>
+        </div>
+        
+        <div class="col-md-6 col-sm-6 col-xs-12">
+          <div class="form_panel">
+            <label>{{TRANSLATE.PinCode}}</label>
+            <input type="text" placeholder="" />
+          </div>
+        </div>
+        <div class="col-md-6 col-sm-6 col-xs-12">
+          <div class="form_panel">
+            <label>{{TRANSLATE.Country}} <span class="required">*</span></label>
+            <div class="position_realtive">
+              <input type="text" placeholder="" />
+              <div class="floating_icon"><i class="fa fa-search"></i></div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-sm-6 col-xs-12">
+          <div class="form_panel">
+            <label>{{TRANSLATE.State}} <span class="required">*</span></label>
+            <div class="position_realtive">
+              <input type="text" placeholder="" />
+              <div class="floating_icon"><i class="fa fa-search"></i></div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-md-6 col-sm-6 col-xs-12">
+          <div class="form_panel">
+            <label>{{TRANSLATE.City}} <span class="required">*</span></label>
+            <div class="position_realtive">
+              <input type="text" placeholder="" />
+              <div class="floating_icon"><i class="fa fa-search"></i></div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-sm-6 col-xs-12">
+          <div class="form_panel">
+            <label>{{TRANSLATE.Location}} <span class="required">*</span></label>
+            <div class="position_realtive">
+              <input type="text" placeholder="" />
+              <div class="floating_icon"><i class="fa fa-search"></i></div>
+            </div>
+          </div>
+        </div>
+    
+        
+    </div>
+  </div>
+</div>
+
+</div>
+</div>
+
+<div class="bottom_btns">
+  <button class="primary_btn mr_10">Export To Excel</button>
+  <button class="primary_btn">Submit</button>
+</div>

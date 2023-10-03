@@ -1,0 +1,80 @@
+
+<div class="page_heading">
+  {{TRANSLATE.GuestMaster}} - {{TRANSLATE.TableView}}  
+  <div class="options_dd">
+    <button mat-button [matMenuTriggerFor]="menu">Options <i class="fa fa-angle-down"></i></button>
+    <mat-menu #menu="matMenu" class="option_panel">
+      <a routerLink="/guestMaster">New</a>
+    </mat-menu>
+  </div>
+</div>
+
+
+<div class="page_wrapper list_wrapper">
+    <div class="custom_panel">
+      <div class="custom_table">
+        <div class="row vertical_center">
+          <div class="col-md-9">
+            <app-filter (keyup)="doFilter($event.target.value)"></app-filter>
+          </div>
+          <div class="col-md-3">
+            <div class="search_guest">
+              <div class="form_panel">
+                <input type="text" placeholder="Enter search text"/>
+                <button class="primary_btn">Search Guest</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="mat-elevation-z8">
+          <table mat-table [dataSource]="dataSource" matSort (matSortChange)="customSort($event)">
+        
+            <!-- Position Column -->
+            <ng-container matColumnDef="accountName">
+              <th mat-header-cell *matHeaderCellDef> Account Name. </th>
+              <td mat-cell *matCellDef="let element"  [routerLink]="['/guestMaster']"> {{element.accountName}} </td>
+            </ng-container>
+        
+            <!-- contact Column -->
+            <ng-container matColumnDef="contact">
+              <th mat-header-cell *matHeaderCellDef> Contact </th>
+              <td mat-cell *matCellDef="let element"> {{element.contact}} </td>
+            </ng-container>
+        
+            <!-- email Column -->
+            <ng-container matColumnDef="email">
+              <th mat-header-cell *matHeaderCellDef> Email </th>
+              <td mat-cell *matCellDef="let element"> {{element.email}} </td>
+            </ng-container>
+        
+            
+        
+            <!-- accountID Column -->
+            <ng-container matColumnDef="accountId">
+              <th mat-header-cell *matHeaderCellDef> Account ID </th>
+              <td mat-cell *matCellDef="let element"> {{element.accountId}} </td>
+            </ng-container>
+        
+            <!-- Symbol Column -->
+            <ng-container matColumnDef="active">
+              <th mat-header-cell *matHeaderCellDef> Active </th>
+              <td mat-cell *matCellDef="let element"> {{element.active}} </td>
+            </ng-container>
+            <ng-container matColumnDef="arrow">
+              <th mat-header-cell *matHeaderCellDef></th>
+              <td mat-cell *matCellDef="let element" style="text-align: right;"> 
+                <span >
+                  <i class="fa fa-angle-right" style="color: #fc7b46; font-size: 20px;"></i>
+              </span> </td>
+            </ng-container>
+        
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+          </table>
+        </div>
+        
+        </div>
+        
+        
+    </div>
+</div>

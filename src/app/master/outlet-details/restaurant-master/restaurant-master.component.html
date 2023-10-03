@@ -1,0 +1,2562 @@
+<div class="page_heading">
+  Restaurant Master - Edit
+</div>
+
+<div class="page_wrapper coluim_layout">
+  <div class="custom_panel page_form">
+    <div class="flex_column">
+      <div class="inner_panel">
+        <div class="inner_heading">Outlet Info</div>
+          <div class="row">
+            <div class="col-md-6 col-sm-6 col-xs-12">
+              <div class="form_panel">
+                <label>{{TRANSLATE.RestaurantId}}</label>
+                <input type="text" placeholder="" />
+              </div>
+            </div>
+            <div class="col-md-6 col-sm-6 col-xs-12">
+              <div class="form_panel">
+                <label>{{TRANSLATE.RestaurantLogo}}</label>
+                <input type="text" placeholder="" />
+              </div>
+            </div>
+            
+            <div class="col-md-6 col-sm-6 col-xs-12">
+              <div class="form_panel">
+                <label>{{TRANSLATE.RestaurantName}} <span class="required">*</span></label>
+                <input type="text" placeholder="" />
+              </div>
+            </div>
+          </div>
+      </div>
+    
+      <div class="inner_panel">
+        <div class="inner_heading">About This Outlet</div>
+        <div class="row">
+          <div class="col-md-12 col-xs-12">
+            <div class="form_panel">
+              <label>{{TRANSLATE.OpeningHours}}</label>
+              
+              <div class="from_to">
+                <div class="from_section mr_10">
+                  <label>{{TRANSLATE.From}}</label>              
+                  <mat-select placeholder=" ">
+                    <mat-option value="one">First option</mat-option>
+                    <mat-option value="two">Second option</mat-option>
+                  </mat-select>
+                </div>
+                <div class="to_section">
+                  <label>{{TRANSLATE.To}}</label>
+                  <mat-select placeholder=" ">
+                    <mat-option value="one">First option</mat-option>
+                    <mat-option value="two">Second option</mat-option>
+                  </mat-select>
+                </div>
+              </div>
+              
+            </div>
+          </div>
+          <div class="col-md-6 col-sm-6 col-xs-12">
+            <div class="form_panel">
+              <label>{{TRANSLATE.TypeofEstablishment}}</label>
+              <input type="text" placeholder="" />
+            </div>
+          </div>
+          
+          <div class="col-md-6 col-sm-6 col-xs-12">
+            <div class="form_panel">
+              <label>{{TRANSLATE.KnownFor}}</label>
+              <input type="text" placeholder="" />
+            </div>
+          </div>
+          <div class="col-md-6 col-sm-6 col-xs-12">
+            <div class="form_panel">
+              <label>{{TRANSLATE.Cuisines}}</label>
+              <mat-select placeholder="" [formControl]="languages" multiple>
+                <mat-option #allSelected (click)="toggleAllSelection()" [value]="0">All</mat-option>
+                <mat-option [value]="1">Select</mat-option>
+              </mat-select>
+            </div>
+          </div>
+          <div class="col-md-6 col-sm-6 col-xs-12">
+            <div class="form_panel">
+              <label>{{TRANSLATE.LiquorTypes}}</label>
+              <mat-select placeholder="" multiple>
+                <mat-option #allSelected (click)="toggleAllSelection()" [value]="0">All</mat-option>
+                <mat-option [value]="language">Select</mat-option>
+              </mat-select>
+            </div>
+          </div>      
+          <div class="col-md-6 col-sm-6 col-xs-12">
+            <div class="form_panel">
+              <label>{{TRANSLATE.Paymodes}}</label>
+              <input type="text" placeholder="" />
+            </div>
+          </div>
+          
+        </div>
+        <div class="row">
+          <div class="col-md-6 col-sm-6 col-xs-12">
+            <div class="form_panel">
+              <label>{{TRANSLATE.AvgMealPricefor2Persons}}</label>
+              <div class="d_flex vertical_center ">
+                <input type="text" placeholder="" class="text_right" />
+                <div class="info_text ml_10 ">Indian Rupees</div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-sm-6 col-xs-12">
+            <div class="form_panel">
+              <label>{{TRANSLATE.AvgPriceforPintofBeer}}</label>
+              <div class="d_flex vertical_center ">
+                <input type="text" placeholder="" class="text_right" />
+                <div class="info_text ml_10 ">Indian Rupees</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6 col-sm-6 col-xs-12">
+            <div class="form_panel">
+              <label>{{TRANSLATE.BanquetsCapacity}}</label>
+              <input type="text" placeholder="" />
+            </div>
+          </div>
+          
+          <div class="col-md-6 col-sm-6 col-xs-12">
+            <div class="form_panel">
+              <label>{{TRANSLATE.SeatingCapacity}}</label>
+              <input type="text" placeholder="" />
+            </div>
+          </div>          
+          <div class="col-md-6 col-sm-6 col-xs-12">
+            <div class="form_panel">
+              <label>{{TRANSLATE.NumberofSeats}}</label>
+              <input type="text" placeholder="" />
+            </div>
+          </div>
+
+          <div class="col-md-6 col-sm-6 col-xs-12">
+            <div class="form_panel">
+              <label>{{TRANSLATE.Numberoftables}}</label>
+              <input type="text" placeholder="" />
+            </div>
+          </div>
+          
+        </div>
+      </div>
+      <div class="inner_panel">
+        <div class="inner_heading">Available Facilities</div>
+        <div class="checkbox_flex_layout">
+          <div class="d_flex">
+            <div class="custom_checkbox">
+              <mat-checkbox class="example-margin"></mat-checkbox>
+            </div>
+            <label>{{TRANSLATE.FineDine}}</label>
+          </div>
+          <div class="d_flex">
+            <div class="custom_checkbox">
+              <mat-checkbox class="example-margin"></mat-checkbox>
+            </div>
+            <label>{{TRANSLATE.Bar}}</label>
+          </div>
+          <div class="d_flex">
+            <div class="custom_checkbox">
+              <mat-checkbox class="example-margin"></mat-checkbox>
+            </div>
+            <label>{{TRANSLATE.CoffeeShop}}</label>
+          </div>
+          
+          <div class="d_flex">
+            <div class="custom_checkbox">
+              <mat-checkbox class="example-margin"></mat-checkbox>
+            </div>
+            <label>{{TRANSLATE.Breakfast}}</label>
+          </div>
+          <div class="d_flex">
+            <div class="custom_checkbox">
+              <mat-checkbox class="example-margin"></mat-checkbox>
+            </div>
+            <label>{{TRANSLATE.Buffet}}</label>
+          </div>
+          <div class="d_flex">
+            <div class="custom_checkbox">
+              <mat-checkbox class="example-margin"></mat-checkbox>
+            </div>
+            <label>{{TRANSLATE.Lunch}}</label>
+          </div>
+          <div class="d_flex">
+            <div class="custom_checkbox">
+              <mat-checkbox class="example-margin"></mat-checkbox>
+            </div>
+            <label>{{TRANSLATE.LunchBuffet}}</label>
+          </div>
+          <div class="d_flex">
+            <div class="custom_checkbox">
+              <mat-checkbox class="example-margin"></mat-checkbox>
+            </div>
+            <label>{{TRANSLATE.Dinner}}</label>
+          </div>
+          <div class="d_flex">
+            <div class="custom_checkbox">
+              <mat-checkbox class="example-margin"></mat-checkbox>
+            </div>
+            <label>{{TRANSLATE.DinnerBuffet}}</label>
+          </div>
+        </div>
+        <div class="checkbox_flex_layout">
+          <div class="d_flex">
+            <div class="custom_checkbox">
+              <mat-checkbox class="example-margin"></mat-checkbox>
+            </div>
+            <label>{{TRANSLATE.IndoorSeating}}</label>
+          </div>
+          <div class="d_flex">
+            <div class="custom_checkbox">
+              <mat-checkbox class="example-margin"></mat-checkbox>
+            </div>
+            <label>{{TRANSLATE.Outdoorseating}}</label>
+          </div>
+          <div class="d_flex">
+            <div class="custom_checkbox">
+              <mat-checkbox class="example-margin"></mat-checkbox>
+            </div>
+            <label>{{TRANSLATE.PoolSide}}</label>
+          </div>
+          <div class="d_flex">
+            <div class="custom_checkbox">
+              <mat-checkbox class="example-margin"></mat-checkbox>
+            </div>
+            <label>{{TRANSLATE.RooftopSeating}}</label>
+          </div>
+          <div class="d_flex">
+            <div class="custom_checkbox">
+              <mat-checkbox class="example-margin"></mat-checkbox>
+            </div>
+            <label>{{TRANSLATE.AirConditioning  }}</label>
+          </div>
+          <div class="d_flex">
+            <div class="custom_checkbox">
+              <mat-checkbox class="example-margin"></mat-checkbox>
+            </div>
+            <label>{{TRANSLATE.FamilyArea}}</label>
+          </div>
+          
+          <div class="d_flex">
+            <div class="custom_checkbox">
+              <mat-checkbox class="example-margin"></mat-checkbox>
+            </div>
+            <label>{{TRANSLATE.KidsFriendly}}</label>
+          </div>
+          <div class="d_flex">
+            <div class="custom_checkbox">
+              <mat-checkbox class="example-margin"></mat-checkbox>
+            </div>
+            <label>{{TRANSLATE.KidsArea}}</label>
+          </div>
+          
+          <div class="d_flex">
+            <div class="custom_checkbox">
+              <mat-checkbox class="example-margin"></mat-checkbox>
+            </div>
+            <label>{{TRANSLATE.SmokingArea}}</label>
+          </div>
+          <div class="d_flex">
+            <div class="custom_checkbox">
+              <mat-checkbox class="example-margin"></mat-checkbox>
+            </div>
+            <label>{{TRANSLATE.Wheelchairfriendly}}</label>
+          </div>
+          
+          <div class="d_flex">
+            <div class="custom_checkbox">
+              <mat-checkbox class="example-margin"></mat-checkbox>
+            </div>
+            <label>{{TRANSLATE.PetFriendly}}</label>
+          </div>
+        </div>
+        <div class="checkbox_flex_layout">
+          <div class="d_flex">
+            <div class="custom_checkbox">
+              <mat-checkbox class="example-margin"></mat-checkbox>
+            </div>
+            <label>{{TRANSLATE.DedicatedParking}}</label>
+          </div>
+          
+          <div class="d_flex">
+            <div class="custom_checkbox">
+              <mat-checkbox class="example-margin"></mat-checkbox>
+            </div>
+            <label>{{TRANSLATE.ValetParking}}</label>
+          </div>
+          <div class="d_flex">
+            <div class="custom_checkbox">
+              <mat-checkbox class="example-margin"></mat-checkbox>
+            </div>
+            <label>{{TRANSLATE.SpecialyabledParking}}</label>
+          </div>
+        </div>
+        <div class="checkbox_flex_layout">
+          <div class="d_flex">
+            <div class="custom_checkbox">
+              <mat-checkbox class="example-margin"></mat-checkbox>
+            </div>
+            <label>{{TRANSLATE.KidsMenu}}</label>
+          </div>
+          <div class="d_flex">
+            <div class="custom_checkbox">
+              <mat-checkbox class="example-margin"></mat-checkbox>
+            </div>
+            <label>{{TRANSLATE.DiabeticMenu}}</label>
+          </div>
+          
+          <div class="d_flex">
+            <div class="custom_checkbox">
+              <mat-checkbox class="example-margin"></mat-checkbox>
+            </div>
+            <label>{{TRANSLATE.VeganMenu}}</label>
+          </div>
+          <div class="d_flex">
+            <div class="custom_checkbox">
+              <mat-checkbox class="example-margin"></mat-checkbox>
+            </div>
+            <label>{{TRANSLATE.JainMenu}}</label>
+          </div>
+          
+          <div class="d_flex">
+            <div class="custom_checkbox">
+              <mat-checkbox class="example-margin"></mat-checkbox>
+            </div>
+            <label>{{TRANSLATE.HalalMenu}}</label>
+          </div>
+          <div class="d_flex">
+            <div class="custom_checkbox">
+              <mat-checkbox class="example-margin"></mat-checkbox>
+            </div>
+            <label>{{TRANSLATE.HealthMenu}}</label>
+          </div>
+          <div class="d_flex">
+            <div class="custom_checkbox">
+              <mat-checkbox class="example-margin"></mat-checkbox>
+            </div>
+            <label>{{TRANSLATE.KosherMenu}}</label>
+          </div>
+          <div class="d_flex">
+            <div class="custom_checkbox">
+              <mat-checkbox class="example-margin"></mat-checkbox>
+            </div>
+            <label>{{TRANSLATE.BraileMenu}}</label>
+          </div>
+          <div class="d_flex">
+            <div class="custom_checkbox">
+              <mat-checkbox class="example-margin"></mat-checkbox>
+            </div>
+            <label>{{TRANSLATE.TableBookingFacility}}</label>
+          </div>
+        </div>
+        <div class="checkbox_flex_layout">
+          <div class="d_flex">
+            <div class="custom_checkbox">
+              <mat-checkbox class="example-margin"></mat-checkbox>
+            </div>
+            <label>{{TRANSLATE.Karaoke}}</label>
+          </div>
+          <div class="d_flex">
+            <div class="custom_checkbox">
+              <mat-checkbox class="example-margin"></mat-checkbox>
+            </div>
+            <label>{{TRANSLATE.Livescreening}}</label>
+          </div>
+          <div class="d_flex">
+            <div class="custom_checkbox">
+              <mat-checkbox class="example-margin"></mat-checkbox>
+            </div>
+            <label>{{TRANSLATE.LiveBand}}</label>
+          </div>
+          
+          <div class="d_flex">
+            <div class="custom_checkbox">
+              <mat-checkbox class="example-margin"></mat-checkbox>
+            </div>
+            <label>{{TRANSLATE.DJ}}</label>
+          </div>
+        </div>
+        <div class="checkbox_flex_layout">
+          <div class="d_flex">
+            <div class="custom_checkbox">
+              <mat-checkbox class="example-margin"></mat-checkbox>
+            </div>
+            <label>{{TRANSLATE.Cateringservices}}</label>
+          </div>
+          
+          <div class="d_flex">
+            <div class="custom_checkbox">
+              <mat-checkbox class="example-margin"></mat-checkbox>
+            </div>
+            <label>{{TRANSLATE.Banquets}}</label>
+          </div>
+
+
+        </div>
+      </div>
+
+      <div class="inner_panel">
+        <div class="inner_heading">Location</div>
+        <div class="row">
+          <div class="col-md-6 col-sm-6 col-xs-12">
+            <div class="form_panel">
+              <label>{{TRANSLATE.LatitudePosition}}<span class="required">*</span></label>
+              <input type="text" placeholder="" />
+            </div>
+          </div>
+          <div class="col-md-6 col-sm-6 col-xs-12">
+            <div class="form_panel">
+              <label>{{TRANSLATE.LongitudePosition}}<span class="required">*</span></label>
+              <input type="text" placeholder="" />
+            </div>
+          </div>
+          <div class="col-md-6 col-sm-6 col-xs-12">
+            <div class="form_panel">
+              <label>{{TRANSLATE.AddressLine1}}</label>
+              <input type="text" placeholder="" />
+            </div>
+          </div>
+          
+          <div class="col-md-6 col-sm-6 col-xs-12">
+            <div class="form_panel">
+              <label>{{TRANSLATE.PinCode}}</label>
+              <input type="text" placeholder="" />
+            </div>
+          </div>
+          <div class="col-md-6 col-sm-6 col-xs-12">
+            <div class="form_panel">
+              <label>{{TRANSLATE.Country}} <span class="required">*</span></label>
+              <div class="position_realtive">
+                <input type="text" placeholder="" />
+                <div class="floating_icon"><i class="fa fa-search"></i></div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-sm-6 col-xs-12">
+            <div class="form_panel">
+              <label>{{TRANSLATE.State}} <span class="required">*</span></label>
+              <div class="position_realtive">
+                <input type="text" placeholder="" />
+                <div class="floating_icon"><i class="fa fa-search"></i></div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-md-6 col-sm-6 col-xs-12">
+            <div class="form_panel">
+              <label>{{TRANSLATE.City}} <span class="required">*</span></label>
+              <div class="position_realtive">
+                <input type="text" placeholder="" />
+                <div class="floating_icon"><i class="fa fa-search"></i></div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-sm-6 col-xs-12">
+            <div class="form_panel">
+              <label>{{TRANSLATE.Location}} <span class="required">*</span></label>
+              <div class="position_realtive">
+                <input type="text" placeholder="" />
+                <div class="floating_icon"><i class="fa fa-search"></i></div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-sm-6 col-xs-12">
+            <div class="form_panel">
+              <label>{{TRANSLATE.GoogleMapURL}}</label>
+              <div class="position_realtive">
+                <input type="text" placeholder="" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="inner_panel">
+        <div class="inner_heading">{{TRANSLATE.PMSConfig}}</div>
+        <div class="row">
+          <div class="col-md-6 col-sm-6 col-xs-12">
+            <div class="form_panel">
+              <label>{{TRANSLATE.PMSType}}</label>              
+              <mat-select placeholder=" ">
+                <mat-option value="one">First option</mat-option>
+                <mat-option value="two">Second option</mat-option>
+              </mat-select>
+            </div>
+          </div>          
+          <div class="col-md-6 col-sm-6 col-xs-12">
+            <div class="form_panel">
+              <label>{{TRANSLATE.PMSStatus}}</label>
+              <mat-slide-toggle [aria-label]="isSubscribedToEmailsMessage">
+              </mat-slide-toggle>
+            </div>
+          </div>
+          <div class="col-md-6 col-sm-6 col-xs-12">
+            <div class="form_panel">
+              <label>{{TRANSLATE.PMSInterfaceURL}}</label>
+              <input type="text" placeholder="" />
+            </div>
+          </div>
+          
+          <div class="col-md-6 col-sm-6 col-xs-12">
+            <div class="form_panel">
+              <label>{{TRANSLATE.DNSURL}}</label>
+              <input type="text" placeholder="" />
+            </div>
+          </div>
+          <div class="col-md-6 col-sm-6 col-xs-12">
+            <div class="form_panel">
+              <label>{{TRANSLATE.PMSUsername}}</label>
+              <input type="text" placeholder="" />
+            </div>
+          </div>
+          <div class="col-md-6 col-sm-6 col-xs-12">
+            <div class="form_panel">
+              <label>{{TRANSLATE.PMSAPIPassword}}</label>
+              <input type="text" placeholder="" />
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="inner_panel">
+        <div class="inner_heading">{{TRANSLATE.POSConfig}}</div>
+        <div class="row">
+          <div class="col-md-6 col-sm-6 col-xs-12">
+            <div class="form_panel">
+              <label>{{TRANSLATE.POSType}}</label>
+              <mat-select placeholder=" ">
+                <mat-option value="one">First option</mat-option>
+                <mat-option value="two">Second option</mat-option>
+              </mat-select>
+            </div>
+          </div>          
+          <div class="col-md-6 col-sm-6 col-xs-12">
+            <div class="form_panel">
+              <label>{{TRANSLATE.POSCode}}</label>
+              <mat-slide-toggle [aria-label]="isSubscribedToEmailsMessage">
+              </mat-slide-toggle>
+            </div>
+          </div>
+          
+          <div class="col-md-6 col-sm-6 col-xs-12">
+            <div class="form_panel">
+              <label>{{TRANSLATE.GroupID}}</label>
+              <input type="text" placeholder="" />
+            </div>
+          </div>
+          
+          <div class="col-md-6 col-sm-6 col-xs-12">
+            <div class="form_panel">
+              <label>{{TRANSLATE.ClientID}}</label>
+              <input type="text" placeholder="" />
+            </div>
+          </div>          
+          <div class="col-md-6 col-sm-6 col-xs-12">
+            <div class="form_panel">
+              <label>{{TRANSLATE.POSURL}}</label>
+              <input type="text" placeholder="" />
+            </div>
+          </div>
+          <div class="col-md-6 col-sm-6 col-xs-12">
+            <div class="form_panel">
+              <label>{{TRANSLATE.DNSURL}}</label>
+              <input type="text" placeholder="" />
+            </div>
+          </div>
+          
+        </div>
+      </div>
+      
+
+      <div class="inner_panel">
+        <div class="inner_heading">{{TRANSLATE.OLOMyPOS}}</div>
+        <div class="row">
+          <div class="col-md-6 col-sm-6 col-xs-12">
+            <div class="form_panel">
+              <label>{{TRANSLATE.POSType}}</label>
+              <mat-select placeholder=" ">
+                <mat-option value="one">First option</mat-option>
+                <mat-option value="two">Second option</mat-option>
+              </mat-select>
+            </div>
+          </div>  
+          <div class="col-md-6 col-sm-6 col-xs-12">
+            <div class="form_panel">
+              <label>{{TRANSLATE.POSURL}}</label>
+              <input type="text" placeholder="" />
+            </div>
+          </div>
+          <div class="col-md-6 col-sm-6 col-xs-12">
+            <div class="form_panel">
+              <label>{{TRANSLATE.ChannelType}}</label>
+              <mat-select placeholder=" ">
+                <mat-option value="one">First option</mat-option>
+                <mat-option value="two">Second option</mat-option>
+              </mat-select>
+            </div>
+          </div> 
+          <div class="col-md-6 col-sm-6 col-xs-12">
+            <div class="form_panel">
+              <label>{{TRANSLATE.Enable}}</label>
+              <mat-slide-toggle [aria-label]="isSubscribedToEmailsMessage">
+              </mat-slide-toggle>
+            </div>
+          </div>
+        </div>
+        
+        <div class="row">          
+          <div class="col-md-6 col-sm-4 col-xs-12">
+            <div class="form_panel">
+              <label>{{TRANSLATE.OLOURL}}</label>
+              <input type="text" placeholder="" />
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-4 col-xs-12">
+            <div class="form_panel">
+              <label>{{TRANSLATE.OLOforMember}}</label>
+              <mat-slide-toggle [aria-label]="isSubscribedToEmailsMessage">
+              </mat-slide-toggle>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-4 col-xs-12">
+            <div class="form_panel">
+              <label>{{TRANSLATE.FreeflowtextinOLO}}</label>
+              <div class="radio_btn">
+                <mat-radio-group aria-label="Select an option">
+                  <mat-radio-button value="1">Yes</mat-radio-button>
+                  <mat-radio-button value="2" checked>No</mat-radio-button>
+                </mat-radio-group>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="row">
+          <div class="col-md-12 col-sm-6 col-xs-12">
+            <div class="form_panel">
+              <label>{{TRANSLATE.DeliveryTime}}</label>
+              <div class="from_to">
+                <div class="from_section mr_10">
+                  <label>{{TRANSLATE.From}}</label>
+                                <mat-select placeholder=" ">
+                <mat-option value="one">First option</mat-option>
+                <mat-option value="two">Second option</mat-option>
+              </mat-select>
+                </div>
+                <div class="to_section">
+                  <label>{{TRANSLATE.To}}</label>
+                                <mat-select placeholder=" ">
+                <mat-option value="one">First option</mat-option>
+                <mat-option value="two">Second option</mat-option>
+              </mat-select>
+                </div>
+              </div>
+            </div>
+          </div>          
+          <div class="col-md-6 col-sm-6 col-xs-12">
+            <div class="form_panel">
+              <label>{{TRANSLATE.HomeDeliveryArea}}</label>
+              <input type="text" placeholder="" />
+            </div>
+          </div>         
+          <div class="col-md-6 col-sm-6 col-xs-12">
+            <div class="form_panel">
+              <label>{{TRANSLATE.MaxDeliveryDistance}}</label>
+              <input type="text" placeholder="" />
+            </div>
+          </div>
+                   
+          <div class="col-md-6 col-sm-6 col-xs-12">
+            <div class="form_panel">
+              <label>{{TRANSLATE.DeliveryAcceptance}}</label>
+              <div class="radio_btn">
+                <mat-radio-group aria-label="Select an option">
+                  <mat-radio-button value="1">Yes</mat-radio-button>
+                  <mat-radio-button value="2" checked>No</mat-radio-button>
+                </mat-radio-group>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">                   
+          <div class="col-md-6 col-sm-6 col-xs-12">
+            <div class="form_panel">
+              <label>{{TRANSLATE.MinimumDeliveryTime}}</label>
+              <input type="text" placeholder="" />
+            </div>
+          </div>
+          <div class="col-md-6 col-sm-6 col-xs-12">
+            <div class="form_panel">
+              <label>{{TRANSLATE.MinimumPickupTime}}</label>
+              <input type="text" placeholder="" />
+            </div>
+          </div>
+          <div class="col-md-6 col-sm-6 col-xs-12">
+            <div class="form_panel">
+              <label>{{TRANSLATE.MinimumOrderValue}}</label>              
+              <input type="text" placeholder="" />
+            </div>
+          </div>
+          <div class="col-md-12 col-sm-6 col-xs-12">
+            <div class="form_panel">
+              <label>{{TRANSLATE.DistanceWiseOrderValue}}</label>
+              <div class="from_to">
+                <div class="from_section mr_10">
+                  <label>{{TRANSLATE.FromDistance}}</label>
+                    <mat-select placeholder=" ">
+                      <mat-option value="one">First option</mat-option>
+                      <mat-option value="two">Second option</mat-option>
+                    </mat-select>
+                </div>
+                <div class="to_section">
+                  <label>{{TRANSLATE.ToDistance}}</label>
+                    <mat-select placeholder=" ">
+                      <mat-option value="one">First option</mat-option>
+                      <mat-option value="two">Second option</mat-option>
+                    </mat-select>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        
+        <div class="custom_table table_bordered mb_10">
+          <table class="mat-table" >
+            <tr class="mat-header-row">
+              <th class="mat-header-cell">Name	</th>
+              <th class="mat-header-cell">Designation	</th>
+              <th class="mat-header-cell">Mobile	</th>
+              <th class="mat-header-cell">Email	</th>
+              <th class="mat-header-cell text_right">
+                <button class="primary_btn btn_sm"> Add </button>
+              </th>
+            </tr>
+            <tr class="mat-row">
+              <td class="mat-cell">Mr. Johny</td>
+              <td class="mat-cell">Developer</td>
+              <td class="mat-cell">7856925555</td>
+              <td class="mat-cell">demo@gmail.com</td>
+              <td class="mat-cell text_right">
+                  <div class="action_btn">
+                    <i class="fa fa-trash-alt"></i>
+                  </div>
+              </td>
+            </tr>
+            <tr class="mat-row">
+              <td class="mat-cell">Mr. Johny</td>
+              <td class="mat-cell">Developer</td>
+              <td class="mat-cell">7856925555</td>
+              <td class="mat-cell">demo@gmail.com</td>
+              <td class="mat-cell text_right">
+                  <div class="action_btn">
+                    <i class="fa fa-trash-alt"></i>
+                  </div>
+              </td>
+            </tr>
+            
+          </table>       
+        </div>
+
+      <div class="row">
+        <div class="col-md-6 col-sm-6 col-xs-12">
+          <div class="form_panel">
+            <label>{{TRANSLATE.AdvanceOrders}}</label>
+            <div class="radio_btn">
+              <mat-radio-group aria-label="Select an option">
+                <mat-radio-button value="1">Yes</mat-radio-button>
+                <mat-radio-button value="2" checked>No</mat-radio-button>
+              </mat-radio-group>
+            </div>
+          </div>
+        </div>
+                
+        <div class="col-md-6 col-sm-6 col-xs-12">
+          <div class="form_panel">
+            <label>{{TRANSLATE.MaxDaysInAdvance}}</label>
+            <input type="text" placeholder="" />
+          </div>
+        </div>
+                 
+        <div class="col-md-6 col-sm-6 col-xs-12">
+          <div class="form_panel">
+            <label>{{TRANSLATE.AdvanceOrderDefaultTimeSlot}}</label>
+            <input type="text" placeholder="" />
+          </div>
+        </div>
+                 
+        <div class="col-md-6 col-sm-6 col-xs-12">
+          <div class="form_panel">
+            <label>{{TRANSLATE.MyPOSforMember}}</label>
+            <input type="text" placeholder="" />
+          </div>
+        </div> 
+        <div class="col-md-6 col-sm-6 col-xs-12">
+          <div class="form_panel">
+            <label>{{TRANSLATE.MaxDeliveryDistance}}</label>
+            <mat-slide-toggle [aria-label]="isSubscribedToEmailsMessage">
+            </mat-slide-toggle>
+          </div>
+        </div> 
+        <div class="col-md-6 col-sm-6 col-xs-12">
+          <div class="form_panel">
+            <label>{{TRANSLATE.MyPOSURL}}</label>
+            <input type="text" placeholder="" />
+          </div>
+        </div> 
+        <div class="col-md-6 col-sm-6 col-xs-12">
+          <div class="form_panel">
+            <label>{{TRANSLATE.FreeflowmodifierforMyPOS}}</label>
+            <div class="radio_btn">
+              <mat-radio-group aria-label="Select an option">
+                <mat-radio-button value="1">Yes</mat-radio-button>
+                <mat-radio-button value="2" checked>No</mat-radio-button>
+              </mat-radio-group>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-sm-6 col-xs-12">
+          <div class="form_panel">
+            <label>{{TRANSLATE.GefencingforJustOrder}}</label>
+            <input type="text" placeholder="" />
+            <div class="info_text">(in KM)</div>
+          </div>
+        </div> 
+      </div>
+      <div class="row">
+        <div class="col-md-6 col-sm-6 col-xs-12">
+          <div class="form_panel">
+            <label>{{TRANSLATE.CasingForMenuHead}}</label>
+            <input type="text" placeholder="" />
+          </div>
+        </div> 
+        <div class="col-md-6 col-sm-6 col-xs-12">
+          <div class="form_panel">
+            <label>{{TRANSLATE.CasingForMenuItem}}</label>
+            <input type="text" placeholder="" />
+          </div>
+        </div> 
+        <div class="col-md-6 col-sm-6 col-xs-12">
+          <div class="form_panel">
+            <label>{{TRANSLATE.CasingForModifier}}</label>
+            <input type="text" placeholder="" />
+          </div>
+        </div> 
+        <div class="col-md-6 col-sm-6 col-xs-12">
+          <div class="form_panel">
+            <label>{{TRANSLATE.CasingForModifierGroup}}</label>
+            <input type="text" placeholder="" />
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md- col-sm-4 col-xs-12">
+          <div class="form_panel">
+            <label>{{TRANSLATE.GetDirectionsButton}}</label>
+            <div class="radio_btn">
+              <mat-radio-group aria-label="Select an option">
+                <mat-radio-button value="1">Yes</mat-radio-button>
+                <mat-radio-button value="2" checked>No</mat-radio-button>
+              </mat-radio-group>
+            </div>
+          </div>
+        </div> 
+        <div class="col-md-4 col-sm-4 col-xs-12">
+          <div class="form_panel">
+            <label>{{TRANSLATE.ViewAllOutletsButton}}</label>
+            <div class="radio_btn">
+              <mat-radio-group aria-label="Select an option">
+                <mat-radio-button value="1">Yes</mat-radio-button>
+                <mat-radio-button value="2" checked>No</mat-radio-button>
+              </mat-radio-group>
+            </div>
+          </div>
+        </div> 
+        <div class="col-md-4 col-sm-4 col-xs-12">
+          <div class="form_panel">
+            <label>{{TRANSLATE.CopyLocationButton}}</label>
+            <div class="radio_btn">
+              <mat-radio-group aria-label="Select an option">
+                <mat-radio-button value="1">Yes</mat-radio-button>
+                <mat-radio-button value="2" checked>No</mat-radio-button>
+              </mat-radio-group>
+            </div>
+          </div>
+        </div> 
+      </div>
+      <div class="row">
+        <div class="col-md-6 col-sm-6 col-xs-12">
+          <div class="form_panel">
+            <label>{{TRANSLATE.Aboutbrand}}</label>
+            <input type="text" placeholder="" />
+          </div>
+        </div>
+        <div class="col-md-6 col-sm-6 col-xs-12">
+          <div class="form_panel">
+            <label>{{TRANSLATE.Aboutrestaurant}}</label>
+            <input type="text" placeholder="" />
+          </div>
+        </div>
+        <div class="col-md-6 col-sm-6 col-xs-12">
+          <div class="form_panel">
+            <label>{{TRANSLATE.Safetytextfield}}</label>
+            <input type="text" placeholder="" />
+          </div>
+        </div>
+        <div class="col-md-6 col-sm-6 col-xs-12">
+          <div class="form_panel">
+            <label>{{TRANSLATE.ThemeColorForButtons}}</label>
+            <input type="color" placeholder="" />
+          </div>
+        </div>
+        <div class="col-md-6 col-sm-6 col-xs-12">
+          <div class="form_panel">
+            <label>{{TRANSLATE.ThemeColorForBanners}}</label>
+            <input type="color" placeholder="" />
+          </div>
+        </div>
+        <div class="col-md-6 col-sm-6 col-xs-12">
+          <div class="form_panel">
+            <label>{{TRANSLATE.UploadBannerImage}}</label>
+            <app-upload-image></app-upload-image>
+          </div>
+        </div>
+        <div class="col-md-6 col-sm-6 col-xs-12">
+          <div class="form_panel">
+            <label>{{TRANSLATE.UploadBackgroundImage1}}</label>
+            <app-upload-image></app-upload-image>
+          </div>
+        </div>
+        
+        <div class="col-md-6 col-sm-6 col-xs-12">
+          <div class="form_panel">
+            <label>{{TRANSLATE.UploadBackgroundImage}2}</label>
+            <app-upload-image></app-upload-image>
+          </div>
+        </div>       
+      </div>
+      
+
+      </div>
+
+
+
+      
+    </div>
+    
+    <div class="row">
+      <div class="col-md-2 col-sm-4 col-xs-12">
+        <div class="form_panel">
+          <label>{{TRANSLATE.EmailofRestaurant}}</label>
+          <input type="text" placeholder="" />
+        </div>
+      </div>
+      
+      <div class="col-md-2 col-sm-4 col-xs-12">
+        <div class="form_panel">
+          <label>{{TRANSLATE.RestaurantWebsite}}</label>
+          <input type="text" placeholder="" />
+        </div>
+      </div>
+      
+      <div class="col-md-2 col-sm-4 col-xs-12">
+        <div class="form_panel">
+          <label>{{TRANSLATE.TypeofBusiness}}</label>
+          <input type="text" placeholder="" />
+        </div>
+      </div>
+      
+      
+      
+      
+      
+    </div>
+
+
+
+
+    <div class="custom_accordion">
+      <mat-accordion>
+        <mat-expansion-panel id="RestaurantSettings" [expanded]="true">
+        <mat-expansion-panel-header>
+          <mat-panel-title>{{TRANSLATE.RestaurantSettings}}</mat-panel-title>
+        </mat-expansion-panel-header>
+        <div class="row">
+          <div class="col-md-2 col-sm-4 col-xs-12">
+            <div class="form_panel">
+              <label>{{TRANSLATE.SendWaitlistedURL}}</label>
+              <div class="custom_checkbox">
+                <mat-checkbox class="example-margin"></mat-checkbox>
+              </div>
+            </div>
+          </div> 
+          <div class="col-md-2 col-sm-4 col-xs-12">
+            <div class="form_panel">
+              <label>{{TRANSLATE.EnableShowLocation}}</label>
+              <div class="custom_checkbox">
+                <mat-checkbox class="example-margin"></mat-checkbox>
+              </div>
+            </div>
+          </div> 
+          <div class="col-md-2 col-sm-4 col-xs-12">
+            <div class="form_panel">
+              <label>{{TRANSLATE.OwnSMSAccount}}</label>
+              <div class="custom_checkbox">
+                <mat-checkbox class="example-margin"></mat-checkbox>
+              </div>
+            </div>
+          </div> 
+          <div class="col-md-2 col-sm-4 col-xs-12">
+            <div class="form_panel">
+              <label>{{TRANSLATE.OwnEmailAccount}}</label>
+              <div class="custom_checkbox">
+                <mat-checkbox class="example-margin"></mat-checkbox>
+              </div>
+            </div>
+          </div> 
+          <div class="col-md-2 col-sm-4 col-xs-12">
+            <div class="form_panel">
+              <label>{{TRANSLATE.EnableTicker}}</label>
+              <div class="custom_checkbox">
+                <mat-checkbox class="example-margin"></mat-checkbox>
+              </div>
+            </div>
+          </div> 
+          <div class="col-md-2 col-sm-4 col-xs-12">
+            <div class="form_panel">
+              <label>{{TRANSLATE.IsActive}}</label>
+              <div class="custom_checkbox">
+                <mat-checkbox class="example-margin"></mat-checkbox>
+              </div>
+            </div>
+          </div> 
+        </div>
+        <div class="row">
+          <div class="col-md-2 col-sm-4 col-xs-12">
+            <div class="form_panel">
+              <label>{{TRANSLATE.GroupId}}</label>
+              <input type="text" placeholder="" />
+            </div>
+          </div>
+          <div class="col-md-2 col-sm-4 col-xs-12">
+            <div class="form_panel">
+              <label>{{TRANSLATE.ClientId}}</label>
+              <input type="text" placeholder="" />
+            </div>
+          </div>
+          <div class="col-md-2 col-sm-4 col-xs-12">
+            <div class="form_panel">
+              <label>{{TRANSLATE.PosCode}}</label>
+              <input type="text" placeholder="" />
+            </div>
+          </div>
+          <div class="col-md-2 col-sm-4 col-xs-12">
+            <div class="form_panel">
+              <label>{{TRANSLATE.InRestoKey}}</label>
+              <input type="text" placeholder="" />
+            </div>
+          </div>
+          <div class="col-md-2 col-sm-4 col-xs-12">
+            <div class="form_panel">
+              <label>{{TRANSLATE.BOTRestaurantID}}</label>
+              <input type="text" placeholder="" />
+            </div>
+          </div>
+          
+          <div class="col-md-2 col-sm-4 col-xs-12">
+            <div class="form_panel">
+              <label>{{TRANSLATE.CompulsoryOTPContactTracer}} </label>
+              <mat-select placeholder=" ">
+                <mat-option value="one">First option</mat-option>
+                <mat-option value="two">Second option</mat-option>
+              </mat-select>
+            </div>
+          </div>
+          
+          <div class="col-md-2 col-sm-4 col-xs-12">
+            <div class="form_panel">
+              <label>{{TRANSLATE.BrandID}} </label>
+              <mat-select placeholder=" ">
+                <mat-option value="one">First option</mat-option>
+                <mat-option value="two">Second option</mat-option>
+              </mat-select>
+            </div>
+          </div>
+          <div class="col-md-2 col-sm-4 col-xs-12">
+            <div class="form_panel">
+              <label>{{TRANSLATE.GoogleAPIKey}}</label>
+              <input type="text" placeholder="" />
+            </div>
+          </div>
+          <div class="col-md-2 col-sm-4 col-xs-12">
+            <div class="form_panel">
+              <label>{{TRANSLATE.SOLOEscalationNumber}}</label>
+              <textarea></textarea>
+              <div class="info_text">(Comma Separated)</div>
+            </div>
+          </div>
+          <div class="col-md-2 col-sm-4 col-xs-12">
+            <div class="form_panel">
+              <label>{{TRANSLATE.SOLOEscalationEmail}}</label>
+              <textarea></textarea>
+              <div class="info_text">(Semi Colon Separated)</div>
+            </div>
+          </div>
+          <div class="col-md-2 col-sm-4 col-xs-12">
+            <div class="form_panel">
+              <label>{{TRANSLATE.RestaurantShortDescription}}</label>
+              <textarea></textarea>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-2 col-sm-4 col-xs-12">
+            <div class="form_panel">
+              <label>{{TRANSLATE.TNCURL}}</label>
+              <input type="text" placeholder="" />
+            </div>
+          </div>
+          <div class="col-md-2 col-sm-4 col-xs-12">
+            <div class="form_panel">
+              <label>{{TRANSLATE.PPURL}}</label>
+              <input type="text" placeholder="" />
+            </div>
+          </div>
+          <div class="col-md-2 col-sm-4 col-xs-12">
+            <div class="form_panel">
+              <label>{{TRANSLATE.EnableDelivery}}</label>
+              <div class="custom_checkbox">
+                <mat-checkbox class="example-margin"></mat-checkbox>
+              </div>
+            </div>
+          </div> 
+          <div class="col-md-2 col-sm-4 col-xs-12">
+            <div class="form_panel">
+              <label>{{TRANSLATE.EnablePickUP}}</label>
+              <div class="custom_checkbox">
+                <mat-checkbox class="example-margin"></mat-checkbox>
+              </div>
+            </div>
+          </div> 
+          <div class="col-md-2 col-sm-4 col-xs-12">
+            <div class="form_panel">
+              <label>{{TRANSLATE.EnableModifyOrderInMerchantApp}}</label>
+              <div class="custom_checkbox">
+                <mat-checkbox class="example-margin"></mat-checkbox>
+              </div>
+            </div>
+          </div> 
+          <div class="col-md-2 col-sm-4 col-xs-12">
+            <div class="form_panel">
+              <label>{{TRANSLATE.CallForServerMessage}}</label>
+              <input type="text" placeholder="" />
+            </div>
+          </div>
+          <div class="col-md-2 col-sm-4 col-xs-12">
+            <div class="form_panel">
+              <label>{{TRANSLATE.CallForBillMessage}}</label>
+              <input type="text" placeholder="" />
+            </div>
+          </div>
+          <div class="col-md-2 col-sm-4 col-xs-12">
+            <div class="form_panel">
+              <label>{{TRANSLATE.AllowModifierQuantity}}</label>
+              <div class="custom_checkbox">
+                <mat-checkbox class="example-margin"></mat-checkbox>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-2 col-sm-4 col-xs-12">
+            <div class="form_panel">
+              <label>{{TRANSLATE.MaxModifierQuantity}}</label>
+              <input type="text" placeholder="" />
+            </div>
+          </div>
+          <div class="col-md-2 col-sm-4 col-xs-12">
+            <div class="form_panel">
+              <label>{{TRANSLATE.CurrencySymbol}}</label>
+              <input type="text" placeholder="" />
+            </div>
+          </div>
+          <div class="col-md-2 col-sm-4 col-xs-12">
+            <div class="form_panel">
+              <label>{{TRANSLATE.CurrencySymbolText}}</label>
+              <input type="text" placeholder="" />
+            </div>
+          </div>
+        </div>
+        </mat-expansion-panel>
+      
+        <!-- Facilities Panel start -->
+        <mat-expansion-panel id="Facilities" style="display: none;">
+          <mat-expansion-panel-header>
+            <mat-panel-title>{{TRANSLATE.Facilities}}</mat-panel-title>
+          </mat-expansion-panel-header>
+          <div class="row">
+            <div class="col-md-2 col-sm-4 col-xs-12">
+              <div class="form_panel">
+                <label>{{TRANSLATE.FacebookPageExists}}</label>
+                <div class="custom_checkbox">
+                  <mat-checkbox class="example-margin"></mat-checkbox>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-2 col-sm-4 col-xs-12">
+              <div class="form_panel">
+                <label>{{TRANSLATE.FineDiningAvailable}}</label>
+                <div class="custom_checkbox">
+                  <mat-checkbox class="example-margin"></mat-checkbox>
+                </div>
+            </div>
+          </div>
+            <div class="col-md-2 col-sm-4 col-xs-12">
+              <div class="form_panel">
+                <label>{{TRANSLATE.ValetParking}}</label>
+                <div class="custom_checkbox">
+                  <mat-checkbox class="example-margin"></mat-checkbox>
+                </div>
+              </div>
+            </div>
+            
+            <div class="col-md-2 col-sm-4 col-xs-12">
+              <div class="form_panel">
+                <label>{{TRANSLATE.Breakfast}}</label>
+                <div class="custom_checkbox">
+                  <mat-checkbox class="example-margin"></mat-checkbox>
+                </div>
+              </div>
+            </div>
+            
+            <div class="col-md-2 col-sm-4 col-xs-12">
+              <div class="form_panel">
+                <label>{{TRANSLATE.TableBookingFacility}}</label>
+                <div class="custom_checkbox">
+                  <mat-checkbox class="example-margin"></mat-checkbox>
+                </div>
+              </div>
+            </div>
+            
+            <!-- <div class="col-md-2 col-sm-4 col-xs-12">
+              <div class="form_panel">
+                <label>{{TRANSLATE.Buffet}}</label>
+                <div class="custom_checkbox">
+                  <mat-checkbox class="example-margin"></mat-checkbox>
+                </div>
+              </div>
+            </div> -->
+            
+            <!-- <div class="col-md-2 col-sm-4 col-xs-12">
+              <div class="form_panel">
+                <label>{{TRANSLATE.LunchBuffet}}</label>
+                <div class="custom_checkbox">
+                  <mat-checkbox class="example-margin"></mat-checkbox>
+                </div>
+              </div>
+            </div> -->
+            
+            <!-- <div class="col-md-2 col-sm-4 col-xs-12">
+              <div class="form_panel">
+                <label>{{TRANSLATE.WiFiAvailable}}</label>
+                <div class="custom_checkbox">
+                  <mat-checkbox class="example-margin"></mat-checkbox>
+                </div>
+              </div>
+            </div> -->
+            
+            <!-- <div class="col-md-2 col-sm-4 col-xs-12">
+              <div class="form_panel">
+                <label>{{TRANSLATE.AirConditioning}}</label>
+                <div class="custom_checkbox">
+                  <mat-checkbox class="example-margin"></mat-checkbox>
+                </div>
+              </div>
+            </div>
+            
+            <div class="col-md-2 col-sm-4 col-xs-12">
+              <div class="form_panel">
+                <label>{{TRANSLATE.Outdoorseating}}</label>
+                <div class="custom_checkbox">
+                  <mat-checkbox class="example-margin"></mat-checkbox>
+                </div>
+              </div>
+            </div> -->
+            
+            <!-- <div class="col-md-2 col-sm-4 col-xs-12">
+              <div class="form_panel">
+                <label>{{TRANSLATE.PetFriendly}}</label>
+                <div class="custom_checkbox">
+                  <mat-checkbox class="example-margin"></mat-checkbox>
+                </div>
+              </div>
+            </div>
+            
+            <div class="col-md-2 col-sm-4 col-xs-12">
+              <div class="form_panel">
+                <label>{{TRANSLATE.KidsFriendly}}</label>
+                <div class="custom_checkbox">
+                  <mat-checkbox class="example-margin"></mat-checkbox>
+                </div>
+              </div>
+            </div> -->
+            
+            <div class="col-md-2 col-sm-4 col-xs-12">
+              <div class="form_panel">
+                <label>{{TRANSLATE.ScreensforViewing}}</label>
+                <div class="custom_checkbox">
+                  <mat-checkbox class="example-margin"></mat-checkbox>
+                </div>
+              </div>
+            </div>
+            
+            <div class="col-md-2 col-sm-4 col-xs-12">
+              <div class="form_panel">
+                <label>{{TRANSLATE.SmokingArea}}</label>
+                <div class="custom_checkbox">
+                  <mat-checkbox class="example-margin"></mat-checkbox>
+                </div>
+              </div>
+            </div>
+            
+            <div class="col-md-2 col-sm-4 col-xs-12">
+              <div class="form_panel">
+                <label>{{TRANSLATE.LateNightEats}}</label>
+                <div class="custom_checkbox">
+                  <mat-checkbox class="example-margin"></mat-checkbox>
+                </div>
+              </div>
+            </div>
+            
+            <div class="col-md-2 col-sm-4 col-xs-12">
+              <div class="form_panel">
+                <label>{{TRANSLATE.DedicatedParking}}</label>
+                <div class="custom_checkbox">
+                  <mat-checkbox class="example-margin"></mat-checkbox>
+                </div>
+              </div>
+            </div>
+            
+            <div class="col-md-2 col-sm-4 col-xs-12">
+              <div class="form_panel">
+                <label>{{TRANSLATE.RoofTop}}</label>
+                <div class="custom_checkbox">
+                  <mat-checkbox class="example-margin"></mat-checkbox>
+                </div>
+              </div>
+            </div>
+            
+            <div class="col-md-2 col-sm-4 col-xs-12">
+              <div class="form_panel">
+                <label>{{TRANSLATE.PoolSide}}</label>
+                <div class="custom_checkbox">
+                  <mat-checkbox class="example-margin"></mat-checkbox>
+                </div>
+              </div>
+            </div>
+            
+            <div class="col-md-2 col-sm-4 col-xs-12">
+              <div class="form_panel">
+                <label>{{TRANSLATE.FamilyArea}}</label>
+                <div class="custom_checkbox">
+                  <mat-checkbox class="example-margin"></mat-checkbox>
+                </div>
+              </div>
+            </div>
+            
+            <div class="col-md-2 col-sm-4 col-xs-12">
+              <div class="form_panel">
+                <label>{{TRANSLATE.DifferentlyabledPeoplefriendly}}</label>
+                <div class="custom_checkbox">
+                  <mat-checkbox class="example-margin"></mat-checkbox>
+                </div>
+              </div>
+            </div>
+            
+            <div class="col-md-2 col-sm-4 col-xs-12">
+              <div class="form_panel">
+                <label>{{TRANSLATE.BrailleMenu}}</label>
+                <div class="custom_checkbox">
+                  <mat-checkbox class="example-margin"></mat-checkbox>
+                </div>
+              </div>
+            </div>
+            
+            <div class="col-md-2 col-sm-4 col-xs-12">
+              <div class="form_panel">
+                <label>{{TRANSLATE.KidsMenu}}</label>
+                <div class="custom_checkbox">
+                  <mat-checkbox class="example-margin"></mat-checkbox>
+                </div>
+              </div>
+            </div>
+            
+            <div class="col-md-2 col-sm-4 col-xs-12">
+              <div class="form_panel">
+                <label>{{TRANSLATE.HealthMenu}}</label>
+                <div class="custom_checkbox">
+                  <mat-checkbox class="example-margin"></mat-checkbox>
+                </div>
+              </div>
+            </div>
+            
+            <div class="col-md-2 col-sm-4 col-xs-12">
+              <div class="form_panel">
+                <label>{{TRANSLATE.DiabeticMenu}}</label>
+                <div class="custom_checkbox">
+                  <mat-checkbox class="example-margin"></mat-checkbox>
+                </div>
+              </div>
+            </div>
+            
+            <div class="col-md-2 col-sm-4 col-xs-12">
+              <div class="form_panel">
+                <label>{{TRANSLATE.AddressingAllergies}}</label>
+                <div class="custom_checkbox">
+                  <mat-checkbox class="example-margin"></mat-checkbox>
+                </div>
+              </div>
+            </div>
+            
+            <div class="col-md-2 col-sm-4 col-xs-12">
+              <div class="form_panel">
+                <label>{{TRANSLATE.SodexoCouponsAccepted}}</label>
+                <div class="custom_checkbox">
+                  <mat-checkbox class="example-margin"></mat-checkbox>
+                </div>
+              </div>
+            </div>
+            
+            <div class="col-md-2 col-sm-4 col-xs-12">
+              <div class="form_panel">
+                <label>{{TRANSLATE.LiveBand}}</label>
+                <div class="custom_checkbox">
+                  <mat-checkbox class="example-margin"></mat-checkbox>
+                </div>
+              </div>
+            </div>
+            
+            <div class="col-md-2 col-sm-4 col-xs-12">
+              <div class="form_panel">
+                <label>{{TRANSLATE.Karaoke}}</label>
+                <div class="custom_checkbox">
+                  <mat-checkbox class="example-margin"></mat-checkbox>
+                </div>
+              </div>
+            </div>
+            
+            <div class="col-md-2 col-sm-4 col-xs-12">
+              <div class="form_panel">
+                <label>{{TRANSLATE.Cateringservices}}</label>
+                <div class="custom_checkbox">
+                  <mat-checkbox class="example-margin"></mat-checkbox>
+                </div>
+              </div>
+            </div>
+            
+            <div class="col-md-2 col-sm-4 col-xs-12">
+              <div class="form_panel">
+                <label>{{TRANSLATE.WashroomFacility}}</label>
+                <div class="custom_checkbox">
+                  <mat-checkbox class="example-margin"></mat-checkbox>
+                </div>
+              </div>
+            </div>
+        
+        
+            <div class="col-md-2 col-sm-4 col-xs-12">
+              <div class="form_panel">
+                <label>{{TRANSLATE.Banquets}}</label>
+                <div class="custom_checkbox">
+                  <mat-checkbox class="example-margin"></mat-checkbox>
+                </div>
+              </div>
+            </div>
+        
+           
+
+            <div class="col-md-2 col-sm-4 col-xs-12">
+              <div class="form_panel">
+                <label>{{TRANSLATE.LiquorAvailable}}</label>
+                <div class="custom_checkbox">
+                  <mat-checkbox class="example-margin"></mat-checkbox>
+                </div>
+              </div>
+            </div>
+            
+        
+            <div class="col-md-2 col-sm-4 col-xs-12">
+              <div class="form_panel">
+                <label>{{TRANSLATE.HappyHoursOffers}}</label>
+                <div class="custom_checkbox">
+                  <mat-checkbox class="example-margin"></mat-checkbox>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="row">
+            <div class="col-md-2 col-sm-4 col-xs-12">
+              <div class="form_panel">
+                <label>{{TRANSLATE.CreditCardsAccepted}}</label>
+                <mat-select placeholder="" [formControl]="languages" multiple>
+                  <mat-option #allSelected (click)="toggleAllSelection()" [value]="0">All</mat-option>
+                  <mat-option [value]="language">Select</mat-option>
+                </mat-select>
+              </div>
+            </div>
+            <div class="col-md-4 col-sm-4 col-xs-12">
+              <div class="form_panel">
+                <label>{{TRANSLATE.TimingofHappyHours}}</label>
+                <div class="from_to">
+                  <div class="from_section mr_10">
+                    <label>{{TRANSLATE.From}}</label>
+                                  <mat-select placeholder=" ">
+                  <mat-option value="one">First option</mat-option>
+                  <mat-option value="two">Second option</mat-option>
+                </mat-select>
+                  </div>
+                  <div class="to_section">
+                    <label>{{TRANSLATE.To}}</label>
+                                  <mat-select placeholder=" ">
+                  <mat-option value="one">First option</mat-option>
+                  <mat-option value="two">Second option</mat-option>
+                </mat-select>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-2 col-sm-4 col-xs-12">
+              <div class="form_panel">
+                <label>{{TRANSLATE.FoodPreference}}</label>
+                <mat-select placeholder=" " multiple>
+                  <mat-option value="one">First option</mat-option>
+                  <mat-option value="two">Second option</mat-option>
+                </mat-select>
+              </div>
+            </div>
+            <div class="col-md-2 col-sm-4 col-xs-12">
+              <div class="form_panel">
+                <label>{{TRANSLATE.HomeDeliveryFacility}}</label>
+                <div class="radio_btn">
+                  <mat-radio-group aria-label="Select an option">
+                    <mat-radio-button value="1">Yes</mat-radio-button>
+                    <mat-radio-button value="2" checked>No</mat-radio-button>
+                  </mat-radio-group>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-2 col-sm-4 col-xs-12">
+              <div class="form_panel">
+                <label>{{TRANSLATE.SubscriptionPlan}} <span class="required">*</span></label>
+                <mat-select placeholder="Select Plan">
+                  <mat-option value="one">First option</mat-option>
+                  <mat-option value="two">Second option</mat-option>
+                </mat-select>
+                
+              </div>
+            </div>
+            <div class="col-md-2 col-sm-4 col-xs-12">
+              <div class="form_panel">
+                <label>{{TRANSLATE.PackageChosen}}</label>
+                <mat-select placeholder="Select Package Type">
+                  <mat-option value="one">First option</mat-option>
+                  <mat-option value="two">Second option</mat-option>
+                </mat-select>
+              </div>
+            </div>
+            <div class="col-md-2 col-sm-4 col-xs-12">
+              <div class="form_panel">
+                <label>{{TRANSLATE.PackagePeriod}}</label>
+                <mat-select placeholder="Select Package Period">
+                  <mat-option value="one">First option</mat-option>
+                  <mat-option value="two">Second option</mat-option>
+                </mat-select>
+              </div>
+            </div>
+            <div class="col-md-2 col-sm-4 col-xs-12">
+              <div class="form_panel">
+                <label>{{TRANSLATE.PaymentDetails}}</label>
+                <mat-select placeholder="Select Payment Mode">
+                  <mat-option value="one">First option</mat-option>
+                  <mat-option value="two">Second option</mat-option>
+                </mat-select>
+              </div>
+            </div>
+            
+            <div class="col-md-2 col-sm-4 col-xs-12">
+              <div class="form_panel">
+                <label>{{TRANSLATE.Bar}}</label>
+                <mat-select placeholder="Select Bar Type">
+                  <mat-option value="one">First option</mat-option>
+                  <mat-option value="two">Second option</mat-option>
+                </mat-select>
+              </div>
+            </div>
+            
+            <div class="col-md-2 col-sm-4 col-xs-12">
+              <div class="form_panel">
+                <label>{{TRANSLATE.BOTRestaurantID}}</label>
+                <input type="text" placeholder="" />
+              </div>
+            </div>
+            
+            <div class="col-md-2 col-sm-4 col-xs-12">
+              <div class="form_panel">
+                <label>{{TRANSLATE.SalesPersonName}}</label>
+                <mat-select placeholder="Select Sakes Person">
+                  <mat-option value="one">First option</mat-option>
+                  <mat-option value="two">Second option</mat-option>
+                </mat-select>
+              </div>
+            </div>
+          </div>
+        </mat-expansion-panel>
+
+        <!-- DishCoMerchant Panel start here -->
+        <mat-expansion-panel id="DishCoMerchant">
+          <mat-expansion-panel-header>
+            <mat-panel-title>{{TRANSLATE.DishCoMerchant}}</mat-panel-title>
+          </mat-expansion-panel-header>
+          <div class="row">
+            <div class="col-md-2 col-sm-4 col-xs-12">
+              <div class="form_panel">
+                <label>{{TRANSLATE.EnableTableBooking}}</label>
+                <div class="custom_checkbox">
+                  <mat-checkbox class="example-margin"></mat-checkbox>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-2 col-sm-4 col-xs-12">
+              <div class="form_panel">
+                <label>{{TRANSLATE.ShowInClub}}</label>
+                <div class="custom_checkbox">
+                  <mat-checkbox class="example-margin"></mat-checkbox>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-2 col-sm-4 col-xs-12">
+              <div class="form_panel">
+                <label>{{TRANSLATE.EnableChat}}</label>
+                <div class="custom_checkbox">
+                  <mat-checkbox class="example-margin"></mat-checkbox>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-2 col-sm-4 col-xs-12">
+              <div class="form_panel">
+                <label>{{TRANSLATE.EnableWallet}}</label>
+                <div class="custom_checkbox">
+                  <mat-checkbox class="example-margin"></mat-checkbox>
+                </div>
+              </div>
+            </div>
+          </div>
+        </mat-expansion-panel>
+
+         <!-- DishCoMerchant Panel start here -->
+         <mat-expansion-panel id="Feedback">
+          <mat-expansion-panel-header>
+            <mat-panel-title>{{TRANSLATE.Feedback}}</mat-panel-title>
+          </mat-expansion-panel-header>
+          <div class="row">
+            <div class="col-md-2 col-sm-4 col-xs-12">
+              <div class="form_panel">
+                <label>{{TRANSLATE.EnableFeedback}}</label>
+                <div class="custom_checkbox">
+                  <mat-checkbox class="example-margin"></mat-checkbox>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-2 col-sm-4 col-xs-12">
+              <div class="form_panel">
+                <label>{{TRANSLATE.FeedbackAPIURL}}</label>
+                <input type="text" />
+              </div>
+            </div>
+            <div class="col-md-2 col-sm-4 col-xs-12">
+              <div class="form_panel">
+                <label>{{TRANSLATE.FeedbackSubscription}}</label>
+                <div class="custom_checkbox">
+                  <mat-checkbox class="example-margin"></mat-checkbox>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-2 col-sm-4 col-xs-12">
+              <div class="form_panel">
+                <label>{{TRANSLATE.FeedbackForm}}</label>                
+                  <mat-select placeholder=" " multiple>
+                    <mat-option value="one">First option</mat-option>
+                    <mat-option value="two">Second option</mat-option>
+                  </mat-select>
+              </div>
+            </div>
+            <div class="col-md-2 col-sm-4 col-xs-12">
+              <div class="form_panel">
+                <label>{{TRANSLATE.SendFeedbackUrl}}</label>
+                <div class="custom_checkbox">
+                  <mat-checkbox class="example-margin"></mat-checkbox>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-2 col-sm-4 col-xs-12">
+              <div class="form_panel">
+                <label>{{TRANSLATE.IsActiveForFeedback}}</label>
+                <div class="custom_checkbox">
+                  <mat-checkbox class="example-margin"></mat-checkbox>
+                </div>
+              </div>
+            </div>
+          </div>
+        </mat-expansion-panel>
+
+        <!-- OnlineOrdering Panel start here-->
+        <mat-expansion-panel id="OnlineOrdering">
+          <mat-expansion-panel-header>
+            <mat-panel-title>{{TRANSLATE.OnlineOrdering}}</mat-panel-title>
+          </mat-expansion-panel-header>
+          <div class="row">
+            <div class="col-md2 col-sm-4 col-xs-12">
+              <div class="form_panel">
+                <label>{{TRANSLATE.ThirdPartyChannel}}</label>
+                <mat-select placeholder="Select">
+                  <mat-option value="one">First option</mat-option>
+                  <mat-option value="two">Second option</mat-option>
+                </mat-select>
+              </div>
+            </div>
+          </div>
+        </mat-expansion-panel> 
+        
+        <!-- ThirdPartyPOS Panel start here-->
+        <mat-expansion-panel id="ThirdPartyPOS" style="display: none;">
+          <mat-expansion-panel-header>
+            <mat-panel-title>{{TRANSLATE.ThirdPartyPOS}}</mat-panel-title>
+          </mat-expansion-panel-header>
+          <div class="row">
+            <div class="col-md-2 col-sm-4 col-xs-12">
+              <div class="form_panel">
+                <label>{{TRANSLATE.ThirdPartyPOS}}</label>
+                <mat-select placeholder="Select">
+                  <mat-option value="one">First option</mat-option>
+                  <mat-option value="two">Second option</mat-option>
+                </mat-select>
+              </div>
+            </div>
+          </div>
+        </mat-expansion-panel>
+
+        <!-- ThirdPartyPMS Panel start here-->
+        <mat-expansion-panel id="ThirdPartyPMS" style="display: none;">
+          <mat-expansion-panel-header>
+            <mat-panel-title>{{TRANSLATE.ThirdPartyPMS}}</mat-panel-title>
+          </mat-expansion-panel-header>
+          <div class="row">
+            <div class="col-md-2 col-sm-4 col-xs-12">
+              <div class="form_panel">
+                <label>{{TRANSLATE.ThirdPartyPMS}}</label>
+                <mat-select placeholder="Select">
+                  <mat-option value="one">First option</mat-option>
+                  <mat-option value="two">Second option</mat-option>
+                </mat-select>
+              </div>
+            </div>
+          </div>
+        </mat-expansion-panel>
+
+        <!-- ProfileLookup Panel start here-->
+        <mat-expansion-panel id="ProfileLookup">
+          <mat-expansion-panel-header>
+            <mat-panel-title>{{TRANSLATE.ProfileLookup}}</mat-panel-title>
+          </mat-expansion-panel-header>
+          <div class="row">
+            <div class="col-md-2 col-sm-4 col-xs-12">
+              <div class="form_panel">
+                <label>{{TRANSLATE.ProfileLookup}}</label>
+                <mat-select placeholder="Select">
+                  <mat-option value="one">First option</mat-option>
+                  <mat-option value="two">Second option</mat-option>
+                </mat-select>
+              </div>
+            </div>
+          </div>
+        </mat-expansion-panel>
+
+        <!-- Analytics Panel start here-->
+        <mat-expansion-panel id="Analytics">
+          <mat-expansion-panel-header>
+            <mat-panel-title>{{TRANSLATE.Analytics}}</mat-panel-title>
+          </mat-expansion-panel-header>
+          <div class="row">
+            <div class="col-md-2 col-sm-4 col-xs-12">
+              <div class="form_panel">
+                <label>{{TRANSLATE.EnableAnalytics}}</label>
+                <div class="custom_checkbox">
+                  <mat-checkbox class="example-margin"></mat-checkbox>
+                </div>
+              </div>
+            </div> 
+            <div class="col-md-2 col-sm-4 col-xs-12">
+              <div class="form_panel">
+                <label>{{TRANSLATE.DashboardAPIURL}}</label>
+                <input type="text" placeholder="" />
+              </div>
+            </div>
+            <div class="col-md-2 col-sm-4 col-xs-12">
+              <div class="form_panel">
+                <label>{{TRANSLATE.IsAllRestaurants}}</label>
+                <div class="custom_checkbox">
+                  <mat-checkbox class="example-margin"></mat-checkbox>
+                </div>
+              </div>
+            </div> 
+            <div class="col-md-2 col-sm-4 col-xs-12">
+              <div class="form_panel">
+                <label>{{TRANSLATE.TodaysSalesAPIURL}}</label>
+                <input type="text" placeholder="" />
+              </div>
+            </div>
+            <div class="col-md-2 col-sm-4 col-xs-12">
+              <div class="form_panel">
+                <label>{{TRANSLATE.OwnersAppClientId}}</label>
+                <input type="text" placeholder="" />
+              </div>
+            </div>
+          </div>
+        </mat-expansion-panel>
+
+        <!-- ThirdPartyTransactionSync Panel start here-->
+        <mat-expansion-panel id="ThirdPartyTransactionSync">
+          <mat-expansion-panel-header>
+            <mat-panel-title>{{TRANSLATE.ThirdPartyTransactionSync}}</mat-panel-title>
+          </mat-expansion-panel-header>
+          <div class="row">
+            <div class="col-md-2 col-sm-4 col-xs-12">
+              <div class="form_panel">
+                <label>{{TRANSLATE.TransactionSyncChannel}}</label>
+                <mat-select placeholder="Select Channel">
+                  <mat-option value="one">First option</mat-option>
+                  <mat-option value="two">Second option</mat-option>
+                </mat-select>
+              </div>
+            </div>
+          </div>
+        </mat-expansion-panel>
+
+        <!-- AdvanceOrder Panel start here-->
+        <mat-expansion-panel id="AdvanceOrder">
+          <mat-expansion-panel-header>
+            <mat-panel-title>{{TRANSLATE.AdvanceOrder}}</mat-panel-title>
+          </mat-expansion-panel-header>
+          <div class="row">
+            <div class="col-md-2 col-sm-4 col-xs-12">
+              <div class="form_panel">
+                <label>{{TRANSLATE.EnableAdvanceOrder}}</label>
+                <div class="custom_checkbox">
+                  <mat-checkbox class="example-margin"></mat-checkbox>
+                </div>
+              </div>
+            </div> 
+            <div class="col-md-2 col-sm-4 col-xs-12">
+              <div class="form_panel">
+                <label>{{TRANSLATE.MaxAdvanceOrder}}</label>
+                <input type="text" placeholder="" />
+              </div>
+            </div>
+            <div class="col-md-2 col-sm-4 col-xs-12">
+              <div class="form_panel">
+                <label>{{TRANSLATE.AdvanceOrderDefaultTimeSlot}}</label>
+                <input type="text" placeholder="" />
+              </div>
+            </div>
+          </div>
+        </mat-expansion-panel>
+
+        <!-- AboutRestaurant Panel start here-->
+        <mat-expansion-panel id="AboutRestaurant">
+          <mat-expansion-panel-header>
+            <mat-panel-title>{{TRANSLATE.AboutRestaurant}}</mat-panel-title>
+          </mat-expansion-panel-header>
+          <div class="row">
+            <div class="col-md-2 col-sm-4 col-xs-12">
+              <div class="form_panel">
+                <label>{{TRANSLATE.EnablePayBill}}</label>
+                <div class="custom_checkbox">
+                  <mat-checkbox class="example-margin"></mat-checkbox>
+                </div>
+              </div>
+            </div> 
+            <div class="col-md-2 col-sm-4 col-xs-12">
+              <div class="form_panel">
+                <label>{{TRANSLATE.RestaurantSafety}}</label>
+                <input type="text" placeholder="" />
+              </div>
+            </div>
+            <div class="col-md-2 col-sm-4 col-xs-12">
+              <div class="form_panel">
+                <label>{{TRANSLATE.CasingForMenuHead}}</label>
+                <mat-select placeholder="Select">
+                  <mat-option value="one">As It Is</mat-option>
+                  <mat-option value="two">Second option</mat-option>
+                </mat-select>
+              </div>
+            </div>
+            <div class="col-md-2 col-sm-4 col-xs-12">
+              <div class="form_panel">
+                <label>{{TRANSLATE.CasingForMenuItem}}</label>
+                <mat-select placeholder="Select">
+                  <mat-option value="one">As It Is</mat-option>
+                  <mat-option value="two">Second option</mat-option>
+                </mat-select>
+              </div>
+            </div>
+            <div class="col-md-2 col-sm-4 col-xs-12">
+              <div class="form_panel">
+                <label>{{TRANSLATE.CasingForModifier}}</label>
+                <mat-select placeholder="Select">
+                  <mat-option value="one">As It Is</mat-option>
+                  <mat-option value="two">Second option</mat-option>
+                </mat-select>
+              </div>
+            </div>
+            <div class="col-md-2 col-sm-4 col-xs-12">
+              <div class="form_panel">
+                <label>{{TRANSLATE.CasingForModifierGroup}}</label>
+                <mat-select placeholder="Select">
+                  <mat-option value="one">As It Is</mat-option>
+                  <mat-option value="two">Second option</mat-option>
+                </mat-select>
+              </div>
+            </div>
+
+            <div class="col-md-2 col-sm-4 col-xs-12">
+              <div class="form_panel">
+                <label>{{TRANSLATE.CovidText}}</label>
+                <textarea></textarea>
+              </div>
+            </div>
+            <div class="col-md-2 col-sm-4 col-xs-12">
+              <div class="form_panel">
+                <label>{{TRANSLATE.AboutRestaurant}}</label>
+                <textarea></textarea>
+              </div>
+            </div>
+            <div class="col-md-2 col-sm-4 col-xs-12">
+              <div class="form_panel">
+                <label>{{TRANSLATE.OwnedBy}}</label>
+                <textarea></textarea>
+              </div>
+            </div>
+            
+            <div class="col-md-2 col-sm-4 col-xs-12">
+              <div class="form_panel">
+                <label>{{TRANSLATE.AdvanceOrderDefaultTimeSlot}}</label>
+                <input type="text" placeholder="" />
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-2 col-sm-4 col-xs-12">
+              <div class="form_panel">
+                <label>{{TRANSLATE.CopyLocationButton}}</label>
+                <div class="custom_checkbox">
+                  <mat-checkbox class="example-margin"></mat-checkbox>
+                </div>
+              </div>
+            </div> 
+            <div class="col-md-2 col-sm-4 col-xs-12">
+              <div class="form_panel">
+                <label>{{TRANSLATE.GetDirectionsButton}}</label>
+                <div class="custom_checkbox">
+                  <mat-checkbox class="example-margin"></mat-checkbox>
+                </div>
+              </div>
+            </div> 
+            <div class="col-md-2 col-sm-4 col-xs-12">
+              <div class="form_panel">
+                <label>{{TRANSLATE.AverageWineCost}}</label>
+                <input type="text" placeholder="" />
+              </div>
+            </div>
+            <div class="col-md-2 col-sm-4 col-xs-12">
+              <div class="form_panel">
+                <label>{{TRANSLATE.AverageBeerCost}}</label>
+                <input type="text" placeholder="" />
+              </div>
+            </div>
+            <div class="col-md-2 col-sm-4 col-xs-12">
+              <div class="form_panel">
+                <label>{{TRANSLATE.OLOWebsiteURL}}</label>
+                <textarea></textarea>
+              </div>
+            </div>
+            <div class="col-md-2 col-sm-4 col-xs-12">
+              <div class="form_panel">
+                <label>{{TRANSLATE.MypospushURL}}</label>
+                <textarea></textarea>
+              </div>
+            </div>
+            <div class="col-md-2 col-sm-4 col-xs-12">
+              <div class="form_panel">
+                <label>{{TRANSLATE.ViewAllOutletsButton}}</label>
+                <div class="custom_checkbox">
+                  <mat-checkbox class="example-margin"></mat-checkbox>
+                </div>
+              </div>
+            </div> 
+            <div class="col-md-2 col-sm-4 col-xs-12">
+              <div class="form_panel">
+                <label>{{TRANSLATE.GeoFencingLocationForJustOrder}}</label>
+                <input type="text" placeholder="" />
+              </div>
+            </div>
+            <div class="col-md-2 col-sm-4 col-xs-12">
+              <div class="form_panel">
+                <label>{{TRANSLATE.FreeflowTextinSolo}}</label>
+                <div class="custom_checkbox">
+                  <mat-checkbox class="example-margin"></mat-checkbox>
+                </div>
+              </div>
+            </div> 
+            <div class="col-md-2 col-sm-4 col-xs-12">
+              <div class="form_panel">
+                <label>{{TRANSLATE.FreeflowModifierForEachMenuItem}}</label>
+                <div class="custom_checkbox">
+                  <mat-checkbox class="example-margin"></mat-checkbox>
+                </div>
+              </div>
+            </div> 
+          </div>
+          <div class="row">
+            <div class="col-md-2 col-sm-4 col-xs-12">
+              <div class="form_panel">
+                <label>{{TRANSLATE.UploadBackgroundImage2}}</label>
+                <app-upload-image></app-upload-image>
+              </div>
+            </div> 
+            <div class="col-md-2 col-sm-4 col-xs-12">
+              <div class="form_panel">
+                <label>{{TRANSLATE.ImageForOrder400x400}}</label>
+                <app-upload-image></app-upload-image>
+              </div>
+            </div> 
+            <div class="col-md-2 col-sm-4 col-xs-12">
+              <div class="form_panel">
+                <label>{{TRANSLATE.mageForDineIn400x400}}</label>
+                <app-upload-image></app-upload-image>
+              </div>
+            </div> 
+            <div class="col-md-2 col-sm-4 col-xs-12">
+              <div class="form_panel">
+                <label>{{TRANSLATE.ImageForOffer400x400}}</label>
+                <app-upload-image></app-upload-image>
+              </div>
+            </div> 
+            <div class="col-md-2 col-sm-4 col-xs-12">
+              <div class="form_panel">
+                <label>{{TRANSLATE.ImageForReserve400x400}}</label>
+                <app-upload-image></app-upload-image>
+              </div>
+            </div> 
+            <div class="col-md-2 col-sm-4 col-xs-12">
+              <div class="form_panel">
+                <label>{{TRANSLATE.RestaurantTopImage}}</label>
+                <app-upload-image></app-upload-image>
+              </div>
+            </div> 
+            <div class="col-md-2 col-sm-4 col-xs-12">
+              <div class="form_panel">
+                <label>{{TRANSLATE.OrderTypeSelectionPageBackImage}}</label>
+                <app-upload-image></app-upload-image>
+              </div>
+            </div> 
+          </div>
+        </mat-expansion-panel>
+
+        <!-- DeliveryChannel Panel start here-->
+        <mat-expansion-panel id="DeliveryChannel">
+          <mat-expansion-panel-header>
+            <mat-panel-title>{{TRANSLATE.DeliveryChannel}}</mat-panel-title>
+          </mat-expansion-panel-header>
+          <div class="row">
+            <div class="col-md-2 col-sm-4 col-xs-12">
+              <div class="form_panel">
+                <label>{{TRANSLATE.DeliveryChannel}}</label>
+                <mat-select placeholder="Select">
+                  <mat-option value="one">First option</mat-option>
+                  <mat-option value="two">Second option</mat-option>
+                </mat-select>
+              </div>
+            </div>
+          </div>
+        </mat-expansion-panel>
+
+        <!-- SOLOSettings Panel start here-->
+        <mat-expansion-panel id="SOLOSettings">
+          <mat-expansion-panel-header>
+            <mat-panel-title>{{TRANSLATE.SOLOSettings}}</mat-panel-title>
+          </mat-expansion-panel-header>
+          <div class="row">
+            <div class="col-md-2 col-sm-4 col-xs-12">
+              <div class="form_panel">
+                <label>{{TRANSLATE.SearchViewType}}</label>
+                <div class="radio_btn">
+                  <mat-radio-group aria-label="Select an option">
+                    <mat-radio-button value="1">Yes</mat-radio-button>
+                    <mat-radio-button value="2" checked>No</mat-radio-button>
+                  </mat-radio-group>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-2 col-sm-4 col-xs-12">
+              <div class="form_panel">
+                <label>{{TRANSLATE.MenuPageViewType}}</label>
+                <div class="radio_btn">
+                  <mat-radio-group aria-label="Select an option">
+                    <mat-radio-button value="1">Yes</mat-radio-button>
+                    <mat-radio-button value="2" checked>No</mat-radio-button>
+                  </mat-radio-group>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-2 col-sm-4 col-xs-12">
+              <div class="form_panel">
+                <label>{{TRANSLATE.RestaurantOptionsViewType}}</label>
+                <div class="radio_btn">
+                  <mat-radio-group aria-label="Select an option">
+                    <mat-radio-button value="1">Yes</mat-radio-button>
+                    <mat-radio-button value="2" checked>No</mat-radio-button>
+                  </mat-radio-group>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-2 col-sm-4 col-xs-12">
+              <div class="form_panel">
+                <label>{{TRANSLATE.CityId}}</label>
+                <input type="text" />
+              </div>
+            </div>
+            <div class="col-md-2 col-sm-4 col-xs-12">
+              <div class="form_panel">
+                <label>{{TRANSLATE.ViewCartStripColor}}</label>
+                <input type="text" />
+              </div>
+            </div>
+            <div class="col-md-2 col-sm-4 col-xs-12">
+              <div class="form_panel">
+                <label>{{TRANSLATE.ShowAddressAsTable}}</label>
+                <div class="radio_btn">
+                  <mat-radio-group aria-label="Select an option">
+                    <mat-radio-button value="1">Yes</mat-radio-button>
+                    <mat-radio-button value="2" checked>No</mat-radio-button>
+                  </mat-radio-group>
+                </div>
+              </div>
+            </div>
+            
+            <div class="col-md-2 col-sm-4 col-xs-12">
+              <div class="form_panel">
+                <label>{{TRANSLATE.EnableTodaysAdvanceOrder}}</label>
+                <div class="radio_btn">
+                  <mat-radio-group aria-label="Select an option">
+                    <mat-radio-button value="1">Yes</mat-radio-button>
+                    <mat-radio-button value="2" checked>No</mat-radio-button>
+                  </mat-radio-group>
+                </div>
+              </div>
+            </div>
+            
+            <div class="col-md-2 col-sm-4 col-xs-12">
+              <div class="form_panel">
+                <label>{{TRANSLATE.AskParcelEatHere}}</label>
+                <div class="radio_btn">
+                  <mat-radio-group aria-label="Select an option">
+                    <mat-radio-button value="1">Yes</mat-radio-button>
+                    <mat-radio-button value="2" checked>No</mat-radio-button>
+                  </mat-radio-group>
+                </div>
+              </div>
+            </div>
+            
+            <div class="col-md-2 col-sm-4 col-xs-12">
+              <div class="form_panel">
+                <label>{{TRANSLATE.AllowRestaurantSelectionForDelivery}}</label>
+                <div class="custom_checkbox">
+                  <mat-checkbox class="example-margin"></mat-checkbox>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-2 col-sm-4 col-xs-12">
+              <div class="form_panel">
+                <label>{{TRANSLATE.AccountId}}</label>
+                <input type="text" />
+              </div>
+            </div>
+            
+            <div class="col-md-2 col-sm-4 col-xs-12">
+              <div class="form_panel">
+                <label>{{TRANSLATE.LocationId}}</label>
+                <input type="text" />
+              </div>
+            </div>
+            <div class="col-md-2 col-sm-4 col-xs-12">
+              <div class="form_panel">
+                <label>{{TRANSLATE.RestaurantName}}</label>
+                <input type="text" />
+              </div>
+            </div>
+          </div>
+        </mat-expansion-panel>
+
+        <!-- SOLOMenuPreferenceSettings panel start here -->
+        <mat-expansion-panel id="SOLOMenuPreferenceSettings">
+          <mat-expansion-panel-header>
+            <mat-panel-title>{{TRANSLATE.SOLOMenuPreferenceSettings}}</mat-panel-title>
+          </mat-expansion-panel-header>
+          <div class="row">
+            <div class="col-md-2 col-sm-4 col-xs-12">
+              <div class="form_panel">
+                <label>{{TRANSLATE.AddButtonBackColor}}</label>
+                <input type="text" />
+              </div>
+            </div>
+            <div class="col-md-2 col-sm-4 col-xs-12">
+              <div class="form_panel">
+                <label>{{TRANSLATE.AddButtonForeColor}}</label>
+                <input type="text" />
+              </div>
+            </div>
+            <div class="col-md-2 col-sm-4 col-xs-12">
+              <div class="form_panel">
+                <label>{{TRANSLATE.MenuQtyBackColor}}</label>
+                <input type="text" />
+              </div>
+            </div>
+            <div class="col-md-2 col-sm-4 col-xs-12">
+              <div class="form_panel">
+                <label>{{TRANSLATE.MenuQtyForeColor}}</label>
+                <input type="text" />
+              </div>
+            </div>
+            <div class="col-md-2 col-sm-4 col-xs-12">
+              <div class="form_panel">
+                <label>{{TRANSLATE.MenuHeadForeColor}}</label>
+                <input type="text" />
+              </div>
+            </div>
+            <div class="col-md-2 col-sm-4 col-xs-12">
+              <div class="form_panel">
+                <label>{{TRANSLATE.NoofItemsAcrossMobile}}</label>
+                <input type="text" />
+              </div>
+            </div>
+            <div class="col-md-2 col-sm-4 col-xs-12">
+              <div class="form_panel">
+                <label>{{TRANSLATE.NoofItemsAcrossWeb}}</label>
+                <input type="text" />
+              </div>
+            </div>
+            <div class="col-md-2 col-sm-4 col-xs-12">
+              <div class="form_panel">
+                <label>{{TRANSLATE.TaxesAndChargesText}}</label>
+                <input type="text" />
+              </div>
+            </div>
+            <div class="col-md-2 col-sm-4 col-xs-12">
+              <div class="form_panel">
+                <label>{{TRANSLATE.PackagingChargesLabelText}}</label>
+                <input type="text" />
+              </div>
+            </div>
+            <div class="col-md-2 col-sm-4 col-xs-12">
+              <div class="form_panel">
+                <label>{{TRANSLATE.AdvanceOrderTimeSlotDuration}}</label>
+                <input type="text" />
+              </div>
+            </div>
+            
+            <div class="col-md-2 col-sm-4 col-xs-12">
+              <div class="form_panel">
+                <label>{{TRANSLATE.AdvanceOrderJustOrderTimeSlotDuration}}</label>
+                <input type="text" />
+              </div>
+            </div>
+            
+            <div class="col-md-2 col-sm-4 col-xs-12">
+              <div class="form_panel">
+                <label>{{TRANSLATE.ViewAllLocationBackColor}}</label>
+                <input type="text" />
+              </div>
+            </div>
+            <div class="col-md-2 col-sm-4 col-xs-12">
+              <div class="form_panel">
+                <label>{{TRANSLATE.FilterVeganMenuItems}}</label>
+                <div class="radio_btn">
+                  <mat-radio-group aria-label="Select an option">
+                    <mat-radio-button value="1">Yes</mat-radio-button>
+                    <mat-radio-button value="2" checked>No</mat-radio-button>
+                  </mat-radio-group>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-2 col-sm-4 col-xs-12">
+              <div class="form_panel">
+                <label>{{TRANSLATE.FilterGlutenFreeMenuItems}}</label>
+                <div class="radio_btn">
+                  <mat-radio-group aria-label="Select an option">
+                    <mat-radio-button value="1">Yes</mat-radio-button>
+                    <mat-radio-button value="2" checked>No</mat-radio-button>
+                  </mat-radio-group>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-2 col-sm-4 col-xs-12">
+              <div class="form_panel">
+                <label>{{TRANSLATE.FilterSelectSpicyLevel}}</label>
+                <div class="radio_btn">
+                  <mat-radio-group aria-label="Select an option">
+                    <mat-radio-button value="1">Yes</mat-radio-button>
+                    <mat-radio-button value="2" checked>No</mat-radio-button>
+                  </mat-radio-group>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-2 col-sm-4 col-xs-12">
+              <div class="form_panel">
+                <label>{{TRANSLATE.FilterEggMenuItem}}</label>
+                <div class="radio_btn">
+                  <mat-radio-group aria-label="Select an option">
+                    <mat-radio-button value="1">Yes</mat-radio-button>
+                    <mat-radio-button value="2" checked>No</mat-radio-button>
+                  </mat-radio-group>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-2 col-sm-4 col-xs-12">
+              <div class="form_panel">
+                <label>{{TRANSLATE.ShowTaxBreakupFlag}}</label>
+                <div class="radio_btn">
+                  <mat-radio-group aria-label="Select an option">
+                    <mat-radio-button value="1">Yes</mat-radio-button>
+                    <mat-radio-button value="2" checked>No</mat-radio-button>
+                  </mat-radio-group>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-2 col-sm-4 col-xs-12">
+              <div class="form_panel">
+                <label>{{TRANSLATE.FilterVegMenuItems}}</label>
+                <div class="radio_btn">
+                  <mat-radio-group aria-label="Select an option">
+                    <mat-radio-button value="1">Yes</mat-radio-button>
+                    <mat-radio-button value="2" checked>No</mat-radio-button>
+                  </mat-radio-group>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-2 col-sm-4 col-xs-12">
+              <div class="form_panel">
+                <label>{{TRANSLATE.FreeDeliveryFlag}}</label>
+                <div class="radio_btn">
+                  <mat-radio-group aria-label="Select an option">
+                    <mat-radio-button value="1">Yes</mat-radio-button>
+                    <mat-radio-button value="2" checked>No</mat-radio-button>
+                  </mat-radio-group>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-2 col-sm-4 col-xs-12">
+              <div class="form_panel">
+                <label>{{TRANSLATE.EnableJustOrderAdvanceOrder}}</label>
+                <div class="radio_btn">
+                  <mat-radio-group aria-label="Select an option">
+                    <mat-radio-button value="1">Yes</mat-radio-button>
+                    <mat-radio-button value="2" checked>No</mat-radio-button>
+                  </mat-radio-group>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-2 col-sm-4 col-xs-12">
+              <div class="form_panel">
+                <label>{{TRANSLATE.FilterJainMenuItems}}</label>
+                <div class="radio_btn">
+                  <mat-radio-group aria-label="Select an option">
+                    <mat-radio-button value="1">Yes</mat-radio-button>
+                    <mat-radio-button value="2" checked>No</mat-radio-button>
+                  </mat-radio-group>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-2 col-sm-4 col-xs-12">
+              <div class="form_panel">
+                <label>{{TRANSLATE.AcceptAdvanceOrdersFlag}}</label>
+                <div class="radio_btn">
+                  <mat-radio-group aria-label="Select an option">
+                    <mat-radio-button value="1">Yes</mat-radio-button>
+                    <mat-radio-button value="2" checked>No</mat-radio-button>
+                  </mat-radio-group>
+                </div>
+              </div>
+            </div>
+            
+            <div class="col-md-2 col-sm-4 col-xs-12">
+              <div class="form_panel">
+                <label>{{TRANSLATE.FlagRestaurantLogo}}</label>
+                <div class="radio_btn">
+                  <mat-radio-group aria-label="Select an option">
+                    <mat-radio-button value="1">Yes</mat-radio-button>
+                    <mat-radio-button value="2" checked>No</mat-radio-button>
+                  </mat-radio-group>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-2 col-sm-4 col-xs-12">
+              <div class="form_panel">
+                <label>{{TRANSLATE.DeliveryType}}</label>
+                <mat-select placeholder=" ">
+                  <mat-option value="one">Takeway</mat-option>
+                  <mat-option value="two">Both</mat-option>
+                </mat-select>
+              </div>
+            </div>
+          </div>
+        </mat-expansion-panel>
+      </mat-accordion>
+    </div>
+    <hr/>
+    <div class="mt_20">
+      <h4>Contact Person Details : </h4>
+      <div class="custom_table table_bordered">
+        <table class="mat-table" >
+          <tr class="mat-header-row">
+            <th class="mat-header-cell">Sr No.	</th>
+            <th class="mat-header-cell">Contact Name	</th>
+            <th class="mat-header-cell">Contact Designation</th>
+            <th class="mat-header-cell">Contact Mobile No.</th>
+            <th class="mat-header-cell">Contact Landline No.</th>
+            <th class="mat-header-cell">Contact Email</th>
+            <th class="mat-header-cell">Services Rights</th>
+            <th class="mat-header-cell">Action</th>
+          </tr>
+          <tr class="mat-row">
+            <td class="mat-cell"></td>
+            <td class="mat-cell">
+              <div class="form_panel">
+                <input type="text" />
+              </div>
+            </td>
+            <td class="mat-cell">
+              <div class="form_panel">
+                <input type="text" />
+              </div>
+            </td>
+            <td class="mat-cell">              
+              <div class="form_panel">
+                <input type="text" />
+              </div>
+            </td>
+            <td class="mat-cell">              
+              <div class="form_panel">
+                <input type="text" />
+              </div>
+            </td>
+            <td class="mat-cell">              
+              <div class="form_panel">
+                <input type="text" />
+              </div>
+            </td>
+            
+            <td class="mat-cell">              
+              <div class="form_panel">
+                <mat-select placeholder=" " multiple>
+                  <mat-option value="one">Select All</mat-option>
+                  <mat-option value="one">First option</mat-option>
+                  <mat-option value="two">Second option</mat-option>
+                </mat-select>
+              </div>
+            </td>
+            <td class="mat-cell">
+              <div class="d_flex">
+                <button class="primary_btn mr_10 btn_sm"> Add </button>
+                <button class="primary_btn btn_sm"> Clear </button>
+              </div>
+            </td>
+          </tr>
+          <tr class="mat-row">
+            <td class="mat-cell"></td>
+            <td class="mat-cell">
+              <div class="form_panel">
+                <input type="text" />
+              </div>
+            </td>
+            <td class="mat-cell">
+              <div class="form_panel">
+                <input type="text" />
+              </div>
+            </td>
+            <td class="mat-cell">              
+              <div class="form_panel">
+                <input type="text" />
+              </div>
+            </td>
+            <td class="mat-cell">              
+              <div class="form_panel">
+                <input type="text" />
+              </div>
+            </td>
+            <td class="mat-cell">              
+              <div class="form_panel">
+                <input type="text" />
+              </div>
+            </td>
+            
+            <td class="mat-cell">              
+              <div class="form_panel">
+                <mat-select placeholder=" " multiple>
+                  <mat-option value="one">Select All</mat-option>
+                  <mat-option value="one">First option</mat-option>
+                  <mat-option value="two">Second option</mat-option>
+                </mat-select>
+              </div>
+            </td>
+            <td class="mat-cell">
+              <div class="d_flex">
+                <button class="primary_btn mr_10 btn_sm"> Add </button>
+                <button class="primary_btn btn_sm"> Clear </button>
+              </div>
+            </td>
+          </tr>
+          
+        </table> 
+      </div>
+    </div>
+
+    <div class="mt_20">
+      <h4>Upload Menu : </h4>
+      <div class="row">
+        <div class="col-md-2 col-sm-4 col-xs-12">
+          <div class="form_panel">
+            <label>{{TRANSLATE.UploadMenu}}</label>
+            <app-upload-image></app-upload-image>
+          </div>
+        </div> 
+        <div class="col-md-2 col-sm-4 col-xs-12">
+          <div class="form_panel">
+            <label>{{TRANSLATE.UploadRestaurantImage}}</label>
+            <app-upload-image></app-upload-image>
+          </div>
+        </div> 
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="bottom_btns">
+  <button class="primary_btn">Submit</button>
+</div>

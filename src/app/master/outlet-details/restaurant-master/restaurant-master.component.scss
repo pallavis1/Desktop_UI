@@ -1,0 +1,28 @@
+@import "../../../../../src/config.scss";
+
+.mat-expansion-panel,
+.mat-accordion .mat-expansion-panel:not(.mat-expanded), 
+.mat-accordion .mat-expansion-panel:not(.mat-expansion-panel-spacing){
+    border-radius: 8px;
+}
+.custom_accordion{
+    .mat-expansion-panel{        
+        border: 1px solid var(--extreamLightGrey);
+        box-shadow: none;
+        .mat-expansion-panel-header{
+            background: var(--textWhite);
+            font-size: 12px;
+            font-weight: 500;
+        }
+
+        &.mat-expanded{
+            .mat-expansion-panel-header{
+                border-radius: 8px 8px 0 0;
+                border-bottom: 2px solid var(--input_border );
+            }
+        }
+    }
+    .mat-expansion-panel-body{
+        border-radius: 0 0 8px 8px;
+    }
+}

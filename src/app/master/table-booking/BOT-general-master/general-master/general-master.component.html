@@ -1,0 +1,216 @@
+<div class="page_heading">
+  {{TRANSLATE.GeneralMasters}}
+</div>
+
+<div class="page_wrapper list_wrapper">
+  <div class="custom_panel page_form">
+    <mat-tab-group>
+      <mat-tab label="Rating">
+        <div class="custom_table form_panel table_bordered">
+          <table class="mat-table" >
+            <tr class="mat-header-row">
+              <th class="mat-header-cell">Rating Id  </th>
+              <th class="mat-header-cell">Rating Description(Max. 100 characters)  </th>
+              <th class="mat-header-cell">Rank</th>
+              <th class="mat-header-cell">Is Active</th>
+            </tr>
+            <tr class="mat-row" *ngFor="let item of students">
+              <td class="mat-cell">
+                <span *ngIf="!editMode">{{item.id}}</span>
+                <input type="text" [(ngModel)]="item.id" value={{item.id}} *ngIf="editMode"> 
+              </td>
+              <td class="mat-cell">
+                <span *ngIf="!editMode">{{item.designationDesc}}</span>
+                <input type="text" [(ngModel)]="item.designationDesc" value={{item.designationDesc}} *ngIf="editMode"> 
+              </td>
+              <td class="mat-cell">
+                <span *ngIf="!editMode">{{item.designationDesc}}</span>
+                <input type="text" [(ngModel)]="item.designationDesc" value={{item.designationDesc}} *ngIf="editMode"> 
+              </td>
+              <td class="mat-cell">
+                <span *ngIf="!editMode">{{item.isActive}}</span>
+                <select [(ngModel)]="item.isActive" value={{item.isActive}} *ngIf="editMode">
+                  <option selected>Yes</option>
+                  <option>No</option>
+                </select>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="tab_bottom_btn text_right mt_20">
+          <div *ngIf="!editMode">          
+          <button class="primary_btn mr_10" (click)="new(document)">New</button>
+          <button class="primary_btn " >List</button>
+          </div>
+          
+          <div *ngIf="editMode">
+            <button class="primary_btn mr_10"  (click)="save(document)">Save</button>
+            <button class="primary_btn"  (click)="cancel(document)">Cancel</button>
+          </div>
+        </div>
+      </mat-tab>
+      <mat-tab label="Reason"> 
+        <div class="custom_table form_panel table_bordered">
+          <table class="mat-table" >
+            <tr class="mat-header-row">
+              <th class="mat-header-cell">Reason Id  </th>
+              <th class="mat-header-cell">Reason (Max. 100 characters)  </th>
+              <th class="mat-header-cell">Is Active</th>
+            </tr>
+            <tr class="mat-row" *ngFor="let item of students">
+              <td class="mat-cell">
+                <span *ngIf="!editMode">{{item.id}}</span>
+                <input type="text" [(ngModel)]="item.id" value={{item.id}} *ngIf="editMode"> 
+              </td>
+              <td class="mat-cell">
+                <span *ngIf="!editMode">{{item.designationDesc}}</span>
+                <input type="text" [(ngModel)]="item.designationDesc" value={{item.designationDesc}} *ngIf="editMode"> 
+              </td>
+              <td class="mat-cell">
+                <span *ngIf="!editMode">{{item.isActive}}</span>
+                <select [(ngModel)]="item.isActive" value={{item.isActive}} *ngIf="editMode">
+                  <option selected>Yes</option>
+                  <option>No</option>
+                </select>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="tab_bottom_btn text_right mt_20">
+          <div *ngIf="!editMode">          
+          <button class="primary_btn mr_10" (click)="new(document)">New</button>
+          <button class="primary_btn " >List</button>
+          </div>
+          
+          <div *ngIf="editMode">
+            <button class="primary_btn mr_10"  (click)="save(document)">Save</button>
+            <button class="primary_btn"  (click)="cancel(document)">Cancel</button>
+          </div>
+        </div>
+      </mat-tab>
+      <mat-tab label="Designation"> 
+        <div class="custom_table form_panel table_bordered">
+          <table class="mat-table" >
+            <tr class="mat-header-row">
+              <th class="mat-header-cell">Designation Id  </th>
+              <th class="mat-header-cell">Designation (Max. 100 characters)  </th>
+              <th class="mat-header-cell">Is Active</th>
+            </tr>
+            <tr class="mat-row" *ngFor="let item of students">
+              <td class="mat-cell">
+                <span *ngIf="!editMode">{{item.id}}</span>
+                <input type="text" [(ngModel)]="item.id" value={{item.id}} *ngIf="editMode"> 
+              </td>
+              <td class="mat-cell">
+                <span *ngIf="!editMode">{{item.designationDesc}}</span>
+                <input type="text" [(ngModel)]="item.designationDesc" value={{item.designationDesc}} *ngIf="editMode"> 
+              </td>
+              <td class="mat-cell">
+                <span *ngIf="!editMode">{{item.isActive}}</span>
+                <select [(ngModel)]="item.isActive" value={{item.isActive}} *ngIf="editMode">
+                  <option selected>Yes</option>
+                  <option>No</option>
+                </select>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="tab_bottom_btn text_right mt_20">
+          <div *ngIf="!editMode">          
+          <button class="primary_btn mr_10" (click)="new(document)">New</button>
+          <button class="primary_btn " >List</button>
+          </div>
+          
+          <div *ngIf="editMode">
+            <button class="primary_btn mr_10"  (click)="save(document)">Save</button>
+            <button class="primary_btn"  (click)="cancel(document)">Cancel</button>
+          </div>
+        </div>
+      </mat-tab>
+      
+      <mat-tab label="Booker"> 
+        <div class="custom_table form_panel table_bordered">
+          <table class="mat-table" >
+            <tr class="mat-header-row">
+              <th class="mat-header-cell">Booker Id  </th>
+              <th class="mat-header-cell">Booker Name (Max. 100 characters)  </th>
+              <th class="mat-header-cell">Is Active</th>
+            </tr>
+            <tr class="mat-row" *ngFor="let item of students">
+              <td class="mat-cell">
+                <span *ngIf="!editMode">{{item.id}}</span>
+                <input type="text" [(ngModel)]="item.id" value={{item.id}} *ngIf="editMode"> 
+              </td>
+              <td class="mat-cell">
+                <span *ngIf="!editMode">{{item.designationDesc}}</span>
+                <input type="text" [(ngModel)]="item.designationDesc" value={{item.designationDesc}} *ngIf="editMode"> 
+              </td>
+              <td class="mat-cell">
+                <span *ngIf="!editMode">{{item.isActive}}</span>
+                <select [(ngModel)]="item.isActive" value={{item.isActive}} *ngIf="editMode">
+                  <option selected>Yes</option>
+                  <option>No</option>
+                </select>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="tab_bottom_btn text_right mt_20">
+          <div *ngIf="!editMode">          
+          <button class="primary_btn mr_10" (click)="new(document)">New</button>
+          <button class="primary_btn " >List</button>
+          </div>
+          
+          <div *ngIf="editMode">
+            <button class="primary_btn mr_10"  (click)="save(document)">Save</button>
+            <button class="primary_btn"  (click)="cancel(document)">Cancel</button>
+          </div>
+        </div>
+      </mat-tab>
+      <mat-tab label="Holiday"> 
+        <div class="custom_table form_panel table_bordered">
+          <table class="mat-table" >
+            <tr class="mat-header-row">
+              <th class="mat-header-cell">Holiday Id  </th>
+              <th class="mat-header-cell">Holiday (Max. 100 characters)  </th>
+              <th class="mat-header-cell">Holiday Date</th>
+              <th class="mat-header-cell">Is Active</th>
+            </tr>
+            <tr class="mat-row" *ngFor="let item of students">
+              <td class="mat-cell">
+                <span *ngIf="!editMode">{{item.id}}</span>
+                <input type="text" [(ngModel)]="item.id" value={{item.id}} *ngIf="editMode"> 
+              </td>
+              <td class="mat-cell">
+                <span *ngIf="!editMode">{{item.designationDesc}}</span>
+                <input type="text" [(ngModel)]="item.designationDesc" value={{item.designationDesc}} *ngIf="editMode"> 
+              </td>
+              <td class="mat-cell">
+                <span *ngIf="!editMode">{{item.designationDesc}}</span>
+                <input type="text" [(ngModel)]="item.designationDesc" value={{item.designationDesc}} *ngIf="editMode"> 
+              </td>
+              <td class="mat-cell">
+                <span *ngIf="!editMode">{{item.isActive}}</span>
+                <select [(ngModel)]="item.isActive" value={{item.isActive}} *ngIf="editMode">
+                  <option selected>Yes</option>
+                  <option>No</option>
+                </select>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="tab_bottom_btn text_right mt_20">
+          <div *ngIf="!editMode">          
+          <button class="primary_btn mr_10" (click)="new(document)">New</button>
+          <button class="primary_btn " >List</button>
+          </div>
+          
+          <div *ngIf="editMode">
+            <button class="primary_btn mr_10"  (click)="save(document)">Save</button>
+            <button class="primary_btn"  (click)="cancel(document)">Cancel</button>
+          </div>
+        </div>
+      </mat-tab>
+    </mat-tab-group>
+  </div>
+</div>

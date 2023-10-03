@@ -1,0 +1,84 @@
+<div class="page_heading">
+  {{TRANSLATE.EmailTemplateMaster}} - {{TRANSLATE.New}}  
+</div>
+
+<div class="page_wrapper">
+  <div class="custom_panel page_form">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="row">
+        <div class="col-md-4 col-sm-6 col-xs-12">
+          <div class="form_panel">
+            <label>{{TRANSLATE.RestaurantName}} <span class="required">*</span></label>
+            <mat-select placeholder=" ">
+              <mat-option value="one">First option</mat-option>
+              <mat-option value="two">Second option</mat-option>
+            </mat-select>
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-6 col-xs-12">
+          <div class="form_panel">
+            <label>{{TRANSLATE.TemplateType}} </label>
+            <input type="text" placeholder="" />
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-6 col-xs-12">
+          <div class="form_panel">
+            <label>{{TRANSLATE.FromDate}}</label>
+            <div class="custom_datepicker">
+              <input matInput [matDatepicker]="FromDate">
+              <mat-datepicker-toggle matIconSuffix [for]="FromDate"></mat-datepicker-toggle>
+              <mat-datepicker #FromDate></mat-datepicker>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-6 col-xs-12">
+          <div class="form_panel">
+            <label>{{TRANSLATE.ToDate}}</label>
+            <div class="custom_datepicker">
+              <input matInput [matDatepicker]="ToDate">
+              <mat-datepicker-toggle matIconSuffix [for]="ToDate"></mat-datepicker-toggle>
+              <mat-datepicker #ToDate></mat-datepicker>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-md-4 col-sm-6 col-xs-12">
+          <div class="form_panel">
+            <label>{{TRANSLATE.Subject}} <span class="required">*</span></label>
+            <input type="text" placeholder="" />
+          </div>
+        </div>      
+        <div class="col-md-4 col-sm-6 col-xs-12">
+          <div class="form_panel">
+            <label>{{TRANSLATE.IsActive}}</label>
+            <div class="custom_checkbox">
+              <mat-checkbox class="example-margin"></mat-checkbox>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-6 col-xs-12">
+          <div class="form_panel">
+            <label>{{TRANSLATE.Image}}</label>
+            <app-upload-image></app-upload-image>
+          </div>
+        </div> 
+      </div>
+      </div>
+      <div class="col-md-6 col-sm-12">
+        <div class="form_panels">
+          <label>{{TRANSLATE.Description}}</label>        
+          <skv-editor [data]="result" [options]="options" (onUpdate)="update($event)"></skv-editor>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+</div>
+
+<div class="bottom_btns">
+  <button class="primary_btn border_btn mr_10">Reset</button>
+  <button class="primary_btn mr_10">Preview</button>
+  <button class="primary_btn">Submit</button>
+</div>

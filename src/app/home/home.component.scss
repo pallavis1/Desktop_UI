@@ -1,0 +1,345 @@
+
+@import "../../config.scss";
+
+.card_panel{
+    display: flex;
+    .card_box {
+      background: #FFFFFF 0% 0% no-repeat padding-box;
+      border-radius: 18px;
+      margin-right: 15px;
+      img{
+        height: 50px;
+      }
+    }
+    a{
+        color: #464646;
+        text-decoration: none;
+        font-size: 16px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 171px;
+        height: 160px;
+    }
+  }
+
+  .dashboard_panel{
+    border-radius: 3px;
+    background: var(--input_backgroud);
+    padding:0 15px 15px;
+    box-shadow: 0 0 7px 1px #cfcfcf;
+    margin-bottom: 20px;
+    min-height: 230px;
+    .custom_table{
+      min-height: 200px;
+      max-height: 150px;
+      overflow-y: auto;
+    }
+    .cstm_dd{
+      padding:6px 15px;
+      border-bottom: 2px solid #b4b4b4;
+      margin: 0 -15px;
+      color: var(--DimGrey);
+    }
+    .count{
+      padding: 5px 0;
+      // text-align: center;
+      .decrease,
+      .increase{
+        font-size: 15px;
+        width: 100%;
+        display: block;    
+      }
+    }
+
+    .decrease{
+      color: red;
+    }
+    .increase{
+      color: #00d800;
+    }
+    &.minheight_auto{
+      min-height: auto;
+    }
+  }
+
+  .resrv_cancel_box{
+    padding: 10px 0 0;
+    overflow-y: auto;
+    height: 208px;
+    margin-right: -15px;
+
+    .msg_box{
+      margin-bottom: 15px;
+      p{
+        margin-bottom: 5px;
+      }
+      .d_flex{
+        align-items: center;
+        img{
+          height: 15px;
+          margin-right: 5px;
+        }
+      }
+    }
+  }
+  .wait_panel{
+    display: flex;
+    align-items: center;
+    padding:5px 0;
+    justify-content: space-between;
+    min-width: 300px;    
+    color: var(--dash_top_color);
+    @include laptop_view{
+      font-size: 13px;
+      min-width: 230px;
+    }
+    @include mobile_XSview{
+      min-width: auto;
+    }
+    img{
+      width: 20px;
+      margin-right: 7px;
+      margin-top: -6px;
+    }
+    .left{
+      font-size: 23px;
+      span{
+        font-size: 17px;
+      }
+    }
+    .right{
+      h3{
+        margin-top: 10px;
+        @include laptop_view{
+          font-size: 14px;
+        }
+      }
+    }
+  }
+  .cstm_dd{
+    justify-content: space-between;
+  }
+  .dd_options div{
+    cursor: pointer;
+    font-size: 12px;
+  }
+  .chartjs-container{
+    padding-top: 10px;
+  }
+  .dash_wrapper{
+    .dash_left{
+      @include desktop_view{
+        padding-right: 0;
+      }
+    }
+    .dash_right{
+      // @include desktop_view{
+      //   padding-right: 0;
+      //   padding-left: 0;
+      // }
+      padding-right: 0;
+      /* padding-left: 0; */
+      padding-top: 20px;
+      box-shadow: 0 0 5px 2px #cfcfcf;
+      border-radius: 5px;
+      background-color: #fff;
+
+      .dashboard_panel{
+        box-shadow: none;
+        min-height: auto;
+        border: 1px solid #dbdbdb;
+        h4{
+          border-bottom: 1px solid #dbdbdb;
+        }
+      }
+    }
+    .dash_head{
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 20px;
+      border-bottom: 1px solid #b4b4b4;
+      padding-bottom: 7px;
+
+      h4{
+        margin: 0;
+        color: var(--textBlack);
+      }
+      .filter_dd{
+        .mat-button{
+          line-height: normal;
+          padding-right: 0;
+          &:hover,
+          &:focus{
+            background: transparent;
+            outline: none;
+            box-shadow: none;
+          }
+        }
+      }
+    }
+  }
+  .radio_btn{
+    ::ng-deep{
+    mat-radio-group{
+      .mat-radio-button{
+      .mat-radio-container,
+      .mat-radio-outer-circle,
+      .mat-radio-inner-circle{
+        width: 14px;
+        height: 14px;
+      }
+      .mat-radio-label-content{
+        font-size: 13px;
+      }
+    }
+  }
+}
+}
+.percentage_panel{
+  display: flex;
+  justify-content: right;
+  margin: 10px 0 10px;  
+  color: var(--textBlack);
+  .percentage_text{
+    margin-right: 20px;
+    display: flex;
+    flex-direction: column;
+    font-size: 12px;
+    &:last-child{
+      margin-right: 0;
+    }
+    span{
+      font-weight: 500;
+      font-size: 20px;
+    }
+  }
+}
+.dash_top_panel{
+  margin: 0 5px;
+  display: flex;
+  @include desktop_view{
+    justify-content: space-between;
+  }
+  flex-wrap: wrap;
+  margin-bottom: 15px;
+  .dashboard_panel{
+    min-height: auto;
+    margin-right:5px;
+    padding: 0 10px 10px;
+    flex: 1;
+    box-shadow:0 1px 5px 1px var(--input_border);
+    position: relative;
+    @include mobile_XSview{
+      flex: inherit;
+      width: 100%;
+    }
+    h4{
+      // padding: 7px 0;
+      border-bottom: none;
+      font-size: 14px;
+      padding: 10px 0;
+      color: var(--textBlack);
+    }
+    &:last-child{
+      margin-right: 0;
+    }
+    &::after{
+      content: '';
+      border-right: 1px solid #ccc;
+      position: absolute;
+      right: -3px;
+      height: 100%;
+      top: 0;
+
+    @include mobile_XSview{
+      border-right: none;
+    }
+      
+    }
+    &:last-child{
+      &::after{
+        border-right: none;
+      }
+    }
+    &.cancel_panel{
+      min-width: 180px;
+    }
+  }
+}
+.chart_filter{
+  mat-button-toggle-group{
+    &.mat-button-toggle-group-appearance-standard{
+      border:1px solid var(--input_border);
+      // border:1px solid red;
+
+      .mat-button-toggle+.mat-button-toggle{
+        border-left-color:var(--input_border) ;
+      }
+    }
+    ::ng-deep{
+      
+      .mat-button-toggle{
+        &.chart_view,
+        &.grid_view{
+          background-size: 60% !important;
+          background-position: center !important;
+          width: 30px;
+          height: 25px;
+          padding: 5px;
+        }
+          &.chart_view{
+          background: url('../../assets/image/icons/chart_view.png') no-repeat;
+        }
+        &.grid_view{
+          background: url('../../assets/image/icons/grid_view.png') no-repeat;
+        }
+        &.mat-button-toggle-checked{          
+          &.chart_view{            
+            background: url('../../assets/image/icons/chart_view_active.png')no-repeat #fc7a45;
+          }
+          &.grid_view{
+            background: url('../../assets/image/icons/grid_view_active.png') no-repeat #fc7a45;
+          }
+          button:focus{
+            border: none;
+            outline: none;
+          }
+        }
+        
+      }
+    }
+  }
+  
+}
+
+.filter_panel{
+  display: flex;
+  .day_dd{
+    border: none;
+    color: var(--primary_color);
+    margin-right: 15px;
+    font-size: 13px;
+    background: var(--input_backgroud);
+    &:focus{
+      outline: none;
+    }
+  }
+}
+.wait_panel .left,
+.count{
+  font-size: 28px;
+  color: var(--dash_top_color);
+  font-weight: 600;
+  @include laptop_view{
+    font-size: 20px;
+  }
+  span{
+    font-size: 20px;
+    font-weight: 500;
+     @include below1280{
+      font-size: 15px;
+     }
+  }
+}
