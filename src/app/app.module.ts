@@ -57,7 +57,6 @@ import { LoaderComponent } from './common/loader/loader.component';
 import { FormatTimePipe } from './shared/pipe/format-time.pipe';
 import { OnlyNumberDirective } from './shared/directives/only-number.directive';
 import { FilterPipe } from './shared/pipe/filter.pipe';
-import { QRCodeModule } from 'angularx-qrcode';
 import { TogglePipe } from './shared/pipe/toggle.pipe';
 import { LoginComponent } from './login/login.component';
 import { AccountSelectionComponent } from './customer/account-selection.component';
@@ -256,7 +255,6 @@ import { FloorPlanMapComponent } from './master/table-booking/restaurant-floor-p
     MatTooltipModule,
     MatSliderModule,
     MatDividerModule,
-    QRCodeModule,
     MatBadgeModule,
     MaterialModule,
     CommonModule,
